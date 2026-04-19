@@ -1,0 +1,79 @@
+---
+description: Owner close-out and handover—phased docs, deliverable list, PDF TOC pattern, scope/disclaimers, deferrals.
+alwaysApply: true
+---
+
+# Owner handover and design documentation
+
+Use this when drafting **client-facing packs**, **close-out**, or **“what owners get at the end”**—distinct from day-to-day concept/DD work.
+
+## Phase flow (design → site → handover)
+
+```mermaid
+flowchart LR
+  concept[Concept_and_mood]
+  dd[Design_development]
+  cd[Construction_docs]
+  site[Site_and_install]
+  handover[Handover_package]
+  concept --> dd --> cd --> site --> handover
+```
+
+- **Concept / mood**: narrative, references, preliminary palette and direction.
+- **Design development (DD)**: developed layouts, key elevations, indicative specs, tighter budgets.
+- **Construction docs (CD)**: drawings and schedules suitable for pricing/build (as far as interior scope goes).
+- **Site & install**: RFIs, shop drawing review, snagging, punch list.
+- **Handover package**: record docs, warranties, care, and **as-built/record** information for the owner.
+
+## Typical owner handover deliverables
+
+Each line is one **document or bundle**; expand only when the user asks for depth.
+
+| Deliverable | Typical contents (one line) |
+|-------------|-----------------------------|
+| Design narrative / concept book | Story, principles, imagery—if not already issued earlier |
+| **Record / as-built drawings** | Plans, elevations, key details reflecting **built** state (after changes) |
+| Finish schedule | Room-by-room or element-based; links to specs and samples |
+| FF&E schedule | Item, image, dimensions, finishes, supplier, lead time, warranty, care |
+| Lighting schedule | ID, type, location, lamp, control, CCT/CRI intent |
+| Specifications / cut sheets | Indexed PDF binder or structured appendix |
+| Joinery summary | Approved shop drawings list + revision numbers |
+| Warranty register | Product, serial if applicable, period, contact, claim process |
+| O&M and care guides | Appliances, stone, wood, specialty coatings |
+| Spare parts / attic stock | Handles, tiles, paint codes, extra wallpaper |
+| Photo set | Completed spaces for insurance and future renovation reference |
+| Punch list | Signed closure; defects / warranty period expectations (wording only—legal terms local) |
+| Smart home / AV | User guide and reset basics if applicable |
+
+## How to respond when the user asks for a deliverable
+
+1. Output a **table of contents** suitable for export to PDF (numbered sections).
+2. Use **English** body; optional **Russian headings** in parentheses if the user wants bilingual owner docs.
+3. Avoid marketing fluff; use **scope**, **assumptions**, **exclusions**, and **TBD** with **what information is needed** to close TBDs.
+4. Include the **scope & assumptions** block below whenever producing a **full owner pack** or **final TOC**.
+
+## Scope & assumptions template (embed in owner packs)
+
+Include a section similar to:
+
+- **Interior design scope**: what this engagement covered (e.g. layouts, finishes, FF&E specification, site visits as agreed).
+- **Contractor / owner scope**: supply/install split; owner-supplied items.
+- **Assumptions**: dimensions taken from base drawings; existing MEP capacity; site access—**list only what you were told**.
+- **Exclusions**: structural calculations, code compliance certificates, MEP engineering, waterproofing certification, specialist acoustic/fire modeling—unless explicitly contracted.
+
+## Deferral triggers (do not overclaim)
+
+If the topic involves any of the following, **stop at coordination** and name the responsible discipline:
+
+- Load-bearing walls, slabs, openings, or reinforcement
+- Wet-room tanking/waterproofing **certification**
+- Gas appliances or gas line routing
+- Main electrical panel upgrades, three-phase, or supply upgrades
+- Façade or envelope changes affecting condensation/fire
+- Fire separation between units/escape routes
+
+Say explicitly: **coordinate with a licensed architect/engineer/MEP designer** in the project jurisdiction.
+
+## Disclaimer (handover)
+
+AI-generated documentation is a **drafting aid** only. It is **not** a substitute for licensed professionals where required. Owners and contractors must verify dimensions on site, confirm compatibility with existing building systems, and obtain **official approvals** where applicable. **Warranty and defects language** must align with local contracts and law—flag when a lawyer should review.
