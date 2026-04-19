@@ -2,9 +2,13 @@
 
 **Связанный документ:** требования заказчика к объекту (бриф, планировка, инженерные и стилистические ожидания) — [`apartment-project-requirements.md`](./apartment-project-requirements.md).
 
+**Матрица доставки (кв. 93):** [HTML: артефакты по этому файлу ↔ разделы требований](../docs/apartment-93-deliverables-matrix.html) — для обзора и печати в PDF.
+
 **Назначение этого файла:** зафиксировать **что дизайнер интерьера выдаёт по этапам** (артефакты), **минимальный состав ведомостей**, **пакет передачи заказчику** на закрытии и **границы координации** со смежными специалистами. Конкретный объём — в договоре; здесь — согласованный ориентир.
 
 **Единицы:** SI (мм, м, м², лк, °C).
+
+**Версия этого файла (пакет доставки):** 1.1 · **Дата:** 2026-04-19 · **Изменения:** добавлены **§8–§11** — E2E привязка к [`apartment-project-requirements.md`](./apartment-project-requirements.md) (кв. **93**): ворота фаз, матрица помещений, шаблоны ведомостей; тело **§8** на английском (ориентир для международных подрядчиков).
 
 ---
 
@@ -17,6 +21,10 @@
 5. [Состав пакета передачи заказчику (handover)](#section-5)
 6. [Координация смежных лицензируемых специалистов](#section-6)
 7. [Ограничение ответственности (дисклеймер)](#section-7)
+8. [(EN) Interior scope, priorities, assumptions — Apt 93](#section-8) *(рус.: объём и приоритеты дизайна)*
+9. [Ворота согласования по фазам (E2E)](#section-9)
+10. [Матрица помещений × артефакты дизайнера (кв. 93)](#section-10)
+11. [Шаблоны ведомостей (пустые строки для копирования)](#section-11)
 
 ---
 
@@ -168,3 +176,85 @@ ID светильника • тип • место / привязка к пла
 ## 7. Ограничение ответственности (дисклеймер)
 
 Документ — **вспомогательный шаблон** для структурирования договорных ожиданий и пакета передачи по интерьеру. Это **не** юридическая консультация, не расчёт несущих конструкций и не сертификация соответствия нормам. Конструктивную часть, пожарную и газовую безопасность, проектирование **систем** электроснабжения должны проверить **квалифицированные специалисты с допуском** в юрисдикции объекта. Заказчик и подрядчики обязаны **проверить размеры на объекте**, совместимость с инженерией здания и получить **официальные согласования**, где требуется. Формулировки по гарантиям и дефектам должны соответствовать **местным договорам и закону** — при необходимости привлечь юриста.
+
+---
+
+<a id="section-8"></a>
+
+## 8. (EN) Interior design scope, priorities, and assumptions — Apartment 93, Bishkek
+
+*This subsection is written in **English** for international contractors and manufacturers, per studio workflow. Metric SI only. No currency or tax assumptions.*
+
+**Project:** Private apartment **No. 93**, **Jusup Mamai 16**, Bishkek, Kyrgyz Republic. **Registered internal floor area (state register):** **93.6 m²** (room list and wet zones — see [requirements §2.3](./apartment-project-requirements.md#section-2)). **Design ceiling datum (intent until surveyed):** **2700 mm** — [requirements §2.4](./apartment-project-requirements.md#section-2-4).
+
+**Interior design scope (typical, to be fixed in contract — aligns with [§2.1](#section-2-1)):** space planning and furniture layout; architectural finishes specification within the apartment; built-in joinery (kitchen, hall storage, wardrobes); FF&E specification or procurement support; lighting concept and luminaire schedule coordinated with ceiling and joinery; sun-shading intent coordinated with suppliers; site visits, mock-ups, sample approvals, RFIs, shop-drawing review, snag list / punch list.
+
+**Design priorities (aligned with owner [§4.3](./apartment-project-requirements.md#section-4-3)):** circulation and storage first; daylight and glare control; acoustic comfort at bedrooms vs hall; durability and maintainability; budget; aesthetics (Scandinavian + Japandi, white + oak — [§5.5](./apartment-project-requirements.md#section-5-5)).
+
+**Coordinate, do not substitute licensed work:** structural openings, fire strategy, gas distribution and certification, main electrical panel upgrades, façade / envelope changes, and **certified** wet-area waterproofing — flag in drawings and defer to **licensed architect / engineer / MEP designer** in the project jurisdiction ([requirements §3.4](./apartment-project-requirements.md#section-3-4), [§6 coordination below](#section-6)).
+
+**Open inputs the owner must close for CD:** [requirements §5.1.1](./apartment-project-requirements.md#section-5-1-1) sleep/work matrix; [§5.0](./apartment-project-requirements.md#section-5-0) cooktop fuel choice, TV wall, LAN counts; [requirements §6](./apartment-project-requirements.md#section-6) TBD-5 wet wall / risers for kitchen wall run.
+
+---
+
+<a id="section-9"></a>
+
+## 9. Ворота согласования по фазам (E2E)
+
+*Каждая строка — минимум для перехода к следующей фазе; даты и подписи — в договоре / приложении. Ссылки — на **требования** кв. 93.*
+
+| Фаза | Артефакты дизайнера (выход) | Критерий «закрыто» со стороны заказчика / смежников |
+|------|-----------------------------|------------------------------------------------------|
+| **Концепция** | Нарратив, референсы, палитра, предварительный бюджетный коридор | Согласована матрица намерений [§4.4](./apartment-project-requirements.md#section-4-4) (черновик допустим; дата пересмотра зафиксирована). |
+| **DD** | Планы, ключевые фасады/разрезы, матрица помещений, ориентировочные спеки | Обмер/ревизия в [§2.4](./apartment-project-requirements.md#section-2-4); согласованы приоритеты [§5.8](./apartment-project-requirements.md#section-5-8) по ключевым зонам; заполнена [§5.1.1](./apartment-project-requirements.md#section-5-1-1) или письмо-эквивалент. |
+| **CD** | Рабочие чертежи и ведомости для сметы/монтажа в рамках интерьера | Красные линии [§4.2](./apartment-project-requirements.md#section-4-2) не нарушены; решения [§5.0](./apartment-project-requirements.md#section-5-0) зафиксированы до заказа кухни/слаботочки. |
+| **Монтаж** | RFI, журнал shop drawings, визуальный надзор, punch list | Приёмка по [§5.7](./apartment-project-requirements.md#section-5-7) и [§5.7.1](./apartment-project-requirements.md#section-5-7-1); ОВиК/газ — по журналу согласований [§3.3.1](./apartment-project-requirements.md#section-3) требований. |
+| **Передача** | Пакет [§5](#section-5) этого файла (13 пунктов) + исполнительные схемы | Чек-лист [§5.7.1](./apartment-project-requirements.md#section-5-7-1) пройден; O&M включает [§5.3.1](./apartment-project-requirements.md#section-5-3-1) KPI (фильтры, сценарии света). |
+
+---
+
+<a id="section-10"></a>
+
+## 10. Матрица помещений × артефакты дизайнера (кв. 93)
+
+*Площади — из экспликации госреестра в требованиях [§2.3](./apartment-project-requirements.md#section-2). «Минимум артефактов» — что дизайнер выдаёт по комнате в типовом полном цикле (уточнить в договоре).*
+
+| Помещение | S, м² | План/расстановка | Корпусная мебель / узлы | Отделка (ведомость) | Свет (сценарии + позиции) | ОВиК-привязки (дизайнер) | Требования §5.8 |
+|-----------|-------|------------------|-------------------------|----------------------|---------------------------|---------------------------|------------------|
+| Коридор | 17,0 | да | гардеробная встроенная | да | да (ночной контур) | ниши/люки | [5.8.2](./apartment-project-requirements.md#section-5-8) |
+| Кухня–гостиная (open space) | 35,6 | да | кухня, ТВ-ниша | да | да (3+ сценария) | розетки, LAN, сплит | [5.8.3](./apartment-project-requirements.md#section-5-8) |
+| Кладовая | 2,8 | да | полки/корзины | да | да | розетка | [5.8.4](./apartment-project-requirements.md#section-5-8) |
+| Санузел | 1,6 | да | тумба | да | да (лицо у зеркала) | вентиляция живое сечение | [5.8.5](./apartment-project-requirements.md#section-5-8) |
+| Санузел (душевая) | 3,1 | да | ниша душа | да | да | сушка полотенец | [5.8.6](./apartment-project-requirements.md#section-5-8) |
+| Санузел (ванная) | 4,2 | да | шкаф/ниша | да | да | стирка/сушка, УЗО | [5.8.7](./apartment-project-requirements.md#section-5-8) |
+| Спальня | 15,1 | да | шкаф | да | да (blackout логика) | сплит не в створ кровати | [5.8.8](./apartment-project-requirements.md#section-5-8) |
+| Спальня | 14,2 | да | шкаф | да | да | сплит | [5.8.8](./apartment-project-requirements.md#section-5-8) |
+| Лоджия (у кухни) | 3,7 | да | шкаф ≤ глубины по обмеру | да | по необходимости | без самовольной воды | [5.8.9](./apartment-project-requirements.md#section-5-8) |
+| Лоджия (у спальни) | 4,4 | да | хранение/зона отдыха | да | по необходимости | УК по остеклению | [5.8.9](./apartment-project-requirements.md#section-5-8) |
+| Балкон | 3,2 | да | лёгкая мебель/сушка | да | по необходимости | крепления по правилам дома | [5.8.9](./apartment-project-requirements.md#section-5-8) |
+
+---
+
+<a id="section-11"></a>
+
+## 11. Шаблоны ведомостей (пустые строки для копирования)
+
+*Столбцы — как в [§4.1–4.3](#section-4) выше; не считать ведомость полной без всех столбцов (или явного **Н/П**). Дублирует минимум из правил студии (finish / FF&E / lighting).*
+
+### 11.1 Ведомость отделки (шаблон)
+
+| Space/element | Material | Manufacturer/line | Colour/name | Pattern/repeat | Dimensions (mm) | Grout/sealant | Slip/wet rating | Supplier | Sample approved (Y/N) |
+|---------------|----------|--------------------|--------------|----------------|-----------------|----------------|------------------|----------|----------------------|
+| | | | | | | | | | |
+
+### 11.2 Ведомость FF&E (шаблон)
+
+| Item ID | Image ref | Qty | Dimensions (mm) | Finish/fabric | SKU | Supplier | Lead time | Install by | Warranty | Care note |
+|---------|-----------|-----|-------------------|---------------|-----|----------|-----------|------------|----------|-----------|
+| | | | | | | | | | | |
+
+### 11.3 Ведомость освещения (шаблон)
+
+| Fixture ID | Type | Location / plan ref | Lamp/socket | CCT/CRI target | Dimming/control | Driver location note | Ceiling height (mm) | lm | W | Ra/R9 | TM-30 Rf/Rg | Lens/angle | UGR | IP/IK | Driver type / Pst LM | Dimmer compatibility | IES/LDT link | Housing colour | Lead time | Spare LED module (Y/N) |
+|--------------|------|---------------------|---------------|----------------|-----------------|------------------------|----------------------|----|---|-------|-------------|------------|-----|-------|----------------------|---------------------|--------------|---------------|-----------|----------------------|
+| | | | | | | | 2700 (intent) | | | | | | | | | | | | | |

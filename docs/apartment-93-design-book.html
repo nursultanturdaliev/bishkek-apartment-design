@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apartment 93 — Interior Design Book (Bishkek)</title>
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --card: #fff;
+      --text: #1a1a1a;
+      --muted: #5c5c5c;
+      --accent: #2c5282;
+      --border: #e2ddd6;
+      --warn: #9c4221;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      background: var(--bg);
+      margin: 0;
+      padding: 1.5rem clamp(1rem, 3vw, 2.5rem) 3rem;
+      max-width: 64rem;
+      margin-inline: auto;
+    }
+    h1 { font-size: 1.6rem; font-weight: 650; margin: 0 0 0.25rem; }
+    h2 { font-size: 1.2rem; margin-top: 2.25rem; padding-bottom: 0.35rem; border-bottom: 2px solid var(--border); }
+    h3 { font-size: 1rem; margin-top: 1.25rem; color: var(--muted); font-weight: 600; }
+    h4 { font-size: 0.95rem; margin: 1rem 0 0.35rem; }
+    p { margin: 0.5rem 0; }
+    .lead { color: var(--muted); margin-bottom: 1.25rem; }
+    .ru { color: var(--muted); font-weight: 400; font-size: 0.9em; }
+    nav.toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0 2rem;
+    }
+    nav.toc strong { display: block; margin-bottom: 0.5rem; }
+    nav.toc ol { margin: 0; padding-left: 1.25rem; columns: 2; column-gap: 1.5rem; }
+    nav.toc li { break-inside: avoid; }
+    nav.toc a { color: var(--accent); text-decoration: none; }
+    nav.toc a:hover { text-decoration: underline; }
+    section { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0.5rem 0 1rem; }
+    th, td { border-bottom: 1px solid var(--border); padding: 0.45rem 0.55rem; vertical-align: top; text-align: left; }
+    th { background: #edeae4; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    code { background: #efece7; padding: 0.05em 0.35em; border-radius: 3px; font-size: 0.92em; }
+    a { color: var(--accent); }
+    .pill { display: inline-block; font-size: 0.72rem; padding: 0.1rem 0.4rem; border-radius: 4px; background: #e8f0f8; color: #234876; margin: 0 0.2rem 0.15rem 0; }
+    .pill.warn { background: #fdebd6; color: var(--warn); }
+    .pill.ok { background: #d8eed8; color: #235c2a; }
+    .note { color: var(--muted); font-size: 0.85rem; }
+    .palette { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0.75rem 0; }
+    .swatch { width: 130px; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: var(--card); }
+    .swatch .chip { height: 70px; }
+    .swatch .lbl { padding: 0.4rem 0.55rem; font-size: 0.78rem; }
+    .schematic { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem; }
+    .schematic svg { width: 100%; height: auto; display: block; }
+    .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .twocol { grid-template-columns: 1fr; } nav.toc ol { columns: 1; } }
+    @media print {
+      body { background: #fff; padding: 0.5cm; max-width: none; }
+      section, nav.toc { break-inside: avoid; box-shadow: none; }
+      h2 { break-after: avoid; }
+      a { color: #000; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Apartment 93 — Interior Design Book <span class="ru">(Кв. 93, ул. Жусупа Мамая 16, Бишкек)</span></h1>
+  <p class="lead">
+    Senior interior designer's working set for a private residence (~93.6 m² registered internal). SI metric only.
+    Body in English; Russian short labels in parentheses. Print to PDF (A4, fit to page) for owner sign-off.
+  </p>
+  <p class="note">
+    Linked source documents (open from a clone of the repo):
+    <a href="../img/apartment-project-requirements.md">apartment-project-requirements.md</a> ·
+    <a href="../img/interior-designer-deliverables.md">interior-designer-deliverables.md</a> ·
+    <a href="apartment-93-deliverables-matrix.html">deliverables × requirements matrix</a>.
+  </p>
+  <p class="note">Document version 1.0 · 2026-04-19. Owner contact for RFQ / clarifications: <strong>TBD</strong>.</p>
+</header>
+
+<nav class="toc" aria-label="Contents">
+  <strong>Contents <span class="ru">(Содержание)</span></strong>
+  <ol>
+    <li><a href="#s1">Project info</a></li>
+    <li><a href="#s2">Assumptions &amp; exclusions</a></li>
+    <li><a href="#s3">Concept &amp; palette</a></li>
+    <li><a href="#s4">Space plan (schematic)</a></li>
+    <li><a href="#s5">Room-by-room design</a></li>
+    <li><a href="#s6">Finish schedule</a></li>
+    <li><a href="#s7">FF&amp;E schedule</a></li>
+    <li><a href="#s8">Lighting schedule</a></li>
+    <li><a href="#s9">Joinery brief</a></li>
+    <li><a href="#s10">MEP coordination</a></li>
+    <li><a href="#s11">Sun &amp; shade</a></li>
+    <li><a href="#s12">Acoustic &amp; comfort intent</a></li>
+    <li><a href="#s13">Sustainability &amp; health</a></li>
+    <li><a href="#s14">Sample checklist</a></li>
+    <li><a href="#s15">Punch list &amp; handover TOC</a></li>
+    <li><a href="#s16">Open coordination items</a></li>
+    <li><a href="#s17">Disclaimer</a></li>
+  </ol>
+</nav>
+
+<!-- ============== 1 ============== -->
+<section id="s1">
+  <h2>1. Project info <span class="ru">(Объект)</span></h2>
+  <table>
+    <tr><th>Address</th><td>Bishkek, Lenin district, Jusup Mamai st. 16, apt. 93</td></tr>
+    <tr><th>Cadastral / tech ID</th><td><code>1-01-14-0060-3172-01-033</code></td></tr>
+    <tr><th>Registered internal area</th><td>93.6 m² (state register expluication, see <a href="../img/apartment-project-requirements.md#section-2">requirements §2.3</a>)</td></tr>
+    <tr><th>External areas</th><td>2 loggias 3.7 + 4.4 m² and 1 balcony 3.2 m² (total 11.3 m²)</td></tr>
+    <tr><th>Ceiling intent (datum)</th><td>2700 mm — confirm on site, see <a href="../img/apartment-project-requirements.md#section-2-4">§2.4</a></td></tr>
+    <tr><th>Climate</th><td>Continental: cold winters, hot summers; sun control, dust, indoor humidity matter</td></tr>
+    <tr><th>Tenure</th><td>Owner-occupied, long-term — invest in fixed finishes and joinery</td></tr>
+  </table>
+</section>
+
+<!-- ============== 2 ============== -->
+<section id="s2">
+  <h2>2. Assumptions &amp; exclusions <span class="ru">(Допущения и исключения)</span></h2>
+  <p>Design decisions in this book rely on the following <strong>professional assumptions</strong>. Replace any item with a written owner / contractor confirmation before tendering long-lead items; keep change log in <a href="../img/apartment-project-requirements.md#section-3">requirements §3.3.1</a>.</p>
+  <table>
+    <thead><tr><th>ID</th><th>Assumption</th><th>Source / impact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>A1</strong></td><td>Household: 2 adults + 2 children (1 shared children's room).</td><td>Drives bedroom programming, sleep matrix v.1.1 (<a href="../img/apartment-project-requirements.md#section-5-1-1">§5.1.1</a>).</td></tr>
+      <tr><td><strong>A2</strong></td><td>Bedroom assignment: 15.1 m² = parents; 14.2 m² = children (twin beds).</td><td>Wardrobe sizing, blackout, AC throw direction.</td></tr>
+      <tr><td><strong>A3</strong></td><td>One full WFH desk in open space; one half-desk in children's room.</td><td>LAN points, daylight orientation, video-call backdrop.</td></tr>
+      <tr><td><strong>A4</strong></td><td>Cooktop: <strong>induction</strong>; gas only for the boiler.</td><td>Kitchen schedule, electrical load, hood ducting (<a href="../img/apartment-project-requirements.md#section-5-0">§5.0</a>).</td></tr>
+      <tr><td><strong>A5</strong></td><td>TV on long wall opposite sofa, 55–65", wall-mounted, 80 mm chase.</td><td>Joinery, sockets, sound bar future-proofing.</td></tr>
+      <tr><td><strong>A6</strong></td><td>Kitchen wet-wall shared with central WC stack block (TBD-5).</td><td>Linear / L kitchen along that wall, sink over stack, hood near vertical riser. Verify on site (<a href="../img/apartment-project-requirements.md#section-2-4">§2.4</a>).</td></tr>
+      <tr><td><strong>A7</strong></td><td>Finished ceilings 2700 mm everywhere; -150 mm light coffer in bath/shower for IP downlights.</td><td>Joinery height, fixture choices, dropped tracks.</td></tr>
+      <tr><td><strong>A8</strong></td><td>Three split AC indoor units (open space + two bedrooms).</td><td>Routes hidden in joinery; outdoor units per HoA rules.</td></tr>
+      <tr><td><strong>A9</strong></td><td>Loggias remain "cold contour" (no heating) unless HoA permits otherwise in writing.</td><td>Storage cabinets, drying use only; no plumbing extension outdoors.</td></tr>
+      <tr><td><strong>A10</strong></td><td>LAN: 1 RJ45 at WFH desk + 1 at TV + 1 trunk to pantry (router/NAS).</td><td>Slab/floor chase planning before screed.</td></tr>
+    </tbody>
+  </table>
+  <h3>Exclusions <span class="ru">(вне объёма этого пакета)</span></h3>
+  <p class="note">As per <a href="../img/apartment-project-requirements.md#section-3-4">requirements §3.4</a>: structural calculations, fire compartmentation certification, gas system design and certification, main electrical panel upgrades, full HVAC engineering, certified wet-area waterproofing, façade or envelope changes, specialised acoustic / fire modelling. <strong>Verify with licensed designer / engineer / MEP / gas authority.</strong></p>
+</section>
+
+<!-- ============== 3 ============== -->
+<section id="s3">
+  <h2>3. Concept &amp; palette <span class="ru">(Концепция и палитра)</span></h2>
+  <p><strong>Mood keywords:</strong> calm, daylit, oak-warm, textured-matte, low-clutter, household-friendly, durable.</p>
+  <p>Direction: Scandinavian minimalism with Japandi accents (per <a href="../img/apartment-project-requirements.md#section-5-5">§5.5</a>). Whites and warm oak dominate; black is used as a thin accent (handles, frames, taps). No high-gloss "marble look" on large surfaces; no classical mouldings or gilded elements.</p>
+  <div class="palette" aria-label="Palette swatches">
+    <div class="swatch"><div class="chip" style="background:#f4efe7;"></div><div class="lbl">Off-white walls<br><span class="note">P1 · matt 5 % gloss</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#fbfaf6;"></div><div class="lbl">Ceiling white<br><span class="note">P2 · matt 3 %</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#cda476;"></div><div class="lbl">Warm natural oak<br><span class="note">W1 · UV-oil</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#8a7253;"></div><div class="lbl">Smoked oak accent<br><span class="note">W2 · select pieces</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#262626;"></div><div class="lbl">Soft black accent<br><span class="note">M1 · handles, taps</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#dcd6c8;"></div><div class="lbl">Linen / off-grey<br><span class="note">T1 · curtains, sofa</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#b15a3c;"></div><div class="lbl">Terracotta accent<br><span class="note">T2 · cushions, ceramics</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#e9e3d6;"></div><div class="lbl">Warm porcelain<br><span class="note">S1 · wet-zone tile</span></div></div>
+  </div>
+  <p class="note">Hex values are visual approximations only. Real selections happen against samples at the unit (north vs south light), sign-off recorded on the finish schedule (<a href="#s6">§6</a>).</p>
+</section>
+
+<!-- ============== 4 ============== -->
+<section id="s4">
+  <h2>4. Space plan (to-scale, drawn from MEERIM) <span class="ru">(План квартиры в масштабе)</span></h2>
+  <p class="note">
+    Drawn to <strong>1 SVG unit = 1 mm</strong>. Geometry follows the MEERIM 2D plan and the registry areas in <a href="../img/apartment-project-requirements.md#section-2">§2.3</a>; rectangular schematic, ±5 % per-room area drift accepted (registry remains normative). External envelope <strong>~7200 × 15400 mm</strong>; internal <strong>~6800 × 14800 mm</strong>; ceilings 2700 mm. <strong>Replace with surveyed mm plan</strong> when <a href="../img/apartment-project-requirements.md#section-2-4">§2.4</a> is closed.
+    Wall thickness 200 mm; doors shown with swing arc (orange); built-in furniture in light blue.
+  </p>
+  <div class="schematic">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1700 -1700 10500 18100" role="img" aria-label="Detailed scaled floor plan of apartment 93">
+      <defs>
+        <style>
+          .wall    { fill: #1a1a1a; }
+          .room    { fill: #fffdf8; }
+          .wet     { fill: #e6edf4; }
+          .stor    { fill: #efece4; }
+          .ext     { fill: #f3efe4; stroke: #1a1a1a; stroke-width: 40; stroke-dasharray: 120 80; }
+          .gloss   { fill: #cfe0ee; opacity: 0.45; }
+          .built   { fill: #e2ecf4; stroke: #2c5282; stroke-width: 25; }
+          .softfill{ fill: #f6f1e6; stroke: #2c5282; stroke-width: 25; }
+          .furn    { fill: none; stroke: #2c5282; stroke-width: 25; }
+          .softrug { fill: #ddd3bf; opacity: 0.55; }
+          .door    { fill: none; stroke: #9c4221; stroke-width: 30; }
+          .doorleaf{ stroke: #9c4221; stroke-width: 30; }
+          .winline { stroke: #2c5282; stroke-width: 35; }
+          .lbl-rm  { font: 600 220px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+          .lbl-area{ font: 180px system-ui, sans-serif; fill: #5c5c5c; text-anchor: middle; }
+          .lbl-sm  { font: 150px system-ui, sans-serif; fill: #2c5282; text-anchor: middle; }
+          .lbl-ext { font: 160px system-ui, sans-serif; fill: #5c5c5c; text-anchor: middle; }
+          .lbl-dim { font: 150px system-ui, sans-serif; fill: #2c5282; }
+          .lbl-N   { font: 700 320px system-ui, sans-serif; fill: #2c5282; text-anchor: middle; }
+          .symL    { fill: none; stroke: #2c5282; stroke-width: 25; stroke-linecap: round; }
+        </style>
+      </defs>
+
+      <!-- =============================================== -->
+      <!-- EXTERNAL ENVELOPE: outer rect, then cut openings -->
+      <!-- =============================================== -->
+      <!-- Solid wall mass: outer rect 7200 x 15400, inner cutout 6800 x 15000 -->
+      <path class="wall" fill-rule="evenodd"
+            d="M0,0 H7200 V15400 H0 Z
+               M200,200 H7000 V15200 H200 Z"/>
+
+      <!-- Re-cut openings in external walls (paint room colour back over wall) -->
+      <!-- North wall opening: kitchen sliding door to loggia 3.7 (x=4100..7000) -->
+      <rect class="room" x="4100" y="0" width="2900" height="200"/>
+      <line class="winline" x1="4100" y1="100" x2="7000" y2="100"/>
+      <!-- East wall: entry door (y=7600..8500, 900 wide) -->
+      <rect class="room" x="7000" y="7600" width="200" height="900"/>
+      <!-- East wall: bedroom 14.2 → balcony (y=10300..13000) -->
+      <rect class="room" x="7000" y="10300" width="200" height="2700"/>
+      <line class="winline" x1="7100" y1="10300" x2="7100" y2="13000"/>
+      <!-- West wall: bedroom 15.1 → loggia (y=10100..13500) -->
+      <rect class="room" x="0" y="10100" width="200" height="3400"/>
+      <line class="winline" x1="100" y1="10100" x2="100" y2="13500"/>
+
+      <!-- =============================================== -->
+      <!-- ROOM FILLS (light coloured backgrounds)         -->
+      <!-- =============================================== -->
+      <!-- TOP WING — open space (35.6 m²) -->
+      <rect class="room" x="200" y="200" width="6800" height="5200"/>
+      <!-- MID WING — hall + wet block (24.5 m²) -->
+      <rect class="room" x="200" y="5600" width="6800" height="3700"/>
+      <!-- WC -->
+      <rect class="wet"  x="200" y="5600" width="1300" height="1300"/>
+      <!-- Shower -->
+      <rect class="wet"  x="200" y="7100" width="1700" height="1850"/>
+      <!-- Pantry -->
+      <rect class="stor" x="5500" y="5600" width="1500" height="1800"/>
+      <!-- BOTTOM WING — bedrooms + bath (33.5 m²) -->
+      <rect class="room" x="200" y="9500" width="6800" height="5700"/>
+      <!-- Bath -->
+      <rect class="wet"  x="2700" y="10500" width="1600" height="2600"/>
+      <!-- Vestibule (between hall and bath) -->
+      <rect class="stor" x="2900" y="9500" width="1400" height="1000"/>
+
+      <!-- =============================================== -->
+      <!-- INTERNAL PARTITIONS                              -->
+      <!-- =============================================== -->
+      <!-- Top/mid partition with open passage x=2800..4600 -->
+      <rect class="wall" x="200"  y="5400" width="2600" height="200"/>
+      <rect class="wall" x="4600" y="5400" width="2400" height="200"/>
+      <!-- Mid/bottom partition with three door openings -->
+      <!-- Bedroom 15.1 door opening x=600..1400 -->
+      <rect class="wall" x="200"  y="9300" width="400"  height="200"/>
+      <rect class="wall" x="1400" y="9300" width="1300" height="200"/>
+      <!-- Vestibule entry opening x=2900..3700 -->
+      <rect class="wall" x="3700" y="9300" width="1500" height="200"/>
+      <!-- Bedroom 14.2 door opening x=5200..6000 -->
+      <rect class="wall" x="6000" y="9300" width="1000" height="200"/>
+
+      <!-- WC walls -->
+      <rect class="wall" x="1500" y="5600" width="200" height="1300"/>
+      <rect class="wall" x="200"  y="6900" width="1500" height="200"/>
+      <!-- WC door east wall opening y=6100..6800 -->
+      <rect class="wall" x="1500" y="5600" width="200" height="500"/>
+      <rect class="wall" x="1500" y="6800" width="200" height="100"/>
+      <!-- (Re-fill door cut) -->
+      <rect class="wet"  x="1500" y="6100" width="200" height="700"/>
+
+      <!-- Shower walls -->
+      <rect class="wall" x="1900" y="7100" width="200" height="1850"/>
+      <rect class="wall" x="200"  y="8950" width="1900" height="200"/>
+      <!-- Shower door east wall y=8000..8800 -->
+      <rect class="wet"  x="1900" y="8000" width="200" height="800"/>
+
+      <!-- Pantry walls -->
+      <rect class="wall" x="5300" y="5600" width="200" height="1800"/>
+      <rect class="wall" x="5300" y="7400" width="1700" height="200"/>
+      <!-- Pantry door west wall y=6200..7000 -->
+      <rect class="stor" x="5300" y="6200" width="200" height="800"/>
+
+      <!-- Bath walls -->
+      <rect class="wall" x="2700" y="10500" width="1600" height="200"/>
+      <rect class="wall" x="2700" y="13100" width="1600" height="200"/>
+      <rect class="wall" x="2700" y="10500" width="200"  height="2600"/>
+      <rect class="wall" x="4300" y="10500" width="200"  height="2600"/>
+      <!-- Bath door in north wall (from vestibule) x=3000..3800 -->
+      <rect class="stor" x="3000" y="10500" width="800"  height="200"/>
+
+      <!-- Vestibule side walls -->
+      <rect class="wall" x="2700" y="9500" width="200" height="1000"/>
+      <rect class="wall" x="4300" y="9500" width="200" height="1000"/>
+
+      <!-- Bedroom 15.1 / 14.2 separating walls (south of vestibule, none — bedrooms wrap around bath) -->
+      <!-- Just continue side walls of bath as separators -->
+      <rect class="wall" x="2700" y="13100" width="200" height="2100"/>
+      <rect class="wall" x="4300" y="13100" width="200" height="2100"/>
+
+      <!-- =============================================== -->
+      <!-- DOOR SWING ARCS                                  -->
+      <!-- =============================================== -->
+      <!-- Entry door (E external) — swings into hall to NW -->
+      <path class="door" d="M7000,8500 A 900 900 0 0 0 6100 7600"/>
+      <line class="doorleaf" x1="7000" y1="8500" x2="6100" y2="8500"/>
+      <!-- WC door — swings into hall to NE -->
+      <path class="door" d="M1700,6800 A 700 700 0 0 0 2400 6100"/>
+      <line class="doorleaf" x1="1700" y1="6800" x2="2400" y2="6800"/>
+      <!-- Shower door — swings into hall to NE -->
+      <path class="door" d="M2100,8800 A 800 800 0 0 0 2900 8000"/>
+      <line class="doorleaf" x1="2100" y1="8800" x2="2900" y2="8800"/>
+      <!-- Pantry door — swings into hall to SE -->
+      <path class="door" d="M5300,6200 A 800 800 0 0 1 4500 7000"/>
+      <line class="doorleaf" x1="5300" y1="6200" x2="4500" y2="6200"/>
+      <!-- Bedroom 15.1 door — swings into bedroom to SE -->
+      <path class="door" d="M600,9500 A 800 800 0 0 1 1400 10300"/>
+      <line class="doorleaf" x1="600" y1="9500" x2="1400" y2="9500"/>
+      <!-- Bedroom 14.2 door — swings into bedroom to SW -->
+      <path class="door" d="M6000,9500 A 800 800 0 0 0 5200 10300"/>
+      <line class="doorleaf" x1="6000" y1="9500" x2="5200" y2="9500"/>
+      <!-- Bath door (south of vestibule) — swings into bath to SE -->
+      <path class="door" d="M3000,10700 A 800 800 0 0 1 3800 11500"/>
+      <line class="doorleaf" x1="3000" y1="10700" x2="3800" y2="10700"/>
+      <!-- Bedroom 15.1 → loggia W (sliding door, just glazing line) -->
+      <!-- Bedroom 14.2 → balcony E (sliding door, just glazing line) -->
+
+      <!-- =============================================== -->
+      <!-- EXTERNAL ATTACHED AREAS (loggias / balcony)     -->
+      <!-- =============================================== -->
+      <!-- Loggia 3.7 (kitchen side, north) -->
+      <rect class="ext" x="4100" y="-1300" width="2900" height="1300"/>
+      <text class="lbl-ext" x="5550" y="-700">Loggia 3.7 m²</text>
+      <text class="lbl-ext" x="5550" y="-490">(2900 × 1300 ≈ 3.77)</text>
+      <!-- Loggia 4.4 (parents bedroom, west) -->
+      <rect class="ext" x="-1300" y="10100" width="1300" height="3400"/>
+      <text class="lbl-ext" x="-650" y="11700">Loggia</text>
+      <text class="lbl-ext" x="-650" y="11910">4.4 m²</text>
+      <text class="lbl-ext" x="-650" y="12130">(1300 × 3400)</text>
+      <!-- Balcony 3.2 (children bedroom, east) -->
+      <rect class="ext" x="7200" y="10300" width="1200" height="2700"/>
+      <text class="lbl-ext" x="7800" y="11600">Balcony</text>
+      <text class="lbl-ext" x="7800" y="11810">3.2 m²</text>
+      <text class="lbl-ext" x="7800" y="12030">(1200 × 2700)</text>
+
+      <!-- =============================================== -->
+      <!-- FURNITURE: TOP WING (open space)                -->
+      <!-- =============================================== -->
+      <!-- Rug under living -->
+      <rect class="softrug" x="300" y="3000" width="3400" height="2400"/>
+
+      <!-- Kitchen counter row (north wall, lowers + uppers symbolised by single block) -->
+      <rect class="built" x="300" y="300" width="3400" height="600"/>
+      <!-- Tall column (oven + tall) -->
+      <rect class="built" x="300" y="300" width="600" height="600"/>
+      <line class="symL" x1="300" y1="600" x2="900" y2="600"/>
+      <!-- Sink -->
+      <ellipse cx="2750" cy="600" rx="350" ry="200" class="furn"/>
+      <line class="symL" x1="2750" y1="450" x2="2750" y2="350"/>
+      <!-- Cooktop (4 burners) -->
+      <circle cx="1700" cy="500" r="80" class="furn"/>
+      <circle cx="1900" cy="500" r="80" class="furn"/>
+      <circle cx="1700" cy="700" r="80" class="furn"/>
+      <circle cx="1900" cy="700" r="80" class="furn"/>
+      <!-- Hood line -->
+      <line class="symL" x1="1500" y1="200" x2="2100" y2="200"/>
+
+      <!-- Dining table 1800x900 -->
+      <rect class="furn" x="4400" y="1100" width="1800" height="900" rx="50"/>
+      <text class="lbl-sm" x="5300" y="1620">Dining 6–8</text>
+      <!-- 6 chairs (small rects) -->
+      <rect class="furn" x="4500" y="900"  width="450" height="180"/>
+      <rect class="furn" x="5075" y="900"  width="450" height="180"/>
+      <rect class="furn" x="5650" y="900"  width="450" height="180"/>
+      <rect class="furn" x="4500" y="2020" width="450" height="180"/>
+      <rect class="furn" x="5075" y="2020" width="450" height="180"/>
+      <rect class="furn" x="5650" y="2020" width="450" height="180"/>
+
+      <!-- WFH desk niche -->
+      <rect class="built" x="5300" y="2700" width="1500" height="700"/>
+      <text class="lbl-sm" x="6050" y="3100">WFH desk · LAN</text>
+
+      <!-- TV unit on east wall -->
+      <rect class="built" x="6400" y="3500" width="600" height="3000"/>
+      <text class="lbl-sm" x="6700" y="5050" transform="rotate(90 6700 5050)">TV unit · A5</text>
+
+      <!-- L-sofa: long part (faces N/E - wraps the rug) -->
+      <rect class="softfill" x="400" y="4400" width="3000" height="900"/>
+      <rect class="softfill" x="400" y="3000" width="900"  height="1400"/>
+      <text class="lbl-sm" x="2000" y="4900">L-sofa 3.0 × 2.3 m</text>
+      <!-- Coffee table -->
+      <rect class="furn" x="1700" y="3900" width="1200" height="500" rx="30"/>
+
+      <!-- Top-wing labels -->
+      <text class="lbl-rm"  x="3000" y="2700">Open space — kitchen + dining + living</text>
+      <text class="lbl-area" x="3000" y="2920">35.6 m² (registry §2.3)</text>
+
+      <!-- =============================================== -->
+      <!-- FURNITURE: MID WING (hall + wet block)          -->
+      <!-- =============================================== -->
+      <!-- Hall built-in wardrobe along south of mid wing (under partition) -->
+      <rect class="built" x="2400" y="8600" width="4600" height="600"/>
+      <text class="lbl-sm" x="4700" y="8950">Built-in wardrobe (depth 600, full height to 2700)</text>
+      <!-- Console / mirror near entry -->
+      <rect class="built" x="6300" y="6700" width="700" height="350"/>
+      <text class="lbl-sm" x="6650" y="6920">Console</text>
+      <!-- Coat hooks at entry -->
+      <line class="symL" x1="6400" y1="8400" x2="6900" y2="8400"/>
+
+      <!-- WC fixtures -->
+      <rect class="furn" x="800" y="5800" width="450" height="600" rx="50"/>
+      <ellipse cx="1025" cy="6100" rx="180" ry="200" class="symL"/>
+      <text class="lbl-sm" x="600" y="6720">WC</text>
+      <ellipse cx="500" cy="6700" rx="200" ry="120" class="furn"/>
+
+      <!-- Shower fixtures -->
+      <rect class="furn" x="300" y="7250" width="900" height="900"/>
+      <line class="symL" x1="300"  y1="7250" x2="1200" y2="8150"/>
+      <line class="symL" x1="1200" y1="7250" x2="300"  y2="8150"/>
+      <text class="lbl-sm" x="700" y="7700">Shower</text>
+      <ellipse cx="1600" cy="7400" rx="200" ry="130" class="furn"/>
+      <rect class="furn" x="1500" y="8500" width="350" height="380" rx="40"/>
+
+      <!-- Pantry shelving -->
+      <line class="symL" x1="5550" y1="5900" x2="6950" y2="5900"/>
+      <line class="symL" x1="5550" y1="6300" x2="6950" y2="6300"/>
+      <line class="symL" x1="5550" y1="6700" x2="6950" y2="6700"/>
+      <line class="symL" x1="5550" y1="7100" x2="6950" y2="7100"/>
+
+      <!-- Mid-wing labels -->
+      <text class="lbl-rm"  x="3700" y="7400">Hall · 17.0 m²</text>
+      <text class="lbl-area" x="3700" y="7620">circulation + storage</text>
+      <text class="lbl-sm"  x="850"  y="6020">1.6 m²</text>
+      <text class="lbl-sm"  x="1050" y="8200">3.1 m²</text>
+      <text class="lbl-rm"  x="6250" y="6580">Pantry</text>
+      <text class="lbl-area" x="6250" y="6780">2.8 m²</text>
+
+      <!-- =============================================== -->
+      <!-- FURNITURE: BOTTOM WING (bedrooms + bath)        -->
+      <!-- =============================================== -->
+      <!-- Bedroom 15.1 (parents) -->
+      <!-- Queen bed 1600 × 2000, head to N wall -->
+      <rect class="softfill" x="850" y="9700" width="1600" height="2000" rx="60"/>
+      <!-- pillows -->
+      <rect class="furn" x="900"  y="9750" width="700" height="200" rx="30"/>
+      <rect class="furn" x="1700" y="9750" width="700" height="200" rx="30"/>
+      <!-- bedside tables -->
+      <rect class="furn" x="300"  y="9700" width="500" height="500"/>
+      <rect class="furn" x="2500" y="9700" width="500" height="500"/>
+      <!-- Wardrobe along south wall of bedroom 15.1 -->
+      <rect class="built" x="300" y="14400" width="2300" height="800"/>
+      <text class="lbl-sm" x="1450" y="14900">Wardrobe (depth 800, sliding)</text>
+
+      <text class="lbl-rm"  x="1500" y="13300">Bedroom · parents</text>
+      <text class="lbl-area" x="1500" y="13520">15.1 m² (A1/A2)</text>
+      <text class="lbl-sm"  x="1500" y="13720">Loggia 4.4 access W</text>
+
+      <!-- Bedroom 14.2 (children) -->
+      <!-- Twin beds along east wall -->
+      <rect class="softfill" x="6100" y="9800" width="900" height="1900" rx="50"/>
+      <rect class="furn"     x="6150" y="9850" width="800" height="180" rx="30"/>
+      <rect class="softfill" x="6100" y="11900" width="900" height="1900" rx="50"/>
+      <rect class="furn"     x="6150" y="11950" width="800" height="180" rx="30"/>
+      <!-- Children desk along west wall -->
+      <rect class="built" x="4500" y="9700" width="1300" height="700"/>
+      <text class="lbl-sm" x="5150" y="10100">Desk + LAN (A3)</text>
+      <!-- Wardrobe south wall children -->
+      <rect class="built" x="4500" y="14400" width="2500" height="800"/>
+      <text class="lbl-sm" x="5750" y="14900">Wardrobe (sliding)</text>
+
+      <text class="lbl-rm"  x="5750" y="13400">Bedroom · children</text>
+      <text class="lbl-area" x="5750" y="13620">14.2 m² (A1/A2)</text>
+      <text class="lbl-sm"  x="5750" y="13820">Balcony 3.2 access E</text>
+
+      <!-- BATH 4.2 -->
+      <!-- Bath tub along east wall of bath -->
+      <rect class="furn" x="3500" y="11000" width="750" height="1700" rx="80"/>
+      <text class="lbl-sm" x="3875" y="11900">Tub 1700×750</text>
+      <!-- WC -->
+      <rect class="furn" x="2800" y="12500" width="400" height="550" rx="40"/>
+      <ellipse cx="3000" cy="12780" rx="170" ry="200" class="symL"/>
+      <!-- Sink + mirror -->
+      <ellipse cx="3000" cy="11050" rx="220" ry="150" class="furn"/>
+      <line class="symL" x1="2750" y1="10750" x2="3250" y2="10750"/>
+      <!-- Washer/dryer column -->
+      <rect class="built" x="2750" y="11400" width="600" height="900"/>
+      <text class="lbl-sm" x="3050" y="11870">W/D</text>
+
+      <text class="lbl-rm"  x="3500" y="10960">Bath · 4.2 m²</text>
+
+      <!-- Vestibule label -->
+      <text class="lbl-sm" x="3500" y="10100">Vestibule</text>
+
+      <!-- =============================================== -->
+      <!-- DIMENSIONS (key)                                 -->
+      <!-- =============================================== -->
+      <text class="lbl-dim" x="3600" y="-1500" text-anchor="middle">External envelope ≈ 7200 × 15400 mm (verify on site)</text>
+      <text class="lbl-dim" x="3600" y="15700" text-anchor="middle">Wall thickness 200 mm · ceilings 2700 mm (intent, §2.4)</text>
+
+      <!-- North arrow -->
+      <g transform="translate(8200,-1000)">
+        <circle r="280" fill="none" stroke="#2c5282" stroke-width="40"/>
+        <path d="M0,-260 L120,180 L0,80 L-120,180 Z" fill="#2c5282"/>
+        <text class="lbl-N" y="-360">N</text>
+      </g>
+
+      <!-- Scale bar 1000 mm -->
+      <g transform="translate(7400,15600)">
+        <rect width="1000" height="60" fill="#1a1a1a"/>
+        <rect x="200" width="200" height="60" fill="#fff" stroke="#1a1a1a" stroke-width="20"/>
+        <rect x="600" width="200" height="60" fill="#fff" stroke="#1a1a1a" stroke-width="20"/>
+        <text class="lbl-dim" x="500" y="220" text-anchor="middle">1 m</text>
+      </g>
+
+      <!-- Compass / orientation note -->
+      <text class="lbl-ext" x="-1500" y="-1200" text-anchor="start">Top of plan = north (assumed; verify with façade orientation)</text>
+    </svg>
+  </div>
+
+  <h3>Apartment area summary (registry · §2.3)</h3>
+  <table>
+    <thead><tr><th>Wing / room</th><th>Area, m²</th><th>Schematic dimensions, mm</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Top wing — open space (kitchen + dining + living + WFH + TV)</td><td>35.6</td><td>~6800 × 5200</td><td>Single open volume, no internal partition.</td></tr>
+      <tr><td>Mid wing — hall</td><td>17.0</td><td>~6800 × 3700 (minus wet block + pantry)</td><td>Wraps wet block on west; pantry on east; entry on east.</td></tr>
+      <tr><td>WC (gosregistr №4)</td><td>1.6</td><td>1300 × 1300</td><td>NW corner of mid wing.</td></tr>
+      <tr><td>Shower (gosregistr №5)</td><td>3.1</td><td>1700 × 1850</td><td>SW of WC, separate door.</td></tr>
+      <tr><td>Pantry</td><td>2.8</td><td>1500 × 1800</td><td>NE of mid wing, near kitchen.</td></tr>
+      <tr><td>Bedroom — parents (gosregistr №6)</td><td>15.1</td><td>~2700 × 5700 (incl. wardrobe footprint)</td><td>West; loggia 4.4 m² on west.</td></tr>
+      <tr><td>Bedroom — children (gosregistr №7)</td><td>14.2</td><td>~2700 × 5700</td><td>East; balcony 3.2 m² on east.</td></tr>
+      <tr><td>Bath (gosregistr №8)</td><td>4.2</td><td>1600 × 2600</td><td>Central south, between bedrooms; W/D column inside.</td></tr>
+      <tr><td>External — loggia N (kitchen)</td><td>3.7</td><td>2900 × 1300</td><td>Cold contour; storage / drying.</td></tr>
+      <tr><td>External — loggia W (parents)</td><td>4.4</td><td>1300 × 3400</td><td>Cold contour; storage / chair.</td></tr>
+      <tr><td>External — balcony E (children)</td><td>3.2</td><td>1200 × 2700</td><td>Cold contour; light folding seating.</td></tr>
+      <tr><td><strong>Total internal (registry)</strong></td><td><strong>93.6</strong></td><td>—</td><td>External 11.3 m² not included in internal sum.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Circulation targets (after furniture)</h3>
+  <table>
+    <thead><tr><th>Path</th><th>Target clear width, mm</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Entry to hall, after console / wardrobe</td><td>≥ 900</td><td>Adult + child can pass.</td></tr>
+      <tr><td>Hall → bedroom doors corridor</td><td>≥ 800</td><td>Doors swing into bedrooms.</td></tr>
+      <tr><td>Kitchen working aisle (counter to opposite element)</td><td>≥ 1100</td><td>No island by default — see <a href="../img/apartment-project-requirements.md#section-5-1">§5.1</a>.</td></tr>
+      <tr><td>Around dining table (back of chair to wall)</td><td>≥ 750</td><td>For 6–8 setting.</td></tr>
+      <tr><td>Around bed (each used side)</td><td>≥ 700</td><td>Per <a href="../img/apartment-project-requirements.md#section-5-8">§5.8.8</a>.</td></tr>
+      <tr><td>Bath: in front of tub / sink</td><td>≥ 700</td><td>Allows turn for toweling.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============== 5 ============== -->
+<section id="s5">
+  <h2>5. Room-by-room design <span class="ru">(По помещениям)</span></h2>
+
+  <h3>5.1 Entry (5.8.1) <span class="ru">(Вход)</span></h3>
+  <ul>
+    <li>Floor: large-format porcelain <code>S1</code>, R10 slip, ~600 × 600 mm, dark grout.</li>
+    <li>Grit defence: scenario <strong>A</strong> — recessed shoe bench/niche (depth 350 mm), prioritised over runner; tiny secondary runner only on rainy days.</li>
+    <li>Transition to oak: flush brass profile, <strong>no</strong> step.</li>
+    <li>Sockets: 2 outlets at 300 mm AFF (vacuum, charger), 1 above bench for shoe drier.</li>
+    <li>Lighting: ceiling downlight + linear under-bench glow tied to <strong>night scene</strong> (dim 1–5 %).</li>
+    <li>Coat: short rail near door (3–4 hooks); main wardrobe in hall.</li>
+  </ul>
+
+  <h3>5.2 Hall &amp; built-in wardrobe (5.8.2) <span class="ru">(Холл и гардеробная)</span></h3>
+  <ul>
+    <li>Wardrobe: full-height (FFL → ceiling 2700, top closed), depth 600 mm, push-to-open flat fronts <code>P1</code> + handle-less; segmented for outerwear / shoes (vented) / suitcases / sports / seasonal.</li>
+    <li>Keys / mail mini-zone: shallow niche 80 × 250 × 120 mm with 1 USB-C charging socket inside (children-safe lid).</li>
+    <li>Stroller / large luggage: dedicated 700 mm bay near entry, <strong>not</strong> blocking egress.</li>
+    <li>Floor: oak engineered <code>W1</code> after the entry porcelain; profile flush.</li>
+    <li>Ceiling: flat plasterboard, indirect cove on one side + recessed downlights for daytime, micro-points for night.</li>
+    <li>Acoustic intent: heavy bedroom doors with full perimeter seals; soft panel optional on one wall.</li>
+    <li>Mirror: full-height in one location (visual depth, dressing check before exit).</li>
+  </ul>
+
+  <h3>5.3 Open space — kitchen + dining + living + WFH + TV (5.8.3) <span class="ru">(Open space)</span></h3>
+  <p class="note">Refer to the apartment plan in <a href="#s4">§4</a> for full dimensioned layout (kitchen run 3400 mm, dining 1800 × 900, L-sofa 3000 × 2300, working aisle ≥ 1100 mm, TV unit 600 × 3000 mm on east wall).</p>
+  <h4>Kitchen block</h4>
+  <ul>
+    <li>Linear run along the wet wall (A6); upper cabinets to ceiling; integrated extractor with real ducting (no recirculation).</li>
+    <li>Induction cooktop (A4); oven below or column.</li>
+    <li>Sink: large single bowl over stack; pull-out tap.</li>
+    <li>Splashback: sintered stone <code>S2</code> (matte, easy clean), continuous.</li>
+    <li>Sockets: 5-gang strip above counter at 1100 mm AFF + 1 USB-C; 16 A circuit for cooktop, 16 A for oven (verify with electrician).</li>
+    <li>No island by default — see A1/§5.1; allow a 1500 mm ø rug zone at the sofa instead.</li>
+  </ul>
+  <h4>Dining</h4>
+  <ul>
+    <li>Solid oak table 1800 × 900 mm extendable to 2200 mm for 6–8.</li>
+    <li>Pendant on its own dimmer; centre over table even if table moves.</li>
+  </ul>
+  <h4>Living</h4>
+  <ul>
+    <li>L-sofa, modular, washable linen <code>T1</code>; rug 2400 × 3000 mm under front legs of sofa and coffee table.</li>
+    <li>TV wall (A5): 65" wall mount at 1100 mm centre; sound bar future-proofed by a 10 mm chase.</li>
+  </ul>
+  <h4>WFH desk</h4>
+  <ul>
+    <li>Niche 1400 × 700 mm, side window light if obtainable; backdrop wall in <code>P1</code>; 1 RJ45 at desk; under-desk grommet for cables.</li>
+  </ul>
+  <h4>Zoning without partitions</h4>
+  <ul>
+    <li>Floor: continuous oak <code>W1</code>; porcelain only under the kitchen run footprint (~500 mm projection). Profile flush.</li>
+    <li>Ceiling: thin recessed linear track defining the kitchen/dining/living rhythm.</li>
+  </ul>
+
+  <h3>5.4 Pantry (5.8.4) <span class="ru">(Кладовая)</span></h3>
+  <ul>
+    <li>Shelves L-shaped, adjustable; one tall slot for vacuum + step-ladder; one drawer block for cleaning chemicals (child-safe).</li>
+    <li>Light: PIR sensor inside + manual override at door; vapour-tight luminaire if condensation risk.</li>
+    <li>Sockets: 2 (vacuum charging, optional router/NAS).</li>
+  </ul>
+
+  <h3>5.5 Guest WC (5.8.5) <span class="ru">(СУ 1.6)</span></h3>
+  <ul>
+    <li>Wall-hung WC, in-wall cistern; back-lit shelf for towel.</li>
+    <li>Wall basin on slim oak shelf; back-lit mirror (face light).</li>
+    <li>Floor &amp; walls: porcelain <code>S1</code>, large format, minimal grout.</li>
+    <li>Ventilation grille kept fully open; dust filter accessible.</li>
+  </ul>
+
+  <h3>5.6 Shower room (5.8.6) <span class="ru">(Душевая 3.1)</span></h3>
+  <ul>
+    <li>Walk-in shower with linear drain; one fixed glass panel; recessed niche 300 × 600 × 100 mm.</li>
+    <li>Heated towel rail (electric IP44); WC and basin opposite the shower.</li>
+    <li>Lighting: IP65 recessed in shower zone, IP44 elsewhere; warm CCT 2700 K.</li>
+  </ul>
+
+  <h3>5.7 Bath / utility (5.8.7) <span class="ru">(Ванная 4.2)</span></h3>
+  <div class="schematic" style="max-width: 32rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-400 -400 2400 3300" role="img" aria-label="Bath plan to scale 1:50">
+      <defs>
+        <style>
+          .wlb   { fill: #1a1a1a; }
+          .rmb   { fill: #e6edf4; }
+          .tilB  { fill: #ece6d8; stroke: #b0a890; stroke-width: 8; }
+          .objB  { fill: #fff; stroke: #1a1a1a; stroke-width: 12; }
+          .applB { fill: #2a2a2a; stroke: #1a1a1a; stroke-width: 10; }
+          .glassB{ fill: #cfe0ee; opacity: 0.55; stroke: #1a1a1a; stroke-width: 8; }
+          .doorB { fill: none; stroke: #9c4221; stroke-width: 14; }
+          .lblB  { font: 100px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+          .subB  { font: 80px system-ui, sans-serif; fill: #5c5c5c; text-anchor: middle; }
+          .dimB  { font: 90px system-ui, sans-serif; fill: #2c5282; }
+        </style>
+      </defs>
+      <!-- Walls (bath 1600 × 2600 internal, 200 thick) -->
+      <path class="wlb" fill-rule="evenodd"
+            d="M0,0 H1800 V2800 H0 Z M100,100 H1700 V2700 H100 Z"/>
+      <rect class="rmb" x="100" y="100" width="1600" height="2600"/>
+      <!-- Tile pattern (light hint) -->
+      <rect class="tilB" x="100" y="100" width="1600" height="2600" opacity="0.3"/>
+      <!-- Door opening N (from vestibule) x=300..1100, swings into bath SE -->
+      <rect class="rmb" x="300" y="0" width="800" height="100"/>
+      <path class="doorB" d="M300,100 A 800 800 0 0 1 1100 900"/>
+      <line stroke="#9c4221" stroke-width="14" x1="300" y1="100" x2="300" y2="900"/>
+
+      <!-- Tub W wall: 1700 long × 750 wide -->
+      <rect class="objB" x="100" y="700" width="750" height="1700" rx="60"/>
+      <ellipse cx="475" cy="1550" rx="280" ry="700" fill="#fbfaf6" stroke="#1a1a1a" stroke-width="10"/>
+      <!-- mixer position -->
+      <circle cx="200" cy="800" r="30" class="applB"/>
+      <text class="subB" x="475" y="1580">Tub 1700×750</text>
+
+      <!-- WC opposite tub (E wall mid) -->
+      <rect class="objB" x="1300" y="1100" width="400" height="550" rx="40"/>
+      <ellipse cx="1500" cy="1380" rx="170" ry="200" fill="#fff" stroke="#1a1a1a" stroke-width="10"/>
+      <text class="subB" x="1500" y="1820">WC</text>
+
+      <!-- Sink E wall top -->
+      <rect class="objB" x="1100" y="200" width="600" height="500"/>
+      <ellipse cx="1400" cy="450" rx="220" ry="150" fill="#cfd8e0" stroke="#1a1a1a" stroke-width="10"/>
+      <text class="subB" x="1400" y="780">Vanity 600×500</text>
+      <text class="subB" x="1400" y="870">mirror cabinet above</text>
+
+      <!-- W/D column SW corner -->
+      <rect class="applB" x="100" y="2050" width="650" height="650"/>
+      <circle cx="425" cy="2200" r="180" fill="#cfd8e0" stroke="#1a1a1a" stroke-width="10"/>
+      <text class="subB" x="425" y="2210" fill="#fff">Washer</text>
+      <circle cx="425" cy="2530" r="150" fill="#cfd8e0" stroke="#1a1a1a" stroke-width="10"/>
+      <text class="subB" x="425" y="2540" fill="#fff">Dryer</text>
+
+      <!-- Heated towel rail E wall lower -->
+      <rect fill="none" stroke="#2a2a2a" stroke-width="22" x="1620" y="1900" width="80" height="500"/>
+
+      <!-- Labels and dimensions -->
+      <text class="lblB" x="900" y="-150">Bath plan · 4.2 m² · 1:50</text>
+      <text class="dimB" x="900" y="2980" text-anchor="middle">Internal 1600 mm</text>
+      <text class="dimB" x="-130" y="1400" text-anchor="middle" transform="rotate(-90 -130 1400)">Internal 2600 mm</text>
+    </svg>
+  </div>
+  <ul>
+    <li>Built-in tub 1700 × 750 mm with removable side panel (service); thermostatic wall mixer; hand shower on slide rail.</li>
+    <li>Stacked washer + dryer in joinery column SW corner with anti-vibration mat; clearance to wall 10 mm; access to filters via removable kick plate.</li>
+    <li>Slim mirror cabinet 1200 × 800 × 120 mm above vanity with internal sockets (<strong>RCD-protected by electrician</strong>); LED bars at sides for face light (no overhead glare).</li>
+    <li>Floor mild slope to dry-zone drain near W/D; tile R11 in any wet zone.</li>
+    <li>Heated towel rail electric IP44 on east wall, independent switch outside the room.</li>
+    <li>Clear floor area in front of tub ≥ 700 mm; in front of vanity ≥ 700 mm — verify on site.</li>
+  </ul>
+
+  <h3>5.8 Bedrooms (5.8.8) <span class="ru">(Спальни)</span></h3>
+
+  <h4>Parents (15.1 m², ≈ 2700 × 5700 mm internal + loggia 4.4 W)</h4>
+  <div class="schematic" style="max-width: 36rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1800 -400 5400 6500" role="img" aria-label="Parents bedroom plan to scale 1:75">
+      <defs>
+        <style>
+          .wlp   { fill: #1a1a1a; }
+          .rmp   { fill: #fffdf8; }
+          .extP  { fill: #f3efe4; stroke: #1a1a1a; stroke-width: 25; stroke-dasharray: 80 60; }
+          .softP { fill: #f6f1e6; stroke: #2c5282; stroke-width: 20; }
+          .builtP{ fill: #e2ecf4; stroke: #2c5282; stroke-width: 20; }
+          .furnP { fill: none; stroke: #2c5282; stroke-width: 20; }
+          .doorP { fill: none; stroke: #9c4221; stroke-width: 22; }
+          .winP  { stroke: #2c5282; stroke-width: 30; }
+          .rugP  { fill: #ddd3bf; opacity: 0.5; }
+          .lblP  { font: 160px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+          .subP  { font: 120px system-ui, sans-serif; fill: #5c5c5c; text-anchor: middle; }
+          .dimP  { font: 130px system-ui, sans-serif; fill: #2c5282; }
+        </style>
+      </defs>
+      <!-- Walls (internal 2700 × 5700 + 200 thick walls) -->
+      <path class="wlp" fill-rule="evenodd"
+            d="M0,0 H2900 V5900 H0 Z M200,200 H2700 V5700 H200 Z"/>
+      <rect class="rmp" x="200" y="200" width="2500" height="5500"/>
+      <!-- Loggia W (4.4 m², 1300 × 3400) -->
+      <rect class="extP" x="-1300" y="800" width="1300" height="3400"/>
+      <text class="subP" x="-650" y="2300">Loggia 4.4 m²</text>
+      <text class="subP" x="-650" y="2480">storage / chair</text>
+      <!-- Window/door W to loggia -->
+      <rect class="rmp" x="0" y="900" width="200" height="3000"/>
+      <line class="winP" x1="100" y1="900" x2="100" y2="3900"/>
+      <!-- Door from hall (top) — opening x=400..1200 -->
+      <rect class="rmp" x="400" y="0" width="800" height="200"/>
+      <path class="doorP" d="M400,200 A 800 800 0 0 1 1200 1000"/>
+      <line stroke="#9c4221" stroke-width="22" x1="400" y1="200" x2="400" y2="1000"/>
+
+      <!-- Queen bed 1600 × 2000 — head to E wall (perpendicular to long axis); door area clear -->
+      <rect class="softP" x="700" y="1500" width="2000" height="1600" rx="60"/>
+      <rect class="furnP" x="2520" y="1550" width="180" height="700" rx="30"/>
+      <rect class="furnP" x="2520" y="2350" width="180" height="700" rx="30"/>
+      <text class="subP" x="1400" y="2380">Queen 1600 × 2000 (head ↦ E)</text>
+      <!-- Bedside tables flanking head -->
+      <rect class="furnP" x="2200" y="1100" width="500" height="400"/>
+      <text class="subP" x="2450" y="1340">side</text>
+      <rect class="furnP" x="2200" y="3100" width="500" height="400"/>
+      <text class="subP" x="2450" y="3340">side</text>
+
+      <!-- Reading rug -->
+      <rect class="rugP" x="400" y="3700" width="2300" height="900"/>
+
+      <!-- Built-in wardrobe along S wall -->
+      <rect class="builtP" x="200" y="4900" width="2500" height="800"/>
+      <text class="subP" x="1450" y="5380">Built-in wardrobe (sliding)</text>
+      <text class="subP" x="1450" y="5560">depth 800, full height</text>
+
+      <!-- Dressing area / armchair zone -->
+      <rect class="furnP" x="300" y="4100" width="700" height="700" rx="50"/>
+      <text class="subP" x="650" y="4500">Armchair</text>
+
+      <!-- AC indoor unit indication on E wall high -->
+      <rect class="furnP" x="2400" y="800" width="300" height="120"/>
+      <text class="subP" x="2540" y="780">AC (high, throw ‖ to bed)</text>
+
+      <!-- Labels -->
+      <text class="lblP" x="1450" y="-150">Parents bedroom · 15.1 m² · 1:75</text>
+      <text class="dimP" x="1450" y="6080" text-anchor="middle">Internal 2500 mm</text>
+      <text class="dimP" x="-1450" y="3000" text-anchor="middle" transform="rotate(-90 -1450 3000)">Internal length 5500 mm</text>
+    </svg>
+  </div>
+  <ul>
+    <li>Queen bed 1600 × 2000 mm centred on north wall (head); bedside tables both sides; bedside light + dimmer dual control (radio dimmer at door + at bed).</li>
+    <li>Clear ≥ 700 mm walking strip both sides of bed; minimum aisle to wardrobe ≥ 800 mm.</li>
+    <li>Built-in wardrobe to 2700 mm (sliding doors per <a href="#s9">§9.5</a>); depth 800 mm; mirror centre panel.</li>
+    <li>Blackout curtain on wrap rail with side returns; sheer underlayer for daytime; pelmet 200 mm to block "halo".</li>
+    <li>Split AC mounted high on east wall, throw <strong>parallel</strong> to bed; drainage routed inside joinery void.</li>
+    <li>Loggia W: storage column + reading chair; no water lines outdoors (A9).</li>
+  </ul>
+
+  <h4>Children (14.2 m², ≈ 2700 × 5700 mm internal + balcony 3.2 E)</h4>
+  <div class="schematic" style="max-width: 36rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-400 -400 5400 6500" role="img" aria-label="Children bedroom plan to scale 1:75">
+      <defs>
+        <style>
+          .wlc   { fill: #1a1a1a; }
+          .rmc   { fill: #fffdf8; }
+          .extC  { fill: #f3efe4; stroke: #1a1a1a; stroke-width: 25; stroke-dasharray: 80 60; }
+          .softC { fill: #f6f1e6; stroke: #2c5282; stroke-width: 20; }
+          .builtC{ fill: #e2ecf4; stroke: #2c5282; stroke-width: 20; }
+          .furnC { fill: none; stroke: #2c5282; stroke-width: 20; }
+          .doorC { fill: none; stroke: #9c4221; stroke-width: 22; }
+          .winC  { stroke: #2c5282; stroke-width: 30; }
+          .lblC  { font: 160px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+          .subC  { font: 120px system-ui, sans-serif; fill: #5c5c5c; text-anchor: middle; }
+          .dimC  { font: 130px system-ui, sans-serif; fill: #2c5282; }
+        </style>
+      </defs>
+      <!-- Walls (internal 2700 × 5700 + 200 walls) -->
+      <path class="wlc" fill-rule="evenodd"
+            d="M0,0 H2900 V5900 H0 Z M200,200 H2700 V5700 H200 Z"/>
+      <rect class="rmc" x="200" y="200" width="2500" height="5500"/>
+      <!-- Balcony E (3.2 m²) -->
+      <rect class="extC" x="2900" y="600" width="1200" height="2700"/>
+      <text class="subC" x="3500" y="1900">Balcony 3.2 m²</text>
+      <text class="subC" x="3500" y="2080">light folding chair</text>
+      <!-- Window/door E to balcony -->
+      <rect class="rmc" x="2700" y="700" width="200" height="2500"/>
+      <line class="winC" x1="2800" y1="700" x2="2800" y2="3200"/>
+      <!-- Door from hall (top) — opening x=1700..2500 -->
+      <rect class="rmc" x="1700" y="0" width="800" height="200"/>
+      <path class="doorC" d="M2500,200 A 800 800 0 0 0 1700 1000"/>
+      <line stroke="#9c4221" stroke-width="22" x1="2500" y1="200" x2="2500" y2="1000"/>
+
+      <!-- Twin beds along W wall (heads to N — door area on E kept clear) -->
+      <rect class="softC" x="300" y="300" width="900" height="1900" rx="50"/>
+      <rect class="furnC" x="350" y="350" width="800" height="180" rx="30"/>
+      <text class="subC" x="750" y="1300">Bed 1</text>
+      <rect class="softC" x="300" y="2400" width="900" height="1900" rx="50"/>
+      <rect class="furnC" x="350" y="2450" width="800" height="180" rx="30"/>
+      <text class="subC" x="750" y="3400">Bed 2</text>
+      <!-- Shared low shelf between beds -->
+      <rect class="furnC" x="300" y="2200" width="500" height="200"/>
+      <text class="subC" x="550" y="2330">share</text>
+
+      <!-- Children desk along E wall (mid, away from door swing) -->
+      <rect class="builtC" x="2000" y="2700" width="700" height="1400"/>
+      <text class="subC" x="2350" y="3340">Desk</text>
+      <text class="subC" x="2350" y="3500">700×1400 + LAN</text>
+      <!-- Chair -->
+      <rect class="furnC" x="1400" y="3000" width="500" height="500" rx="50"/>
+      <text class="subC" x="1650" y="3290">chair</text>
+
+      <!-- Toy storage / drawers along middle west (between beds and balcony zone) -->
+      <rect class="builtC" x="1400" y="500" width="500" height="1700"/>
+      <text class="subC" x="1650" y="1300">Toy</text>
+      <text class="subC" x="1650" y="1450">storage</text>
+
+      <!-- Built-in wardrobe along S wall (sliding) -->
+      <rect class="builtC" x="200" y="4900" width="2500" height="800"/>
+      <text class="subC" x="1450" y="5380">Wardrobe (sliding, low rail 1200)</text>
+
+      <!-- AC indoor unit indication on E wall high (throw parallel to beds) -->
+      <rect class="furnC" x="2400" y="500" width="300" height="120"/>
+      <text class="subC" x="2540" y="480">AC (throw ‖ to beds)</text>
+
+      <!-- Labels -->
+      <text class="lblC" x="1450" y="-150">Children bedroom · 14.2 m² · 1:75</text>
+      <text class="dimC" x="1450" y="6080" text-anchor="middle">Internal 2500 mm</text>
+      <text class="dimC" x="-150" y="3000" text-anchor="middle" transform="rotate(-90 -150 3000)">Internal length 5500 mm</text>
+    </svg>
+  </div>
+  <ul>
+    <li>Twin beds 900 × 1900 mm along east wall (heads to N); rounded corners; safety screws on wall furniture (verify with contractor).</li>
+    <li>Aisle between beds and desk wall ≥ 800 mm; clear approach to balcony door not obstructed.</li>
+    <li>Half-desk 1400 × 700 mm at west wall (north end), with dedicated dimmer task lamp + 1 RJ45 (LAN per §5.0).</li>
+    <li>Built-in wardrobe with <strong>lower hanging rail at 1200 mm AFF</strong> (child reach); soft-close hinges; 2 toy/spare-bed drawers low.</li>
+    <li>Blackout + sheer; warm dim night light (1–5 %); split AC throw parallel to beds (not on heads).</li>
+    <li>Balcony E: light folding chair only; <strong>no built-ins fixed to parapet</strong> without HoA approval.</li>
+  </ul>
+
+  <h3>5.9 Loggias and balcony (5.8.9) <span class="ru">(Лоджии и балкон)</span></h3>
+  <ul>
+    <li>Cabinets at glazing: <strong>≤ 350 mm depth</strong> (verify on parapet survey). No water lines outdoors (A9).</li>
+    <li>Loggia at kitchen (3.7 m²): closed cabinet for outdoor / cleaning gear; drying rail mounted to ceiling.</li>
+    <li>Loggia at bedroom (4.4 m²): single armchair + low cabinet; light filtering blind for sun control.</li>
+    <li>Balcony at second bedroom (3.2 m²): light folding chair; no built-ins to parapet without HoA approval.</li>
+    <li>Floor / skirting: frost / moisture-tolerant porcelain.</li>
+  </ul>
+</section>
+
+<!-- ============== 6 ============== -->
+<section id="s6">
+  <h2>6. Finish schedule <span class="ru">(Ведомость отделки)</span></h2>
+  <p class="note">Manufacturer / SKU columns are intentionally <strong>TBD</strong> — to be locked at sample selection. Studio rule: do not call schedule complete without all columns.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Space / element</th><th>Material</th><th>Mfr / line</th><th>Colour / name</th><th>Pattern / repeat</th><th>Dimensions, mm</th><th>Grout / sealant</th><th>Slip / wet rating</th><th>Supplier</th><th>Sample (Y/N)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Entry floor</td><td>Porcelain stoneware S1</td><td>TBD</td><td>warm porcelain</td><td>plain</td><td>600×600×10</td><td>cement-poly, dark</td><td>R10 / wet</td><td>TBD</td><td>N</td></tr>
+      <tr><td>Hall / open-space / bedrooms floor</td><td>Engineered oak W1</td><td>TBD</td><td>natural matt UV-oil</td><td>plank, random length</td><td>190×1900×14</td><td>n/a</td><td>n/a</td><td>TBD</td><td>N</td></tr>
+      <tr><td>Kitchen apron under run</td><td>Porcelain S1</td><td>TBD</td><td>warm porcelain</td><td>plain</td><td>600×600×10</td><td>match floor</td><td>n/a</td><td>TBD</td><td>N</td></tr>
+      <tr><td>Wall paint, all rooms</td><td>Acrylic matt P1</td><td>TBD low-VOC</td><td>off-white</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>TBD</td><td>N</td></tr>
+      <tr><td>Ceiling paint</td><td>Acrylic matt P2</td><td>TBD low-VOC</td><td>ceiling white</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>TBD</td><td>N</td></tr>
+      <tr><td>TV accent wall</td><td>Smoked oak veneer W2</td><td>TBD</td><td>smoked</td><td>vertical grain</td><td>full wall</td><td>n/a</td><td>n/a</td><td>TBD</td><td>N</td></tr>
+      <tr><td>Kitchen splashback</td><td>Sintered stone S2</td><td>TBD</td><td>warm grey, matte</td><td>plain</td><td>650 high, slab</td><td>silicone, neutral</td><td>n/a</td><td>TBD</td><td>N</td></tr>
+      <tr><td>Bath / shower walls</td><td>Porcelain S1 large format</td><td>TBD</td><td>warm porcelain</td><td>plain</td><td>1200×600×10</td><td>cement-poly</td><td>R10 (floor R11 in shower)</td><td>TBD</td><td>N</td></tr>
+      <tr><td>Bath / shower floors</td><td>Porcelain mosaic 50×50</td><td>TBD</td><td>match S1</td><td>plain</td><td>50×50</td><td>cement-poly</td><td>R11 / wet</td><td>TBD</td><td>N</td></tr>
+      <tr><td>Skirting</td><td>MDF lacquered</td><td>TBD</td><td>P1 white</td><td>flush, 80 mm</td><td>80 high</td><td>n/a</td><td>n/a</td><td>TBD</td><td>N</td></tr>
+      <tr><td>Loggia floors</td><td>Frost-rated porcelain</td><td>TBD</td><td>warm grey</td><td>plain</td><td>600×600</td><td>poly</td><td>R11 / wet, frost</td><td>TBD</td><td>N</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============== 7 ============== -->
+<section id="s7">
+  <h2>7. FF&amp;E schedule <span class="ru">(Ведомость FF&amp;E)</span></h2>
+  <table>
+    <thead>
+      <tr><th>Item ID</th><th>Image ref</th><th>Qty</th><th>Dimensions, mm</th><th>Finish / fabric</th><th>SKU</th><th>Supplier</th><th>Lead time</th><th>Install by</th><th>Warranty</th><th>Care note</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>F-01 L-sofa</td><td>TBD</td><td>1</td><td>3000×2000×850</td><td>Linen T1, washable covers</td><td>TBD</td><td>TBD</td><td>10–14 wk</td><td>contractor</td><td>TBD</td><td>vacuum weekly; cover wash 30 °C</td></tr>
+      <tr><td>F-02 Coffee table</td><td>TBD</td><td>1</td><td>1100×600×350</td><td>Oak W1</td><td>TBD</td><td>TBD</td><td>8 wk</td><td>contractor</td><td>TBD</td><td>oil 1×/yr</td></tr>
+      <tr><td>F-03 Dining table</td><td>TBD</td><td>1</td><td>1800–2200×900×740</td><td>Oak W1</td><td>TBD</td><td>TBD</td><td>10 wk</td><td>contractor</td><td>TBD</td><td>oil 2×/yr; coasters under hot</td></tr>
+      <tr><td>F-04 Dining chairs</td><td>TBD</td><td>8</td><td>450×500×800</td><td>Oak + linen seat</td><td>TBD</td><td>TBD</td><td>8 wk</td><td>contractor</td><td>TBD</td><td>brush seat</td></tr>
+      <tr><td>F-05 TV console</td><td>TBD</td><td>1</td><td>2200×400×400</td><td>Oak veneer + matt black</td><td>TBD</td><td>TBD</td><td>8 wk</td><td>joiner</td><td>TBD</td><td>damp wipe</td></tr>
+      <tr><td>F-06 WFH desk</td><td>TBD</td><td>1</td><td>1400×700×740</td><td>Oak W1</td><td>TBD</td><td>TBD</td><td>6 wk</td><td>joiner</td><td>TBD</td><td>oil 1×/yr</td></tr>
+      <tr><td>F-07 Office chair</td><td>TBD</td><td>1</td><td>std</td><td>Mesh dark grey</td><td>TBD</td><td>TBD</td><td>4 wk</td><td>owner</td><td>TBD</td><td>vacuum mesh</td></tr>
+      <tr><td>F-08 Parents bed</td><td>TBD</td><td>1</td><td>1600×2000</td><td>Upholstered T1</td><td>TBD</td><td>TBD</td><td>8 wk</td><td>contractor</td><td>TBD</td><td>vacuum</td></tr>
+      <tr><td>F-09 Bedside tables</td><td>TBD</td><td>2</td><td>500×400×450</td><td>Oak W1</td><td>TBD</td><td>TBD</td><td>6 wk</td><td>joiner</td><td>TBD</td><td>oil 1×/yr</td></tr>
+      <tr><td>F-10 Children twin beds</td><td>TBD</td><td>2</td><td>900×2000</td><td>Oak frame, no sharp corners</td><td>TBD</td><td>TBD</td><td>8 wk</td><td>contractor</td><td>TBD</td><td>tighten bolts 6 mo</td></tr>
+      <tr><td>F-11 Children desk</td><td>TBD</td><td>1</td><td>1100×600×650 adj.</td><td>Oak top</td><td>TBD</td><td>TBD</td><td>6 wk</td><td>joiner</td><td>TBD</td><td>height log</td></tr>
+      <tr><td>F-12 Living rug</td><td>TBD</td><td>1</td><td>2400×3000</td><td>Wool low pile</td><td>TBD</td><td>TBD</td><td>4 wk</td><td>owner</td><td>TBD</td><td>rotate 6 mo</td></tr>
+      <tr><td>F-13 Bedroom rug</td><td>TBD</td><td>2</td><td>1700×2400</td><td>Wool low pile</td><td>TBD</td><td>TBD</td><td>4 wk</td><td>owner</td><td>TBD</td><td>rotate 6 mo</td></tr>
+      <tr><td>F-14 Curtains parents</td><td>TBD</td><td>1 set</td><td>full wall</td><td>Blackout + sheer</td><td>TBD</td><td>TBD</td><td>6 wk</td><td>contractor</td><td>TBD</td><td>dry clean</td></tr>
+      <tr><td>F-15 Curtains children</td><td>TBD</td><td>1 set</td><td>full wall</td><td>Blackout + sheer</td><td>TBD</td><td>TBD</td><td>6 wk</td><td>contractor</td><td>TBD</td><td>dry clean</td></tr>
+      <tr><td>F-16 Hallway full mirror</td><td>TBD</td><td>1</td><td>500×1900</td><td>Black slim frame</td><td>TBD</td><td>TBD</td><td>4 wk</td><td>contractor</td><td>TBD</td><td>glass cleaner</td></tr>
+      <tr><td>F-17 Loggia armchair</td><td>TBD</td><td>1</td><td>std</td><td>Outdoor textile</td><td>TBD</td><td>TBD</td><td>4 wk</td><td>owner</td><td>TBD</td><td>store winter</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============== 8 ============== -->
+<section id="s8">
+  <h2>8. Lighting schedule <span class="ru">(Ведомость освещения)</span></h2>
+  <p class="note">Targets per requirements <a href="../img/apartment-project-requirements.md#section-5-6">§5.6</a>. Driver type and dimmer compatibility checked in mock-up. Replace placeholders with confirmed product data; <strong>verify circuit design with electrician</strong>.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Fixture ID</th><th>Type</th><th>Location</th><th>Lamp / module</th><th>CCT / CRI</th><th>Dim / control</th><th>Driver</th><th>Ceil. limit, mm</th><th>lm</th><th>W</th><th>Ra / R9</th><th>UGR</th><th>IP / IK</th><th>Pst LM</th><th>Compat.</th><th>IES/LDT</th><th>Lead</th><th>Spare LED</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>L-01 Hall downlight</td><td>recessed micro reflector</td><td>hall ceiling, 4 nos</td><td>LED 7 W</td><td>3000 K / Ra ≥ 90</td><td>0–10 V, scene "day/night"</td><td>remote in pantry</td><td>2700</td><td>650</td><td>7</td><td>≥ 90 / ≥ 50</td><td>≤ 19</td><td>IP20</td><td>≤ 1</td><td>Trailing edge / 0–10 V</td><td>TBD</td><td>8 wk</td><td>Y</td></tr>
+      <tr><td>L-02 Hall night cove</td><td>linear LED, indirect</td><td>cove top wardrobe</td><td>LED strip 9 W/m</td><td>2700 K / Ra ≥ 90</td><td>auto dim 1–5 % at night</td><td>remote in pantry</td><td>2700</td><td>700/m</td><td>9/m</td><td>≥ 90 / ≥ 50</td><td>n/a</td><td>IP20</td><td>≤ 1</td><td>0–10 V</td><td>TBD</td><td>8 wk</td><td>Y</td></tr>
+      <tr><td>L-03 Kitchen splashback</td><td>linear under-cabinet</td><td>continuous along run</td><td>LED strip 8 W/m</td><td>3000 K / Ra ≥ 95, R9 ≥ 60</td><td>switch + sensor</td><td>top cabinet</td><td>n/a</td><td>900/m</td><td>8/m</td><td>≥ 95 / ≥ 60</td><td>n/a</td><td>IP20</td><td>≤ 1</td><td>n/a</td><td>TBD</td><td>8 wk</td><td>Y</td></tr>
+      <tr><td>L-04 Cooker hood task</td><td>integrated downlight</td><td>over hob</td><td>hood OEM</td><td>3500 K / Ra ≥ 90</td><td>3-step</td><td>integrated</td><td>n/a</td><td>500</td><td>—</td><td>≥ 90</td><td>n/a</td><td>IP44</td><td>—</td><td>n/a</td><td>n/a</td><td>10 wk</td><td>—</td></tr>
+      <tr><td>L-05 Sink downlight</td><td>recessed</td><td>over sink</td><td>LED 7 W</td><td>3000 K / Ra ≥ 90</td><td>switch</td><td>top cabinet</td><td>2700</td><td>650</td><td>7</td><td>≥ 90</td><td>≤ 19</td><td>IP44</td><td>≤ 1</td><td>n/a</td><td>TBD</td><td>8 wk</td><td>Y</td></tr>
+      <tr><td>L-06 Dining pendant</td><td>shaded pendant</td><td>over dining table</td><td>LED 12 W</td><td>2700 K / Ra ≥ 90</td><td>own dimmer</td><td>integrated</td><td>2700</td><td>900</td><td>12</td><td>≥ 90</td><td>n/a</td><td>IP20</td><td>≤ 1</td><td>Trailing edge</td><td>TBD</td><td>8 wk</td><td>—</td></tr>
+      <tr><td>L-07 Living ambient</td><td>ceiling track + diffuse heads</td><td>living zone, 4 heads</td><td>LED 8 W ea.</td><td>2700–3000 K / Ra ≥ 90</td><td>scene dimmer</td><td>track</td><td>2700</td><td>700 ea.</td><td>8</td><td>≥ 90</td><td>≤ 19</td><td>IP20</td><td>≤ 1</td><td>Trailing edge</td><td>TBD</td><td>8 wk</td><td>Y</td></tr>
+      <tr><td>L-08 Floor lamp accent</td><td>FF&amp;E</td><td>living corner</td><td>LED 9 W</td><td>2700 K / Ra ≥ 90</td><td>switch</td><td>integrated</td><td>n/a</td><td>700</td><td>9</td><td>≥ 90</td><td>n/a</td><td>IP20</td><td>≤ 1</td><td>n/a</td><td>n/a</td><td>4 wk</td><td>—</td></tr>
+      <tr><td>L-09 WFH task lamp</td><td>articulated desk</td><td>WFH desk</td><td>LED 10 W</td><td>4000 K / Ra ≥ 95</td><td>own dimmer</td><td>integrated</td><td>n/a</td><td>900</td><td>10</td><td>≥ 95</td><td>≤ 19</td><td>IP20</td><td>≤ 1</td><td>n/a</td><td>n/a</td><td>4 wk</td><td>—</td></tr>
+      <tr><td>L-10 Parents bedside</td><td>wall reading</td><td>both sides of bed</td><td>LED 6 W</td><td>2700 K / Ra ≥ 90</td><td>independent dim</td><td>integrated</td><td>n/a</td><td>500</td><td>6</td><td>≥ 90</td><td>n/a</td><td>IP20</td><td>≤ 1</td><td>Trailing edge</td><td>TBD</td><td>6 wk</td><td>—</td></tr>
+      <tr><td>L-11 Parents ambient</td><td>indirect cove or pendant</td><td>parents bedroom</td><td>LED 12 W</td><td>2700 K / Ra ≥ 90</td><td>master + door</td><td>cove</td><td>2700</td><td>900</td><td>12</td><td>≥ 90</td><td>n/a</td><td>IP20</td><td>≤ 1</td><td>0–10 V</td><td>TBD</td><td>8 wk</td><td>Y</td></tr>
+      <tr><td>L-12 Children ambient</td><td>diffuse ceiling</td><td>children bedroom</td><td>LED 18 W</td><td>3000 K / Ra ≥ 90</td><td>master + nightlight</td><td>integrated</td><td>2700</td><td>1500</td><td>18</td><td>≥ 90</td><td>n/a</td><td>IP20</td><td>≤ 1</td><td>Trailing edge</td><td>TBD</td><td>6 wk</td><td>Y</td></tr>
+      <tr><td>L-13 WC face light</td><td>vertical bar at mirror</td><td>WC 1.6</td><td>LED 8 W</td><td>3000 K / Ra ≥ 95, R9 ≥ 60</td><td>switch</td><td>integrated</td><td>n/a</td><td>700</td><td>8</td><td>≥ 95 / ≥ 60</td><td>n/a</td><td>IP44</td><td>≤ 1</td><td>n/a</td><td>n/a</td><td>6 wk</td><td>—</td></tr>
+      <tr><td>L-14 Shower IP65</td><td>recessed wet zone</td><td>shower 3.1</td><td>LED 7 W</td><td>2700 K / Ra ≥ 90</td><td>switch</td><td>remote</td><td>2700</td><td>500</td><td>7</td><td>≥ 90</td><td>n/a</td><td>IP65</td><td>≤ 1</td><td>n/a</td><td>TBD</td><td>8 wk</td><td>Y</td></tr>
+      <tr><td>L-15 Bath face + ambient</td><td>mirror perimeter + 2 IP44 downlights</td><td>bath 4.2</td><td>LED 12 + 2×7 W</td><td>2700 K / Ra ≥ 95, R9 ≥ 60</td><td>scene dim</td><td>integrated + remote</td><td>2700</td><td>900 + 2×500</td><td>26</td><td>≥ 95 / ≥ 60</td><td>n/a</td><td>IP44</td><td>≤ 1</td><td>0–10 V</td><td>TBD</td><td>8 wk</td><td>Y</td></tr>
+      <tr><td>L-16 Pantry</td><td>vapour-tight + PIR</td><td>pantry 2.8</td><td>LED 10 W</td><td>3000 K / Ra ≥ 90</td><td>PIR + manual</td><td>integrated</td><td>2700</td><td>900</td><td>10</td><td>≥ 90</td><td>n/a</td><td>IP44</td><td>—</td><td>n/a</td><td>n/a</td><td>4 wk</td><td>—</td></tr>
+      <tr><td>L-17 Loggia / balcony</td><td>wall-mounted IP54</td><td>each external area</td><td>LED 6 W</td><td>2700 K / Ra ≥ 80</td><td>switch</td><td>integrated</td><td>n/a</td><td>400</td><td>6</td><td>≥ 80</td><td>n/a</td><td>IP54</td><td>—</td><td>n/a</td><td>n/a</td><td>4 wk</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Scenes</h3>
+  <table>
+    <thead><tr><th>Scene</th><th>Where</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Day</td><td>Whole apt</td><td>Daylight + ambient at 30 %; off in unused rooms.</td></tr>
+      <tr><td>Cooking</td><td>Kitchen + dining</td><td>L-03, L-04, L-05 100 %; L-06 80 %.</td></tr>
+      <tr><td>Dining</td><td>Open space</td><td>L-06 80 %, L-07 30 %, L-03 off.</td></tr>
+      <tr><td>Evening</td><td>Open space</td><td>L-07 50 %, L-08 100 %, L-02 30 %.</td></tr>
+      <tr><td>Night hall</td><td>Hall</td><td>L-02 1–5 %; L-01 off.</td></tr>
+      <tr><td>Bedroom read</td><td>Bedrooms</td><td>L-10 / L-12 task; ambient off.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============== 9 ============== -->
+<section id="s9">
+  <h2>9. Joinery &amp; elevations <span class="ru">(Корпусная мебель и развертки)</span></h2>
+  <p class="note">All elevations drawn at <strong>1 SVG unit = 10 mm</strong> (1:100). Run lengths from the apartment plan §4; <strong>verify on site</strong> per <a href="../img/apartment-project-requirements.md#section-2-4">§2.4</a> before ordering.</p>
+
+  <h3>9.1 Kitchen wall elevation — looking north (3400 × 2700 mm)</h3>
+  <div class="schematic">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -30 400 320" role="img" aria-label="Kitchen wall elevation with appliances">
+      <defs>
+        <style>
+          .wall    { fill: #fbfaf6; stroke: #1a1a1a; stroke-width: 1.2; }
+          .upper   { fill: #efece4; stroke: #1a1a1a; stroke-width: 0.7; }
+          .lower   { fill: #efece4; stroke: #1a1a1a; stroke-width: 0.7; }
+          .splash  { fill: #d8c19a; stroke: #1a1a1a; stroke-width: 0.4; opacity: 0.55; }
+          .stone   { fill: #e3dccc; stroke: #1a1a1a; stroke-width: 0.6; }
+          .applhood{ fill: #e0e0e0; stroke: #1a1a1a; stroke-width: 0.7; }
+          .applov  { fill: #2a2a2a; stroke: #1a1a1a; stroke-width: 0.7; }
+          .applmw  { fill: #2a2a2a; stroke: #1a1a1a; stroke-width: 0.7; }
+          .glass   { fill: #cfe0ee; stroke: #1a1a1a; stroke-width: 0.5; opacity: 0.6; }
+          .handle  { stroke: #1a1a1a; stroke-width: 0.8; fill: none; }
+          .gap     { stroke: #999; stroke-width: 0.4; stroke-dasharray: 1 1; fill: none; }
+          .lbl     { font: 6px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+          .lblL    { font: 7.5px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; font-weight: 600; }
+          .dim     { font: 6px system-ui, sans-serif; fill: #2c5282; }
+          .arr     { stroke: #2c5282; stroke-width: 0.5; fill: none; marker-end: url(#k1); marker-start: url(#k1b); }
+        </style>
+        <marker id="k1"  markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#2c5282"/></marker>
+        <marker id="k1b" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6 z" fill="#2c5282"/></marker>
+      </defs>
+      <!-- Wall background -->
+      <rect class="wall" x="0" y="0" width="340" height="270"/>
+
+      <!-- Upper cabinets to ceiling: 2 rows of doors visually -->
+      <rect class="upper" x="0"   y="0" width="60"  height="90"/>
+      <rect class="upper" x="60"  y="0" width="60"  height="90"/>
+      <rect class="upper" x="120" y="0" width="60"  height="90"/>
+      <!-- Hood section (lift up, glass/SS) -->
+      <rect class="applhood" x="180" y="0"  width="80" height="90"/>
+      <line class="handle"   x1="190" y1="50" x2="250" y2="50"/>
+      <text class="lbl"      x="220"  y="55">Hood (recirc/duct 150)</text>
+      <rect class="upper" x="260" y="0" width="40"  height="90"/>
+      <rect class="upper" x="300" y="0" width="40"  height="90"/>
+      <line class="handle" x1="5"   y1="80" x2="55"  y2="80"/>
+      <line class="handle" x1="65"  y1="80" x2="115" y2="80"/>
+      <line class="handle" x1="125" y1="80" x2="175" y2="80"/>
+      <line class="handle" x1="265" y1="80" x2="295" y2="80"/>
+      <line class="handle" x1="305" y1="80" x2="335" y2="80"/>
+
+      <!-- Splashback (S2) -->
+      <rect class="splash" x="0" y="90" width="340" height="55"/>
+      <text class="lbl" x="170" y="121">Splashback S2 (sintered stone, 650 mm high)</text>
+
+      <!-- Worktop (sintered stone, 20 mm) -->
+      <rect class="stone" x="0" y="145" width="340" height="6"/>
+      <text class="lbl" x="170" y="150" fill="#5c5c5c">Worktop 20 mm</text>
+
+      <!-- Lower cabinets row -->
+      <!-- Tall column: oven + microwave + tall storage (LEFT) -->
+      <rect class="lower" x="0"  y="0" width="60" height="270"/>
+      <!-- Oven door at 600-1200 mm AFF -->
+      <rect class="applov" x="5" y="151" width="50" height="48"/>
+      <line class="handle" x1="10" y1="160" x2="50" y2="160"/>
+      <circle cx="48" cy="178" r="2.5" fill="#fff" stroke="#1a1a1a" stroke-width="0.4"/>
+      <text class="lbl" x="30" y="192" fill="#fff">Oven</text>
+      <!-- Microwave above -->
+      <rect class="applmw" x="5" y="100" width="50" height="40"/>
+      <line class="handle" x1="35" y1="120" x2="50" y2="120"/>
+      <text class="lbl" x="22" y="125" fill="#fff">MW</text>
+      <!-- Pantry pull-outs above oven (within tall column upper region — but uppers cover) -->
+
+      <!-- Hob unit + drawers -->
+      <rect class="lower" x="60" y="151" width="120" height="119"/>
+      <!-- Cooktop on top -->
+      <line class="handle" x1="70" y1="148" x2="170" y2="148"/>
+      <circle cx="90"  cy="143" r="6" fill="#1a1a1a"/>
+      <circle cx="120" cy="143" r="6" fill="#1a1a1a"/>
+      <circle cx="150" cy="143" r="6" fill="#1a1a1a"/>
+      <text class="lbl" x="120" y="138">Induction (A4)</text>
+      <!-- Drawer fronts -->
+      <line class="gap" x1="60" y1="200" x2="180" y2="200"/>
+      <line class="gap" x1="60" y1="240" x2="180" y2="240"/>
+      <line class="handle" x1="100" y1="180" x2="140" y2="180"/>
+      <line class="handle" x1="100" y1="220" x2="140" y2="220"/>
+      <line class="handle" x1="100" y1="255" x2="140" y2="255"/>
+      <text class="lbl" x="120" y="186">Pots / pans drawers</text>
+
+      <!-- Sink + dishwasher block -->
+      <rect class="lower" x="180" y="151" width="80" height="119"/>
+      <!-- Single bowl sink shown as inset rect -->
+      <rect class="stone" x="190" y="151" width="60" height="2"/>
+      <ellipse cx="220" cy="148" rx="22" ry="3" fill="#cfd8e0" stroke="#1a1a1a" stroke-width="0.4"/>
+      <text class="lbl" x="220" y="143">Sink (single bowl)</text>
+      <!-- Dishwasher front -->
+      <rect class="applmw" x="185" y="195" width="70" height="70"/>
+      <line class="handle" x1="190" y1="200" x2="250" y2="200"/>
+      <text class="lbl" x="220" y="232" fill="#fff">Dishwasher 600</text>
+
+      <!-- Tall fridge column (RIGHT) -->
+      <rect class="lower" x="260" y="0" width="80" height="270"/>
+      <!-- Fridge: integrated style two doors -->
+      <rect class="applmw" x="265" y="151" width="70" height="115"/>
+      <line class="handle"  x1="295" y1="160" x2="295" y2="195"/>
+      <line class="gap"     x1="265" y1="205" x2="335" y2="205"/>
+      <line class="handle"  x1="295" y1="215" x2="295" y2="250"/>
+      <text class="lbl"     x="300" y="180" fill="#fff">Fridge</text>
+      <text class="lbl"     x="300" y="240" fill="#fff">Freezer</text>
+
+      <!-- Plinth (recessed 100 mm shadow) -->
+      <line class="gap" x1="0" y1="265" x2="340" y2="265"/>
+      <text class="lbl" x="170" y="270" fill="#5c5c5c">Plinth recessed 100 mm</text>
+
+      <!-- Dimensions -->
+      <path class="arr" d="M0,290 L340,290"/>
+      <text class="dim" x="170" y="298" text-anchor="middle">3400 mm (kitchen run, verify A6)</text>
+      <path class="arr" d="M-15,0 L-15,270"/>
+      <text class="dim" x="-20" y="135" text-anchor="middle" transform="rotate(-90 -20 135)">2700 ceiling</text>
+      <text class="dim" x="-15" y="92" text-anchor="end">900 uppers</text>
+      <text class="dim" x="-15" y="148" text-anchor="end">900 worktop AFF</text>
+      <text class="dim" x="-15" y="265" text-anchor="end">100 plinth</text>
+
+      <!-- Section labels (under) -->
+      <text class="lblL" x="30"  y="285">Tall column · oven + MW</text>
+      <text class="lblL" x="120" y="285">Cooking + drawers</text>
+      <text class="lblL" x="220" y="285">Sink + DW</text>
+      <text class="lblL" x="300" y="285">Fridge column</text>
+    </svg>
+  </div>
+  <ul>
+    <li>Upper depth <strong>350 mm</strong>; lower depth <strong>600 mm</strong>; plinth recessed <strong>100 mm</strong>.</li>
+    <li>Push-to-open uppers (no pulls); integrated channel handle on lowers (no protruding hardware in the galley aisle).</li>
+    <li><strong>Cooktop circuit 16 A dedicated</strong> (induction, A4); <strong>oven 16 A dedicated</strong>; <strong>dishwasher 10 A</strong>; <strong>fridge 10 A</strong>; <strong>hood 10 A</strong> — verify panel capacity with electrician.</li>
+    <li>Hood ducting: rigid round Ø150 mm to nearest external/shaft outlet — verify with HVAC contractor.</li>
+    <li>Splashback joins to worktop with neutral silicone; back to wall with same; no exposed grout.</li>
+    <li>Removable plinth at sink + DW for service access (siphon, hoses).</li>
+  </ul>
+
+  <h3>9.2 Hall wardrobe elevation — looking south (4600 × 2700 mm)</h3>
+  <div class="schematic">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -30 520 320" role="img" aria-label="Hall wardrobe elevation">
+      <defs>
+        <style>
+          .wall2  { fill: #fbfaf6; stroke: #1a1a1a; stroke-width: 1.2; }
+          .door   { fill: #f4efe7; stroke: #1a1a1a; stroke-width: 0.7; }
+          .vent   { fill: #f4efe7; stroke: #1a1a1a; stroke-width: 0.7; }
+          .niche  { fill: #efece4; stroke: #1a1a1a; stroke-width: 0.7; stroke-dasharray: 2 1; }
+          .top    { fill: #e3dccc; stroke: #1a1a1a; stroke-width: 0.6; }
+          .handle { stroke: #1a1a1a; stroke-width: 0.7; fill: none; }
+          .lbl    { font: 6.5px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+          .lblL   { font: 7.5px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; font-weight: 600; }
+          .sub    { font: 5.5px system-ui, sans-serif; fill: #5c5c5c; text-anchor: middle; }
+          .dim    { font: 6px system-ui, sans-serif; fill: #2c5282; }
+          .arr    { stroke: #2c5282; stroke-width: 0.5; fill: none; marker-end: url(#h1); marker-start: url(#h1b); }
+        </style>
+        <marker id="h1"  markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#2c5282"/></marker>
+        <marker id="h1b" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6 z" fill="#2c5282"/></marker>
+      </defs>
+
+      <rect class="wall2" x="0" y="0" width="460" height="270"/>
+      <!-- Top closed cap -->
+      <rect class="top"   x="0" y="0" width="460" height="20"/>
+      <text class="sub"   x="230" y="14">Closed cap to ceiling 2700</text>
+
+      <!-- Module 1: Outerwear (long hanging) -->
+      <rect class="door" x="0"  y="20" width="60" height="250"/>
+      <line class="handle" x1="55" y1="135" x2="55" y2="170"/>
+      <!-- Module 2: Outerwear -->
+      <rect class="door" x="60"  y="20" width="60" height="250"/>
+      <line class="handle" x1="65" y1="135" x2="65" y2="170"/>
+      <!-- Module 3: Vented shoes -->
+      <rect class="vent" x="120" y="20" width="60" height="250"/>
+      <!-- ventilation slats -->
+      <line class="handle" x1="130" y1="50"  x2="170" y2="50"/>
+      <line class="handle" x1="130" y1="80"  x2="170" y2="80"/>
+      <line class="handle" x1="130" y1="110" x2="170" y2="110"/>
+      <line class="handle" x1="130" y1="140" x2="170" y2="140"/>
+      <line class="handle" x1="130" y1="170" x2="170" y2="170"/>
+      <line class="handle" x1="130" y1="200" x2="170" y2="200"/>
+      <line class="handle" x1="130" y1="230" x2="170" y2="230"/>
+      <line class="handle" x1="175" y1="135" x2="175" y2="170"/>
+
+      <!-- Open niche: keys / mail (centre) -->
+      <rect class="door" x="180" y="20"  width="100" height="80"/>
+      <line class="handle" x1="275" y1="55" x2="275" y2="75"/>
+      <text class="sub" x="230" y="65">Top cabinet (suitcases)</text>
+      <rect class="niche" x="185" y="105" width="90" height="55"/>
+      <text class="lbl" x="230" y="125">Open niche</text>
+      <text class="sub" x="230" y="138">keys / mail</text>
+      <text class="sub" x="230" y="148">USB-C inside</text>
+      <rect class="door" x="180" y="165" width="100" height="105"/>
+      <line class="handle" x1="275" y1="200" x2="275" y2="240"/>
+      <text class="sub" x="230" y="220">Drawer block</text>
+
+      <!-- Module 4: Suitcases -->
+      <rect class="door" x="280" y="20" width="60" height="250"/>
+      <line class="handle" x1="285" y1="135" x2="285" y2="170"/>
+      <!-- Module 5: Sport / season -->
+      <rect class="door" x="340" y="20" width="60" height="250"/>
+      <line class="handle" x1="395" y1="135" x2="395" y2="170"/>
+      <!-- Module 6: Stroller bay (full-height open behind door) -->
+      <rect class="door" x="400" y="20" width="60" height="250"/>
+      <line class="handle" x1="405" y1="135" x2="405" y2="170"/>
+
+      <!-- Module labels -->
+      <text class="lblL" x="30"  y="290">Outerwear</text>
+      <text class="lblL" x="90"  y="290">Outerwear</text>
+      <text class="lblL" x="150" y="290">Shoes (vented)</text>
+      <text class="lblL" x="230" y="290">Niche · drawers</text>
+      <text class="lblL" x="310" y="290">Suitcases</text>
+      <text class="lblL" x="370" y="290">Sport</text>
+      <text class="lblL" x="430" y="290">Stroller</text>
+
+      <!-- Dimensions -->
+      <path class="arr" d="M0,308 L460,308"/>
+      <text class="dim" x="230" y="316" text-anchor="middle">4600 mm wardrobe wall</text>
+      <path class="arr" d="M-15,0 L-15,270"/>
+      <text class="dim" x="-22" y="135" text-anchor="middle" transform="rotate(-90 -22 135)">2700 ceiling</text>
+    </svg>
+  </div>
+  <ul>
+    <li>Carcass depth <strong>600 mm</strong>; open niche depth <strong>250 mm</strong>; full height to ceiling 2700 mm with closed cap.</li>
+    <li>Vented shoe modules — slatted / mesh shelves; LED strip on door switch.</li>
+    <li>Open niche: USB-C charging socket inside, child-safe lid; max items by use ("keys + mail" only).</li>
+    <li>Stroller bay clear inside <strong>700 × 1200 mm</strong> (folding stroller); empty if not used (TBD-4).</li>
+    <li>Hardware: push-to-open or recessed channel pulls (M1 black); no protruding handles on circulation side.</li>
+  </ul>
+
+  <h3>9.3 Bath wall elevation — looking east (1600 × 2700 mm) <span class="ru">(Ванная)</span></h3>
+  <div class="schematic">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -30 220 320" role="img" aria-label="Bath wall elevation east">
+      <defs>
+        <style>
+          .wall3 { fill: #fbfaf6; stroke: #1a1a1a; stroke-width: 1.2; }
+          .tile  { fill: #ece6d8; stroke: #1a1a1a; stroke-width: 0.4; }
+          .grout { stroke: #b0a890; stroke-width: 0.3; }
+          .obj   { fill: #fff; stroke: #1a1a1a; stroke-width: 0.7; }
+          .glass { fill: #cfe0ee; opacity: 0.55; stroke: #1a1a1a; stroke-width: 0.5; }
+          .stone { fill: #e3dccc; stroke: #1a1a1a; stroke-width: 0.5; }
+          .met   { stroke: #2a2a2a; stroke-width: 1.5; fill: none; }
+          .lbl   { font: 6px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+          .sub   { font: 5px system-ui, sans-serif; fill: #5c5c5c; text-anchor: middle; }
+          .dim   { font: 6px system-ui, sans-serif; fill: #2c5282; }
+          .arr   { stroke: #2c5282; stroke-width: 0.5; fill: none; marker-end: url(#b1); marker-start: url(#b1b); }
+        </style>
+        <marker id="b1"  markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#2c5282"/></marker>
+        <marker id="b1b" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6 z" fill="#2c5282"/></marker>
+      </defs>
+
+      <!-- Tile field 60x120 cm pattern (1200 wide x 600 high tiles) -->
+      <rect class="wall3" x="0" y="0" width="160" height="270"/>
+      <g class="tile">
+        <rect x="0"   y="0"   width="120" height="60"/>
+        <rect x="120" y="0"   width="40"  height="60"/>
+        <rect x="0"   y="60"  width="120" height="60"/>
+        <rect x="120" y="60"  width="40"  height="60"/>
+        <rect x="0"   y="120" width="120" height="60"/>
+        <rect x="120" y="120" width="40"  height="60"/>
+        <rect x="0"   y="180" width="120" height="60"/>
+        <rect x="120" y="180" width="40"  height="60"/>
+        <rect x="0"   y="240" width="120" height="30"/>
+        <rect x="120" y="240" width="40"  height="30"/>
+      </g>
+      <!-- Tub (1700 long shown along this wall — but wall is 1600 — slight overhang allowed visually) -->
+      <rect class="obj" x="-5" y="170" width="170" height="55" rx="6"/>
+      <ellipse cx="80" cy="195" rx="78" ry="22" fill="#fbfaf6" stroke="#1a1a1a" stroke-width="0.5"/>
+      <!-- Tub mixer (wall-mounted) -->
+      <line class="met" x1="20"  y1="150" x2="20"  y2="170"/>
+      <circle cx="20"  cy="155" r="3" fill="#fff" stroke="#1a1a1a" stroke-width="0.5"/>
+      <!-- Hand shower on slide rail -->
+      <line class="met" x1="40"  y1="80"  x2="40"  y2="155"/>
+      <rect class="obj" x="36"  y="118" width="8" height="14"/>
+
+      <!-- Heated towel rail right side -->
+      <rect class="met" x="135" y="80" width="20" height="80" fill="none"/>
+      <line class="met" x1="135" y1="100" x2="155" y2="100"/>
+      <line class="met" x1="135" y1="120" x2="155" y2="120"/>
+      <line class="met" x1="135" y1="140" x2="155" y2="140"/>
+      <text class="sub" x="145" y="170">Heated rail</text>
+
+      <!-- Niche above tub -->
+      <rect fill="#efece4" stroke="#1a1a1a" stroke-width="0.5" x="60" y="100" width="40" height="20"/>
+      <text class="sub" x="80" y="113">Niche 400×200</text>
+
+      <!-- Plinth -->
+      <line stroke="#999" stroke-width="0.4" stroke-dasharray="1 1" x1="0" y1="265" x2="160" y2="265"/>
+
+      <!-- Labels -->
+      <text class="lbl" x="80" y="200">Built-in tub 1700 × 750 (mm)</text>
+      <text class="sub" x="80" y="215">removable side panel for service</text>
+
+      <!-- Dimensions -->
+      <path class="arr" d="M0,290 L160,290"/>
+      <text class="dim" x="80" y="298" text-anchor="middle">1600 wall</text>
+      <path class="arr" d="M-15,0 L-15,270"/>
+      <text class="dim" x="-22" y="135" text-anchor="middle" transform="rotate(-90 -22 135)">2700 ceiling</text>
+      <text class="dim" x="-15" y="170" text-anchor="end">580 tub rim</text>
+    </svg>
+  </div>
+
+  <h3>9.4 Bath wall elevation — looking west (1600 × 2700 mm), sink + W/D column</h3>
+  <div class="schematic">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -30 220 320" role="img" aria-label="Bath wall elevation west">
+      <defs>
+        <style>
+          .wall4 { fill: #fbfaf6; stroke: #1a1a1a; stroke-width: 1.2; }
+          .tile  { fill: #ece6d8; stroke: #1a1a1a; stroke-width: 0.4; }
+          .obj   { fill: #fff; stroke: #1a1a1a; stroke-width: 0.7; }
+          .stone { fill: #e3dccc; stroke: #1a1a1a; stroke-width: 0.5; }
+          .mirror{ fill: #cfe0ee; stroke: #1a1a1a; stroke-width: 0.5; opacity: 0.6; }
+          .appl  { fill: #2a2a2a; stroke: #1a1a1a; stroke-width: 0.6; }
+          .glass { fill: #cfe0ee; opacity: 0.55; stroke: #1a1a1a; stroke-width: 0.5; }
+          .cab   { fill: #efece4; stroke: #1a1a1a; stroke-width: 0.6; }
+          .led   { stroke: #f4d35e; stroke-width: 1.5; opacity: 0.8; }
+          .lbl   { font: 6px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+          .sub   { font: 5px system-ui, sans-serif; fill: #5c5c5c; text-anchor: middle; }
+          .dim   { font: 6px system-ui, sans-serif; fill: #2c5282; }
+          .arr   { stroke: #2c5282; stroke-width: 0.5; fill: none; marker-end: url(#b2); marker-start: url(#b2b); }
+        </style>
+        <marker id="b2"  markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#2c5282"/></marker>
+        <marker id="b2b" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6 z" fill="#2c5282"/></marker>
+      </defs>
+
+      <rect class="wall4" x="0" y="0" width="160" height="270"/>
+      <g class="tile">
+        <rect x="0" y="0"   width="120" height="60"/>
+        <rect x="120" y="0" width="40"  height="60"/>
+        <rect x="0" y="60"  width="120" height="60"/>
+        <rect x="120" y="60" width="40" height="60"/>
+        <rect x="0" y="120" width="120" height="60"/>
+        <rect x="120" y="120" width="40" height="60"/>
+        <rect x="0" y="180" width="120" height="60"/>
+        <rect x="120" y="180" width="40" height="60"/>
+        <rect x="0" y="240" width="120" height="30"/>
+        <rect x="120" y="240" width="40" height="30"/>
+      </g>
+
+      <!-- W/D column on left (depth 600, height 1850 mm of stack) -->
+      <rect class="cab" x="0" y="80" width="60" height="190"/>
+      <!-- washer round -->
+      <rect class="appl" x="2" y="160" width="56" height="56"/>
+      <circle cx="30" cy="188" r="20" fill="#cfd8e0" stroke="#1a1a1a" stroke-width="0.4"/>
+      <text class="lbl" x="30" y="192" fill="#fff">Washer</text>
+      <!-- dryer round -->
+      <rect class="appl" x="2" y="218" width="56" height="48"/>
+      <circle cx="30" cy="242" r="17" fill="#cfd8e0" stroke="#1a1a1a" stroke-width="0.4"/>
+      <text class="lbl" x="30" y="246" fill="#fff">Dryer</text>
+      <!-- Top shelf above for detergents -->
+      <text class="sub" x="30" y="120">Detergents</text>
+
+      <!-- Slim vanity right side (60 cm) -->
+      <rect class="cab" x="80" y="120" width="80" height="60"/>
+      <rect class="stone" x="80" y="118" width="80" height="4"/>
+      <ellipse cx="120" cy="118" rx="22" ry="3" fill="#cfd8e0" stroke="#1a1a1a" stroke-width="0.4"/>
+      <line stroke="#2a2a2a" stroke-width="1.2" x1="120" y1="103" x2="120" y2="118"/>
+      <circle cx="120" cy="103" r="2.5" fill="#fff" stroke="#1a1a1a" stroke-width="0.4"/>
+
+      <!-- Mirror above sink (1200 × 800) -->
+      <rect class="mirror" x="80" y="20" width="80" height="80"/>
+      <line class="led" x1="82" y1="20" x2="82" y2="100"/>
+      <line class="led" x1="158" y1="20" x2="158" y2="100"/>
+      <text class="sub" x="120" y="65">Mirror cabinet</text>
+      <text class="sub" x="120" y="78">1200 × 800 × 120</text>
+
+      <!-- Plinth -->
+      <line stroke="#999" stroke-width="0.4" stroke-dasharray="1 1" x1="0" y1="265" x2="160" y2="265"/>
+
+      <!-- Labels -->
+      <text class="lbl" x="30" y="78">W/D column (anti-vibration)</text>
+      <text class="lbl" x="120" y="195">Vanity 800 × 600</text>
+
+      <!-- Dimensions -->
+      <path class="arr" d="M0,290 L160,290"/>
+      <text class="dim" x="80" y="298" text-anchor="middle">1600 wall</text>
+      <path class="arr" d="M-15,0 L-15,270"/>
+      <text class="dim" x="-22" y="135" text-anchor="middle" transform="rotate(-90 -22 135)">2700 ceiling</text>
+      <text class="dim" x="-15" y="120" text-anchor="end">1200 worktop</text>
+    </svg>
+  </div>
+  <ul>
+    <li>W/D stacked column on anti-vibration mat; spaced from wall (10 mm) for hose access; <strong>night cycle scheduling</strong> recommended (TBD-3, <a href="../img/apartment-project-requirements.md#section-6">§6.3</a>).</li>
+    <li>Mirror cabinet 1200 × 800 × 120 mm with internal LED strip + RCD-protected socket inside (per electrician).</li>
+    <li>Vertical LED bars at mirror sides give <strong>face light without overhead glare</strong> — meets <a href="../img/apartment-project-requirements.md#section-5-6">§5.6</a> requirement for "vertical face light at mirror".</li>
+    <li>Tub side panel removable; mixer wall-mounted; thermostatic cartridge.</li>
+    <li>Heated towel rail electric IP44 (no hot-water tee in cold-water-only walls); independent switch outside.</li>
+  </ul>
+
+  <h3>9.5 Bedroom (parents) wardrobe elevation — south wall (2300 × 2700 mm)</h3>
+  <div class="schematic">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -30 290 320" role="img" aria-label="Bedroom parents wardrobe elevation">
+      <defs>
+        <style>
+          .wall5 { fill: #fbfaf6; stroke: #1a1a1a; stroke-width: 1.2; }
+          .door  { fill: #f4efe7; stroke: #1a1a1a; stroke-width: 0.7; }
+          .glass { fill: #cfe0ee; opacity: 0.55; stroke: #1a1a1a; stroke-width: 0.5; }
+          .top   { fill: #e3dccc; stroke: #1a1a1a; stroke-width: 0.6; }
+          .handle{ stroke: #1a1a1a; stroke-width: 0.7; fill: none; }
+          .lbl   { font: 6.5px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+          .sub   { font: 5.5px system-ui, sans-serif; fill: #5c5c5c; text-anchor: middle; }
+          .dim   { font: 6px system-ui, sans-serif; fill: #2c5282; }
+          .arr   { stroke: #2c5282; stroke-width: 0.5; fill: none; marker-end: url(#bd1); marker-start: url(#bd1b); }
+        </style>
+        <marker id="bd1"  markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#2c5282"/></marker>
+        <marker id="bd1b" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6 z" fill="#2c5282"/></marker>
+      </defs>
+
+      <rect class="wall5" x="0" y="0" width="230" height="270"/>
+      <rect class="top"   x="0" y="0" width="230" height="20"/>
+      <text class="sub"   x="115" y="14">Closed cap to ceiling 2700</text>
+
+      <!-- Sliding doors: 4 panels (top + bottom rail) -->
+      <rect class="door" x="0"   y="20" width="76" height="250"/>
+      <rect class="door" x="76"  y="20" width="76" height="250"/>
+      <rect class="door" x="152" y="20" width="76" height="250"/>
+      <!-- partial mirror panel -->
+      <rect class="glass" x="76" y="20" width="76" height="250"/>
+      <text class="sub" x="114" y="160">Mirror panel</text>
+
+      <!-- Slide rail line -->
+      <line stroke="#1a1a1a" stroke-width="0.6" x1="0" y1="22" x2="230" y2="22"/>
+      <line stroke="#1a1a1a" stroke-width="0.6" x1="0" y1="268" x2="230" y2="268"/>
+
+      <!-- Recessed channel handles -->
+      <line class="handle" x1="60" y1="135" x2="60" y2="170"/>
+      <line class="handle" x1="100" y1="135" x2="100" y2="170"/>
+      <line class="handle" x1="170" y1="135" x2="170" y2="170"/>
+
+      <!-- Internal hint behind doors (dotted) -->
+      <line stroke="#999" stroke-width="0.4" stroke-dasharray="2 2" x1="0" y1="100" x2="230" y2="100"/>
+      <text class="sub" x="40"  y="60">Hanging top</text>
+      <text class="sub" x="40"  y="220">Drawers</text>
+      <text class="sub" x="190" y="60">Hanging top</text>
+      <text class="sub" x="190" y="220">Linen drawer</text>
+
+      <!-- Module labels -->
+      <text class="lbl" x="38"  y="290">Hanging</text>
+      <text class="lbl" x="114" y="290">Mirror / hanging</text>
+      <text class="lbl" x="190" y="290">Hanging + drawers</text>
+
+      <path class="arr" d="M0,308 L230,308"/>
+      <text class="dim" x="115" y="316" text-anchor="middle">2300 mm wardrobe</text>
+      <path class="arr" d="M-15,0 L-15,270"/>
+      <text class="dim" x="-22" y="135" text-anchor="middle" transform="rotate(-90 -22 135)">2700 ceiling</text>
+    </svg>
+  </div>
+  <ul>
+    <li>Sliding doors 3 panels (mirror centre); soft-brake stops; floor-to-ceiling.</li>
+    <li>Internal: 2 hanging rails (long + short on linen-drawer side), 2 drawer columns, 1 linen drawer at bottom.</li>
+    <li>LED strip on motion sensor inside top rail (warm 2700 K, low pulsation).</li>
+    <li>Children bedroom uses same elevation type, depth 600 mm, with <strong>lower hanging rail at 1200 mm AFF</strong> for child use; 2 toy/spare-bed drawers low.</li>
+  </ul>
+</section>
+
+<!-- ============== 10 ============== -->
+<section id="s10">
+  <h2>10. MEP coordination (designer-facing) <span class="ru">(MEP-привязки)</span></h2>
+  <p class="note">Quantities and positions per designer; <strong>circuit design, loads, gas safety, panel capacity — verify with licensed electrician / HVAC engineer / gas authority</strong>.</p>
+  <table>
+    <thead>
+      <tr><th>Room</th><th>Sockets (16 A unless noted)</th><th>Data / TV</th><th>Switching logic</th><th>HVAC / boiler</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Entry</td><td>2 × 220 V at 300 mm AFF</td><td>—</td><td>1-gang door, 2-way to hall main</td><td>—</td></tr>
+      <tr><td>Hall</td><td>2 service + 1 vacuum</td><td>—</td><td>master 2-way + scene "night"</td><td>—</td></tr>
+      <tr><td>Open space — kitchen run</td><td>5-gang strip above counter (1100 AFF) + 1 USB-C; cooktop dedicated 16 A; oven dedicated 16 A; dishwasher 10 A; hood 10 A; fridge 10 A</td><td>—</td><td>under-cabinet sensor + manual</td><td>1 split indoor unit, throw along long wall</td></tr>
+      <tr><td>Open space — dining / living</td><td>2 floor sockets near sofa, 2 wall behind TV at 300 AFF, 2 high behind TV at 1100 AFF (TV / soundbar), 1 at WFH desk</td><td>1 RJ45 at TV; 1 RJ45 at WFH desk</td><td>scene dimmer (4 scenes)</td><td>same split as above</td></tr>
+      <tr><td>Pantry</td><td>2 × 220 V</td><td>1 RJ45 trunk for router/NAS</td><td>PIR + manual</td><td>—</td></tr>
+      <tr><td>WC 1.6</td><td>1 (RCD)</td><td>—</td><td>1-gang + fan link</td><td>extract grille open</td></tr>
+      <tr><td>Shower 3.1</td><td>1 (RCD) + heated rail dedicated</td><td>—</td><td>1-gang + fan link</td><td>extract grille open</td></tr>
+      <tr><td>Bath 4.2</td><td>1 mirror cabinet (RCD), washer 16 A, dryer 16 A</td><td>—</td><td>2-gang + fan link</td><td>extract grille; hot-water connection per plumber</td></tr>
+      <tr><td>Parents bedroom</td><td>2 bedside (each side) + 1 service</td><td>—</td><td>master 2-way + 2 bedside dimmers</td><td>1 split, throw parallel to bed</td></tr>
+      <tr><td>Children bedroom</td><td>2 bedside + 1 desk + 1 service</td><td>—</td><td>master + nightlight switch</td><td>same split design</td></tr>
+      <tr><td>Loggias / balcony</td><td>1 IP54 each</td><td>—</td><td>1-gang from interior</td><td>—</td></tr>
+      <tr><td>Boiler room (existing)</td><td>per gas service</td><td>—</td><td>—</td><td>autonomous gas boiler — clearances and service per data sheet; <strong>do not enclose without gas authority sign-off</strong></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============== 11 ============== -->
+<section id="s11">
+  <h2>11. Sun &amp; shade <span class="ru">(Окна и солнцезащита)</span></h2>
+  <ul>
+    <li>Open space: light-filtering roller / linen sheer + side-stack curtain for evenings; UV reduction on hottest exposure.</li>
+    <li>Parents bedroom: blackout primary + sheer underlayer; full perimeter side returns to remove edge bleed.</li>
+    <li>Children bedroom: blackout + sheer + soft warm night light L-12.</li>
+    <li>Loggias: outdoor-grade shading (vertical strip blind); avoid dark cabinets that overheat in summer sun.</li>
+  </ul>
+</section>
+
+<!-- ============== 12 ============== -->
+<section id="s12">
+  <h2>12. Acoustic &amp; comfort intent <span class="ru">(Акустика и комфорт)</span></h2>
+  <ul>
+    <li>Bedroom doors: heavy leaf (≥ 35 kg); full perimeter seal; threshold drop seal; verify supplier.</li>
+    <li>Soft surfaces: rugs in living and bedrooms, linen curtains in open space, upholstered headboard parents — to dampen reverb without quoting any dB number.</li>
+    <li>HVAC indoor units selected for low night-mode dB(A) — confirm spec sheet at procurement.</li>
+    <li>Washer / dryer column on anti-vibration mat; nightly cycle scheduled away from bedtime.</li>
+  </ul>
+</section>
+
+<!-- ============== 13 ============== -->
+<section id="s13">
+  <h2>13. Sustainability &amp; health <span class="ru">(Устойчивость и здоровье)</span></h2>
+  <ul>
+    <li>Low-VOC paints and adhesives (ask supplier for data sheet, no certificate is invented here).</li>
+    <li>Mechanical extract preserved in wet zones; trickle vents or window restrictors for night airing in summer (verify with HoA).</li>
+    <li>Long-life finishes (oak floor, stone splashback) preferred over disposable laminate in high-wear zones.</li>
+    <li>Filter cleaning schedule for splits added to O&amp;M (per <a href="../img/apartment-project-requirements.md#section-5-3-1">requirements §5.3.1</a>).</li>
+  </ul>
+</section>
+
+<!-- ============== 14 ============== -->
+<section id="s14">
+  <h2>14. Sample checklist <span class="ru">(Контроль образцов)</span></h2>
+  <table>
+    <thead><tr><th>Sample</th><th>Form</th><th>Min size</th><th>Where reviewed</th><th>Decision required by</th></tr></thead>
+    <tbody>
+      <tr><td>Wall paint P1, ceiling P2</td><td>painted A4 board</td><td>200×300 mm</td><td>main wall, day + evening</td><td>before painting</td></tr>
+      <tr><td>Oak engineered W1</td><td>3 plank panel</td><td>500×500 mm</td><td>open space + bedroom</td><td>before order long-lead</td></tr>
+      <tr><td>Smoked oak W2 (TV wall)</td><td>panel</td><td>500×500 mm</td><td>TV wall location</td><td>before order joinery</td></tr>
+      <tr><td>Porcelain S1 + grout</td><td>tile + 50 mm grout strip</td><td>2 tiles</td><td>entry / wet rooms</td><td>before tiling</td></tr>
+      <tr><td>Splashback S2</td><td>200×200 mm slab piece</td><td>—</td><td>kitchen wall</td><td>before slab cut</td></tr>
+      <tr><td>Linen T1</td><td>3 colourways</td><td>A4</td><td>sofa location</td><td>before sofa order</td></tr>
+      <tr><td>Black metal M1</td><td>handle samples ×3</td><td>—</td><td>kitchen + wardrobe</td><td>before joinery release</td></tr>
+      <tr><td>Lighting mock-up</td><td>1 of each major fixture</td><td>—</td><td>on site, evening</td><td>before bulk order</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============== 15 ============== -->
+<section id="s15">
+  <h2>15. Punch list &amp; handover TOC <span class="ru">(Передача)</span></h2>
+  <p>Aligns with <a href="../img/interior-designer-deliverables.md#section-5">deliverables §5</a> (13 items). Signing block kept owner-friendly.</p>
+  <table>
+    <thead><tr><th>#</th><th>Document / pack</th><th>Status</th><th>Date signed</th><th>By</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Concept book</td><td>included §3 of this file</td><td>____</td><td>____</td></tr>
+      <tr><td>2</td><td>As-built plans &amp; sections</td><td>after construction</td><td>____</td><td>____</td></tr>
+      <tr><td>3</td><td>Finish schedule</td><td>this file §6 (final after samples)</td><td>____</td><td>____</td></tr>
+      <tr><td>4</td><td>FF&amp;E schedule</td><td>this file §7</td><td>____</td><td>____</td></tr>
+      <tr><td>5</td><td>Lighting schedule</td><td>this file §8</td><td>____</td><td>____</td></tr>
+      <tr><td>6</td><td>Spec sheets / cut sheets</td><td>PDF binder, after procurement</td><td>____</td><td>____</td></tr>
+      <tr><td>7</td><td>Joinery shop drawings index</td><td>per workshop</td><td>____</td><td>____</td></tr>
+      <tr><td>8</td><td>Warranty register</td><td>build during purchase</td><td>____</td><td>____</td></tr>
+      <tr><td>9</td><td>O&amp;M and care</td><td>compiled at handover</td><td>____</td><td>____</td></tr>
+      <tr><td>10</td><td>Spare / attic stock</td><td>tile, paint, hardware</td><td>____</td><td>____</td></tr>
+      <tr><td>11</td><td>Photo set</td><td>professional photo at handover</td><td>____</td><td>____</td></tr>
+      <tr><td>12</td><td>Punch list</td><td>after walk-through, this section</td><td>____</td><td>____</td></tr>
+      <tr><td>13</td><td>Smart home / AV</td><td>if installed</td><td>____</td><td>____</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============== 16 ============== -->
+<section id="s16">
+  <h2>16. Open coordination items <span class="ru">(Открытые согласования)</span></h2>
+  <p>Each item below is <strong>flagged</strong> by the designer for written confirmation by the appropriate licensed party. Until then, the corresponding interior solution is provisional.</p>
+  <ul>
+    <li><span class="pill warn">structure</span> Any change to load-bearing walls or slabs — licensed structural engineer.</li>
+    <li><span class="pill warn">gas</span> Boiler clearances, flue, any pipe rerouting — gas authority / licensed gas installer.</li>
+    <li><span class="pill warn">electrical</span> Panel capacity, RCDs, three-phase if needed — licensed electrician.</li>
+    <li><span class="pill warn">waterproofing</span> Wet-zone tanking certification — contractor + engineer per local requirement.</li>
+    <li><span class="pill warn">façade / loggia</span> Glazing, parapet anchorage, drainage — building management (HoA) and licensed engineer.</li>
+    <li><span class="pill warn">survey</span> Measured plan close-out (<a href="../img/apartment-project-requirements.md#section-2-4">§2.4</a>) replaces all dimensions in this book.</li>
+  </ul>
+</section>
+
+<!-- ============== 17 ============== -->
+<section id="s17">
+  <h2>17. Disclaimer <span class="ru">(Дисклеймер)</span></h2>
+  <p class="note">
+    This design book is professional design advice for an apartment interior. It is <strong>not</strong> legal advice, structural engineering, code-compliance certification, gas safety design, or HVAC engineering. Structural, fire/life-safety, gas, and electrical system design must be validated by qualified licensed professionals in the project jurisdiction. Owner and contractors must verify dimensions on site, confirm compatibility with existing building systems, and obtain official approvals where applicable. Warranty and defect language must be aligned with local contracts and law — consult a lawyer when needed. See also <a href="../img/interior-designer-deliverables.md#section-7">deliverables §7</a> and <a href="../img/apartment-project-requirements.md#section-11">requirements §7</a>.
+  </p>
+</section>
+
+<footer>
+  <p class="note">© Apartment 93 · Bishkek · for owner use. Print: browser → Print → Save as PDF, A4. File version 1.0 (2026-04-19).</p>
+</footer>
+
+</body>
+</html>

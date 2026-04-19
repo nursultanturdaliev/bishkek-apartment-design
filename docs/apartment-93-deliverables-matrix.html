@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кв. 93 — матрица: результаты дизайнера × требования заказчика</title>
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --card: #fff;
+      --text: #1a1a1a;
+      --muted: #5c5c5c;
+      --accent: #2c5282;
+      --border: #e2ddd6;
+      --ok: #276749;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      background: var(--bg);
+      margin: 0;
+      padding: 1.5rem clamp(1rem, 3vw, 2.5rem) 3rem;
+      max-width: 58rem;
+      margin-inline: auto;
+    }
+    h1 { font-size: 1.45rem; font-weight: 650; margin-top: 0; }
+    h2 { font-size: 1.15rem; margin-top: 2rem; padding-bottom: 0.35rem; border-bottom: 2px solid var(--border); }
+    h3 { font-size: 1rem; margin-top: 1.25rem; color: var(--muted); font-weight: 600; }
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .meta a { color: var(--accent); }
+    nav.toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+    }
+    nav.toc strong { display: block; margin-bottom: 0.5rem; }
+    nav.toc ol { margin: 0; padding-left: 1.25rem; }
+    nav.toc a { color: var(--accent); text-decoration: none; }
+    nav.toc a:hover { text-decoration: underline; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      font-size: 0.88rem;
+      margin: 0.75rem 0 1.5rem;
+    }
+    th, td {
+      border-bottom: 1px solid var(--border);
+      padding: 0.55rem 0.65rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    th { background: #edeae4; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    a.req, a.del {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    a.req:hover, a.del:hover { text-decoration: underline; }
+    .pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      padding: 0.12rem 0.4rem;
+      border-radius: 4px;
+      background: #e8f0f8;
+      color: #234876;
+      margin: 0.1rem 0.15rem 0 0;
+    }
+    .flow {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .flow svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+    .note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    @media print {
+      body { background: #fff; }
+      nav.toc { break-inside: avoid; }
+      h2 { break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Кв. 93, ул. Жусупа Мамая 16 — матрица доставки</h1>
+  <p class="meta">
+    Связка: <strong>ожидаемые результаты дизайнера</strong>
+    (<a class="del" href="../img/interior-designer-deliverables.md">interior-designer-deliverables.md</a>)
+    и <strong>требования заказчика</strong>
+    (<a class="req" href="../img/apartment-project-requirements.md">apartment-project-requirements.md</a>).
+    Откройте этот HTML из клонированного репозитория — ссылки ведут на локальные файлы.
+  </p>
+
+  <nav class="toc" aria-label="Содержание">
+    <strong>Содержание</strong>
+    <ol>
+      <li><a href="#d1">Фазовый поток (как в deliverables §1)</a></li>
+      <li><a href="#d2">Фазы и минимальный состав × требования</a></li>
+      <li><a href="#d21">Типовой объём дизайна (deliverables §2.1) × требования</a></li>
+      <li><a href="#d3">Категории работ / чеклист × требования</a></li>
+      <li><a href="#d4">Ведомости — поля × требования</a></li>
+      <li><a href="#d5">Пакет передачи заказчику × требования</a></li>
+      <li><a href="#d6">Координация смежников × требования</a></li>
+      <li><a href="#d7">Дисклеймер</a></li>
+    </ol>
+  </nav>
+
+  <section id="d1">
+    <h2>1. Назначение и фазовый поток</h2>
+    <p>Содержательные ожидания заказчика по фазам: резюме <a class="req" href="../img/apartment-project-requirements.md#section-4">§4</a>, бриф и техника <a class="req" href="../img/apartment-project-requirements.md#section-5">§5</a>, помещения <a class="req" href="../img/apartment-project-requirements.md#section-5-8">§5.8</a>, приёмка <a class="req" href="../img/apartment-project-requirements.md#section-5-7-1">§5.7.1</a>.</p>
+    <div class="flow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 88" role="img" aria-label="Фазы: концепция, DD, CD, монтаж, передача">
+        <defs>
+          <style>
+            .b { fill: #fff; stroke: #2c5282; stroke-width: 1.5; }
+            .t { font: 13px system-ui, sans-serif; fill: #1a1a1a; }
+            .a { fill: none; stroke: #718096; stroke-width: 1.5; marker-end: url(#arr); }
+          </style>
+          <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 z" fill="#718096" />
+          </marker>
+        </defs>
+        <rect class="b" x="8" y="20" width="104" height="44" rx="6"/><text class="t" x="60" y="47" text-anchor="middle">Концепция</text>
+        <rect class="b" x="136" y="20" width="104" height="44" rx="6"/><text class="t" x="188" y="47" text-anchor="middle">DD</text>
+        <rect class="b" x="264" y="20" width="104" height="44" rx="6"/><text class="t" x="316" y="47" text-anchor="middle">CD</text>
+        <rect class="b" x="392" y="20" width="104" height="44" rx="6"/><text class="t" x="444" y="47" text-anchor="middle">Монтаж</text>
+        <rect class="b" x="520" y="20" width="112" height="44" rx="6"/><text class="t" x="576" y="47" text-anchor="middle">Передача</text>
+        <path class="a" d="M112,42 h24 M240,42 h24 M368,42 h24 M496,42 h24" />
+      </svg>
+      <p class="note">Источник структуры: <a class="del" href="../img/interior-designer-deliverables.md#section-1">deliverables §1</a> (mermaid в MD не рендерится везде — здесь SVG).</p>
+    </div>
+  </section>
+
+  <section id="d2">
+    <h2>2. Фазы проектирования и минимальный состав результатов</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Фаза (deliverables §2)</th>
+          <th>Минимальный состав (кратко)</th>
+          <th>Где зафиксированы ожидания заказчика (requirements)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Концепция / mood</strong></td>
+          <td>Нарратив, референсы, палитра, бюджетный коридор</td>
+          <td>
+            <a class="req" href="../img/apartment-project-requirements.md#section-5-5">§5.5</a> стиль,
+            <a class="req" href="../img/apartment-project-requirements.md#section-4-4">§4.4</a> must/defer,
+            <a class="req" href="../img/apartment-project-requirements.md#section-4-1">§4.1</a> объект
+          </td>
+        </tr>
+        <tr>
+          <td><strong>DD</strong></td>
+          <td>Планы, разрезы, ориентировочные спеки, матрица помещений, бюджет</td>
+          <td>
+            <a class="req" href="../img/apartment-project-requirements.md#section-2-4">§2.4</a> обмер,
+            <a class="req" href="../img/apartment-project-requirements.md#section-5-8">§5.8</a> по комнатам,
+            <a class="req" href="../img/apartment-project-requirements.md#section-5-1-1">§5.1.1</a> матрица сна,
+            <a class="req" href="../img/apartment-project-requirements.md#section-6">§6</a> TBD
+          </td>
+        </tr>
+        <tr>
+          <td><strong>CD</strong></td>
+          <td>Чертежи и ведомости для сметы/строительства</td>
+          <td>
+            <a class="req" href="../img/apartment-project-requirements.md#section-4-2">§4.2</a> красные линии,
+            <a class="req" href="../img/apartment-project-requirements.md#section-3">§3</a> объём/исключения,
+            <a class="req" href="../img/apartment-project-requirements.md#section-5-0">§5.0</a> ТВ/LAN/варочная
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Стройка и монтаж</strong></td>
+          <td>RFI, shop drawings, указания, punch list</td>
+          <td>
+            <a class="req" href="../img/apartment-project-requirements.md#section-5-7">§5.7</a>,
+            <a class="req" href="../img/apartment-project-requirements.md#section-5-7-1">§5.7.1</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Передача</strong></td>
+          <td>As-built, ведомости, гарантии, O&amp;M, фото, punch list</td>
+          <td>
+            <a class="req" href="../img/apartment-project-requirements.md#section-4-6">§4.6</a> навигация,
+            <a class="req" href="../img/apartment-project-requirements.md#images">§8</a> сканы репозитория
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="d21">
+    <h2>2.1 Типовой объём дизайна (договор) × требования</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Строка работ (deliverables §2.1)</th>
+          <th>Требования кв. 93</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Планировка, зонирование, мебель</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-4-3">§4.3</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-1">§5.1</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-8">§5.8</a></td>
+        </tr>
+        <tr>
+          <td>Архитектурные отделки</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-4">§5.4</a> пол/ОВиК-контекст, <a class="req" href="../img/apartment-project-requirements.md#section-5-5">§5.5</a> палитра</td>
+        </tr>
+        <tr>
+          <td>Мебель (кухня, холл)</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-8-2">§5.8.2</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-8-3">§5.8.3</a></td>
+        </tr>
+        <tr>
+          <td>FF&amp;E</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-1">§5.1</a> бриф, <a class="req" href="../img/apartment-project-requirements.md#section-5-5">§5.5</a></td>
+        </tr>
+        <tr>
+          <td>Освещение + ведомость</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-6">§5.6</a>, KPI <a class="req" href="../img/apartment-project-requirements.md#section-5-3">§5.3.1</a></td>
+        </tr>
+        <tr>
+          <td>Солнцезащита / шторы</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-3">§5.3</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-8-8">§5.8.8</a></td>
+        </tr>
+        <tr>
+          <td>Выезды, мокапы, punch list</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-7">§5.7</a>–<a class="req" href="../img/apartment-project-requirements.md#section-5-7-1">5.7.1</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">Допущения и исключения: <a class="req" href="../img/apartment-project-requirements.md#section-3">требования §3</a>.</p>
+  </section>
+
+  <section id="d3">
+    <h2>3. Категории работ (чеклист DD–CD) × требования</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Область (deliverables §3)</th>
+          <th>Разделы требований</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Бриф</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-1">§5.1</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-1-1">§5.1.1</a></td>
+        </tr>
+        <tr>
+          <td>Планировка</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-4-1">§4.1</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-8">§5.8</a></td>
+        </tr>
+        <tr>
+          <td>Отделка</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-4">§5.4</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-5">§5.5</a>, <a class="req" href="../img/apartment-project-requirements.md#section-3-4">§3.4</a> гидроизоляция</td>
+        </tr>
+        <tr>
+          <td>Мебель / корпус</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-8-2">§5.8.2</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-8-3">§5.8.3</a></td>
+        </tr>
+        <tr>
+          <td>FF&amp;E</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-1">§5.1</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-8">§5.8</a></td>
+        </tr>
+        <tr>
+          <td>Освещение</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-6">§5.6</a> + состав полей <a class="del" href="../img/interior-designer-deliverables.md#section-4-3">deliverables §4.3</a></td>
+        </tr>
+        <tr>
+          <td>ОВиК (зона дизайнера)</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-0">§5.0</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-4">§5.4</a>, <a class="req" href="../img/apartment-project-requirements.md#section-4-2">§4.2</a> газ/щит</td>
+        </tr>
+        <tr>
+          <td>Окна и шторы</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-3">§5.3</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-8-8">§5.8.8</a></td>
+        </tr>
+        <tr>
+          <td>Цвет и материалы</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-5">§5.5</a>, <a class="req" href="../img/apartment-project-requirements.md#section-4-4">§4.4</a></td>
+        </tr>
+        <tr>
+          <td>Акустика и комфорт</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-8-2">§5.8.2</a>, <a class="req" href="../img/apartment-project-requirements.md#section-6">§6.1</a></td>
+        </tr>
+        <tr>
+          <td>Декор и искусство</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-5">§5.5</a> (после функции)</td>
+        </tr>
+        <tr>
+          <td>Устойчивость и здоровье</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-3">§5.3</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-4">§5.4</a> приток</td>
+        </tr>
+        <tr>
+          <td>Закупка и реализация</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-4-4">§4.4</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-7">§5.7</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="d4">
+    <h2>4. Спецификации — минимальный состав полей</h2>
+    <p>Перечень столбцов задан в <a class="del" href="../img/interior-designer-deliverables.md#section-4">deliverables §4</a> (подразделы <a class="del" href="../img/interior-designer-deliverables.md#section-4-1">4.1</a>–<a class="del" href="../img/interior-designer-deliverables.md#section-4-3">4.3</a>). Контекст качества для света и приёмки в требованиях:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Ведомость</th>
+          <th>Контекст в требованиях</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Отделка (deliv. §4.1)</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-4">§5.4</a> полы, <a class="req" href="../img/apartment-project-requirements.md#section-5-5">§5.5</a> стены/фактуры</td>
+        </tr>
+        <tr>
+          <td>FF&amp;E (deliv. §4.2)</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-1">§5.1</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-8">§5.8</a></td>
+        </tr>
+        <tr>
+          <td>Освещение (deliv. §4.3)</td>
+          <td><a class="req" href="../img/apartment-project-requirements.md#section-5-6">§5.6</a> (Ra, слои, дим, лк), must/upgrade vs <a class="req" href="../img/apartment-project-requirements.md#section-4-4">§4.4</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="d5">
+    <h2>5. Пакет передачи заказчику (handover) × требования</h2>
+    <p>Таблица из <a class="del" href="../img/interior-designer-deliverables.md#section-5">deliverables §5</a> с привязкой к тому, что заказчик уже задал как критерии:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Документ (handover)</th>
+          <th>Связь с требованиями кв. 93</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Концепция / концепт-бук</td><td><a class="req" href="../img/apartment-project-requirements.md#section-5-5">§5.5</a>, <a class="req" href="../img/apartment-project-requirements.md#section-4-1">§4.1</a></td></tr>
+        <tr><td>2</td><td>Планы «как построено»</td><td><a class="req" href="../img/apartment-project-requirements.md#section-2-4">§2.4</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-8">§5.8</a></td></tr>
+        <tr><td>3</td><td>Ведомость отделок</td><td><a class="req" href="../img/apartment-project-requirements.md#section-5-4">§5.4</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-5">§5.5</a></td></tr>
+        <tr><td>4</td><td>Ведомость FF&amp;E</td><td><a class="req" href="../img/apartment-project-requirements.md#section-5-1">§5.1</a></td></tr>
+        <tr><td>5</td><td>Ведомость освещения</td><td><a class="req" href="../img/apartment-project-requirements.md#section-5-6">§5.6</a></td></tr>
+        <tr><td>6</td><td>Спецификации / cut sheets</td><td><a class="req" href="../img/apartment-project-requirements.md#section-4-2">§4.2</a> красные линии по согласованиям</td></tr>
+        <tr><td>7</td><td>Свод по мебели (shop drawings)</td><td><a class="req" href="../img/apartment-project-requirements.md#section-5-8">§5.8</a></td></tr>
+        <tr><td>8</td><td>Реестр гарантий</td><td>Инженерные узлы: <a class="req" href="../img/apartment-project-requirements.md#section-3">§3</a></td></tr>
+        <tr><td>9</td><td>O&amp;M и уход</td><td><a class="req" href="../img/apartment-project-requirements.md#section-5-3-1">§5.3.1</a> KPI; климат <a class="req" href="../img/apartment-project-requirements.md#section-5-3">§5.3</a></td></tr>
+        <tr><td>10</td><td>Запас / attic stock</td><td><a class="req" href="../img/apartment-project-requirements.md#section-4-4">§4.4</a> defer/must</td></tr>
+        <tr><td>11</td><td>Фотоотчёт</td><td><a class="req" href="../img/apartment-project-requirements.md#images">§8</a> исходные сканы репо</td></tr>
+        <tr><td>12</td><td>Punch list</td><td><a class="req" href="../img/apartment-project-requirements.md#section-5-7-1">§5.7.1</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-7">§5.7</a></td></tr>
+        <tr><td>13</td><td>Умный дом / АВ</td><td><a class="req" href="../img/apartment-project-requirements.md#section-5-6">§5.6</a> (после проводной базы)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="d6">
+    <h2>6. Координация смежников × требования</h2>
+    <p>Список тем из <a class="del" href="../img/interior-designer-deliverables.md#section-6">deliverables §6</a> закрывается в требованиях так:</p>
+    <ul>
+      <li>Исключения и красные линии: <a class="req" href="../img/apartment-project-requirements.md#section-3-4">требования §3.4</a>, <a class="req" href="../img/apartment-project-requirements.md#section-4-2">§4.2</a></li>
+      <li>Газ, котёл, фасад, щит: <a class="req" href="../img/apartment-project-requirements.md#section-5-4">§5.4</a>, <a class="req" href="../img/apartment-project-requirements.md#section-5-0">§5.0</a></li>
+      <li>Риски до обмера: <a class="req" href="../img/apartment-project-requirements.md#section-6">требования §6</a> (TBD-1–5) — не путать с оглавлением deliverables §6</li>
+    </ul>
+  </section>
+
+  <section id="d7">
+    <h2>7. Дисклеймер</h2>
+    <p>Полный текст: <a class="del" href="../img/interior-designer-deliverables.md#section-7">deliverables §7</a> и кратко <a class="req" href="../img/apartment-project-requirements.md#section-11">требования §7</a>.</p>
+  </section>
+
+  <footer>
+    Сгенерировано для репозитория bishkek-apartment-design. Печать: браузер «Печать → PDF». Якоря в <code>.md</code> зависят от рендерера; при обрыве ссылки откройте файл в редакторе и найдите заголовок вручную.
+  </footer>
+
+</body>
+</html>
