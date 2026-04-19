@@ -1,0 +1,1 @@
+# bishkek-apartment-design
