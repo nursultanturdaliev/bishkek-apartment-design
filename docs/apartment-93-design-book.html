@@ -62,6 +62,10 @@
     .swatch .lbl { padding: 0.4rem 0.55rem; font-size: 0.78rem; }
     .schematic { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem; }
     .schematic svg { width: 100%; height: auto; display: block; }
+    .render { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 8px; margin: 0.6rem 0 0.5rem; }
+    .render-cap { font-size: 0.82rem; color: var(--muted); margin: 0.1rem 0 1rem; text-align: center; }
+    .render-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0.6rem 0 0.5rem; }
+    @media (max-width: 760px) { .render-grid { grid-template-columns: 1fr; } }
     .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     @media (max-width: 700px) { .twocol { grid-template-columns: 1fr; } nav.toc ol { columns: 1; } }
     @media print {
@@ -169,11 +173,393 @@
 
 <!-- ============== 4 ============== -->
 <section id="s4">
-  <h2>4. Space plan (to-scale, drawn from MEERIM) <span class="ru">(План квартиры в масштабе)</span></h2>
+  <h2>4. Space plan <span class="ru">(План квартиры)</span></h2>
   <p class="note">
-    Drawn to <strong>1 SVG unit = 1 mm</strong>. Geometry follows the MEERIM 2D plan and the registry areas in <a href="../img/apartment-project-requirements.md#section-2">§2.3</a>; rectangular schematic, ±5 % per-room area drift accepted (registry remains normative). External envelope <strong>~7200 × 15400 mm</strong>; internal <strong>~6800 × 14800 mm</strong>; ceilings 2700 mm. <strong>Replace with surveyed mm plan</strong> when <a href="../img/apartment-project-requirements.md#section-2-4">§2.4</a> is closed.
-    Wall thickness 200 mm; doors shown with swing arc (orange); built-in furniture in light blue.
+    Geometry follows the MEERIM 2D plan and the registry areas in <a href="../img/apartment-project-requirements.md#section-2">§2.3</a>; external envelope <strong>~7200 × 15400 mm</strong>; internal <strong>~6800 × 14800 mm</strong>; ceilings 2700 mm; wall thickness 200 mm. Renderings below are <strong>indicative design intent</strong> — <strong>replace with surveyed mm plan and CAD drawings</strong> for tender once <a href="../img/apartment-project-requirements.md#section-2-4">§2.4</a> is closed.
   </p>
+
+  <p class="note">
+    Four plan representations are provided side by side, in order of <strong>fidelity to the registered MEERIM plan</strong> (most accurate first). The hand-drawn SVG and the developer photo are the canonical sources; the AI renderings are <em>design-intent illustrations only</em> and must not be used for tender or construction. Final CAD drawings come from a licensed architect after the on-site survey (<a href="../img/apartment-project-requirements.md#section-2-4">§2.4</a>).
+  </p>
+
+  <h3>4.1 Canonical reference — MEERIM 2D developer plan + registry explication</h3>
+  <p class="note">Source: <code>photo_2026-04-19 13.29.13.jpeg</code> (developer 2D plan + 3D + room schedule) and <code>photo_2026-04-19 13.29.02.jpeg</code> (state registry exploitation, 93.6 m² internal). These are the <strong>normative</strong> documents — every other drawing in this book is derived from them.</p>
+  <div class="render-grid">
+    <div>
+      <img class="render" src="renders/apt93-meerim-2d-plan.jpeg"
+           alt="MEERIM developer 2D plan and 3D rendering of the apartment with room schedule (kitchen 13.92, living 20.35, hall 17.26, pantry 2.92, WC 1.70, shower 3.16, bedroom 15.74, loggia 4.44, balcony 4.09, bedroom 14.22, bath 4.28 m²)"/>
+      <p class="render-cap">MEERIM developer plan — 2D + 3D + marketing schedule (~106 m² gross including loggias).</p>
+    </div>
+    <div>
+      <img class="render" src="renders/apt93-registry-explication.jpeg"
+           alt="State registry explication of apartment 93 — handwritten table listing 8 internal rooms summing to 93.6 m² and 3 external loggias/balcony summing to 11.3 m²"/>
+      <p class="render-cap">State registry explication (госреестр) — internal 93.6 m², external 11.3 m². <strong>Normative for contract and design.</strong></p>
+    </div>
+  </div>
+
+  <h3>4.2 Hand-drawn portrait floor plan (1 mm-precise SVG)</h3>
+  <p class="note">Drawn by the designer to <strong>1 SVG unit = 1 mm</strong> in <strong>portrait orientation</strong> matching the MEERIM aspect ratio (7.2 × 15.4 m, 1 : 2.14). All room labels carry the <strong>registry area</strong> from <a href="../img/apartment-project-requirements.md#section-2">§2.3</a>; schematic dimensions may drift up to ±5 % until the survey closes <a href="../img/apartment-project-requirements.md#section-2-4">§2.4</a>.</p>
+  <div class="schematic" style="max-width: 38rem; margin: 0 auto;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1500 -1700 9700 18900" role="img" aria-label="Hand-drawn portrait floor plan of apartment 93, 1 SVG unit = 1 mm, north at top">
+      <defs>
+        <style>
+          .wall   { fill: #1a1a1a; }
+          .room   { fill: #fffdf8; }
+          .wet    { fill: #e6edf4; }
+          .pantry { fill: #efece4; }
+          .vest   { fill: #f1ede2; }
+          .ext    { fill: #f3efe4; stroke: #1a1a1a; stroke-width: 30; stroke-dasharray: 100 70; }
+          .built  { fill: #e2ecf4; stroke: #2c5282; stroke-width: 25; }
+          .softp  { fill: #f6f1e6; stroke: #2c5282; stroke-width: 25; }
+          .furn   { fill: none; stroke: #2c5282; stroke-width: 25; }
+          .rug    { fill: #ddd3bf; opacity: 0.45; }
+          .door   { fill: none; stroke: #c0531e; stroke-width: 35; }
+          .leaf   { stroke: #c0531e; stroke-width: 35; }
+          .win    { stroke: #2c5282; stroke-width: 40; }
+          .lblRm  { font: 700 280px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+          .lblA   { font: 220px system-ui, sans-serif; fill: #5c5c5c; text-anchor: middle; }
+          .lblSm  { font: 160px system-ui, sans-serif; fill: #2c5282; text-anchor: middle; }
+          .lblExt { font: 200px system-ui, sans-serif; fill: #5c5c5c; text-anchor: middle; }
+          .lblDim { font: 180px system-ui, sans-serif; fill: #2c5282; }
+          .lblTit { font: 700 320px system-ui, sans-serif; fill: #1a1a1a; }
+          .lblNot { font: italic 180px system-ui, sans-serif; fill: #5c5c5c; }
+          .symL   { fill: none; stroke: #2c5282; stroke-width: 25; stroke-linecap: round; }
+          .removed{ stroke: #c0531e; stroke-width: 25; stroke-dasharray: 100 60; fill: none; }
+        </style>
+      </defs>
+
+      <text class="lblTit" x="3600" y="-1280" text-anchor="middle">Apartment 93 · floor plan to MEERIM proportions</text>
+      <text class="lblNot" x="3600" y="-1000" text-anchor="middle">1 SVG unit = 1 mm · external 7200 × 15400 mm · walls 200 mm · ceilings 2700 mm · north ↑</text>
+
+      <!-- ===== EXTERNAL ENVELOPE (solid wall mass with cutout) ===== -->
+      <path class="wall" fill-rule="evenodd"
+            d="M0,0 H7200 V15400 H0 Z
+               M200,200 H7000 V15200 H200 Z"/>
+
+      <!-- ===== ROOM FILLS (drawn before openings so openings re-cut last) ===== -->
+      <!-- TOP WING — open space 35.6 m² + pantry tucked SW corner -->
+      <rect class="room" x="200" y="200" width="6800" height="5800"/>
+      <!-- Pantry tucked into SW corner of open-space layout -->
+      <rect class="pantry" x="200" y="4100" width="1500" height="1900"/>
+      <!-- MID WING — hall + WC + shower (3300 tall) -->
+      <rect class="room" x="200" y="6200" width="6800" height="3300"/>
+      <rect class="wet"  x="200" y="6200" width="1300" height="1300"/>            <!-- WC -->
+      <rect class="wet"  x="200" y="7700" width="1700" height="1800"/>            <!-- Shower -->
+      <!-- BOTTOM WING — bedrooms + bath central column (5500 tall) -->
+      <rect class="room" x="200" y="9700" width="6800" height="5500"/>
+      <!-- Bath central column -->
+      <rect class="vest" x="2900" y="9700" width="1500" height="1200"/>           <!-- Vestibule -->
+      <rect class="wet"  x="2900" y="10900" width="1500" height="2800"/>          <!-- Bath -->
+      <rect class="pantry" x="2900" y="13700" width="1500" height="1500"/>        <!-- Closet behind bath -->
+
+      <!-- ===== INTERNAL PARTITIONS ===== -->
+      <!-- Top/mid partition (full width) with door from open space → hall and pantry door -->
+      <rect class="wall" x="200"  y="6000" width="6800" height="200"/>
+      <!-- Pantry east wall -->
+      <rect class="wall" x="1700" y="4100" width="200"  height="1900"/>
+      <!-- Pantry north wall -->
+      <rect class="wall" x="200"  y="4100" width="1700" height="200"/>
+      <!-- WC walls (north already part of mid partition, east + south) -->
+      <rect class="wall" x="1500" y="6200" width="200"  height="1300"/>
+      <rect class="wall" x="200"  y="7500" width="1500" height="200"/>
+      <!-- Shower walls (east + north already + south part) -->
+      <rect class="wall" x="1900" y="7700" width="200"  height="1800"/>
+      <rect class="wall" x="200"  y="9500" width="1900" height="200"/>
+      <!-- Mid/bottom partition (rest) -->
+      <rect class="wall" x="1900" y="9500" width="5100" height="200"/>
+      <!-- Bath / vestibule central column walls -->
+      <rect class="wall" x="2900" y="9700" width="200"  height="5500"/>
+      <rect class="wall" x="4400" y="9700" width="200"  height="5500"/>
+      <rect class="wall" x="2900" y="10900" width="1500" height="200"/>           <!-- vestibule/bath partition -->
+      <rect class="wall" x="2900" y="13700" width="1500" height="200"/>           <!-- bath/closet partition -->
+
+      <!-- ===== DOOR / WINDOW OPENINGS (re-paint room over wall slices) ===== -->
+      <!-- North wall: sliding door to loggia №3 at x=3200..6100 -->
+      <rect class="room" x="3200" y="0" width="2900" height="200"/>
+      <line class="win"  x1="3200" y1="100" x2="6100" y2="100"/>
+      <!-- North wall: kitchen window above sink at x=1500..2200 -->
+      <rect class="room" x="1500" y="0" width="700" height="200"/>
+      <line class="win"  x1="1500" y1="100" x2="2200" y2="100"/>
+      <!-- East wall: living window at y=2400..3600 -->
+      <rect class="room" x="7000" y="2400" width="200" height="1200"/>
+      <line class="win"  x1="7100" y1="2400" x2="7100" y2="3600"/>
+      <!-- West wall: kitchen windows -->
+      <rect class="room" x="0" y="800" width="200" height="900"/>
+      <line class="win"  x1="100" y1="800" x2="100" y2="1700"/>
+      <rect class="room" x="0" y="2200" width="200" height="900"/>
+      <line class="win"  x1="100" y1="2200" x2="100" y2="3100"/>
+      <!-- West wall: ENTRANCE door at y=6500..7400 (between pantry and shower, opening into hall) -->
+      <rect class="room" x="0" y="6500" width="200" height="900"/>
+      <!-- Pantry door east (into hall) at y=4500..5300 -->
+      <rect class="room" x="1700" y="4500" width="200" height="800"/>
+      <!-- WC door east (into hall) at y=6500..7300 -->
+      <rect class="room" x="1500" y="6500" width="200" height="800"/>
+      <!-- Shower door east (into hall) at y=8200..9000 -->
+      <rect class="room" x="1900" y="8200" width="200" height="800"/>
+      <!-- Top/mid partition: open passage hall ↔ open space at x=2400..3600 -->
+      <rect class="room" x="2400" y="6000" width="1200" height="200"/>
+      <!-- Mid/bottom partition: door to west bedroom at x=1100..1900 -->
+      <rect class="room" x="1100" y="9500" width="800" height="200"/>
+      <!-- Mid/bottom partition: door to vestibule at x=3300..4000 -->
+      <rect class="room" x="3300" y="9500" width="700" height="200"/>
+      <!-- Mid/bottom partition: door to east bedroom at x=5100..5900 -->
+      <rect class="room" x="5100" y="9500" width="800" height="200"/>
+      <!-- Vestibule → bath door at y=10900 x=3200..3900 -->
+      <rect class="vest" x="3200" y="10900" width="700" height="200"/>
+      <!-- South wall: balcony №10 sliding door at x=400..2700 (west bedroom) -->
+      <rect class="room" x="400" y="15200" width="2300" height="200"/>
+      <line class="win"  x1="400" y1="15300" x2="2700" y2="15300"/>
+      <!-- South wall: loggia №9 sliding door at x=4500..6800 (east bedroom) -->
+      <rect class="room" x="4500" y="15200" width="2300" height="200"/>
+      <line class="win"  x1="4500" y1="15300" x2="6800" y2="15300"/>
+
+      <!-- ===== DOOR SWING ARCS (orange) ===== -->
+      <!-- Entrance door (W ext) — swings into hall NE -->
+      <path class="door" d="M200,6500 A 900 900 0 0 1 1100 7400"/>
+      <line class="leaf" x1="200" y1="6500" x2="1100" y2="6500"/>
+      <!-- Pantry door (E to hall) — swings into hall SE -->
+      <path class="door" d="M1900,4500 A 800 800 0 0 1 2700 5300"/>
+      <line class="leaf" x1="1900" y1="4500" x2="2700" y2="4500"/>
+      <!-- WC door — swings into hall NE -->
+      <path class="door" d="M1700,6500 A 800 800 0 0 0 2500 7300"/>
+      <line class="leaf" x1="1700" y1="6500" x2="2500" y2="6500"/>
+      <!-- Shower door — swings into hall NE -->
+      <path class="door" d="M2100,8200 A 800 800 0 0 0 2900 9000"/>
+      <line class="leaf" x1="2100" y1="8200" x2="2900" y2="8200"/>
+      <!-- West bedroom door — swings into bedroom SE -->
+      <path class="door" d="M1100,9700 A 800 800 0 0 1 1900 10500"/>
+      <line class="leaf" x1="1100" y1="9700" x2="1900" y2="9700"/>
+      <!-- Vestibule door from hall — swings into vestibule SE -->
+      <path class="door" d="M3300,9700 A 700 700 0 0 1 4000 10400"/>
+      <line class="leaf" x1="3300" y1="9700" x2="4000" y2="9700"/>
+      <!-- Bath door from vestibule — swings into bath SE -->
+      <path class="door" d="M3200,11100 A 700 700 0 0 1 3900 11800"/>
+      <line class="leaf" x1="3200" y1="11100" x2="3900" y2="11100"/>
+      <!-- East bedroom door — swings into bedroom SW -->
+      <path class="door" d="M5900,9700 A 800 800 0 0 0 5100 10500"/>
+      <line class="leaf" x1="5900" y1="9700" x2="5100" y2="9700"/>
+
+      <!-- ===== EXTERNAL LOGGIAS / BALCONY ===== -->
+      <rect class="ext" x="3200" y="-1300" width="2900" height="1300"/>
+      <text class="lblExt" x="4650" y="-700">Лоджия №3 · 3.7 m²</text>
+      <text class="lblExt" x="4650" y="-450">(2900 × 1300)</text>
+
+      <rect class="ext" x="200" y="15400" width="2700" height="1200"/>
+      <text class="lblExt" x="1550" y="16000">Балкон №10 · 3.2 m²</text>
+      <text class="lblExt" x="1550" y="16250">(2700 × 1200) · west</text>
+
+      <rect class="ext" x="4300" y="15400" width="2700" height="1300"/>
+      <text class="lblExt" x="5650" y="16000">Лоджия №9 · 4.4 m²</text>
+      <text class="lblExt" x="5650" y="16250">(≈ schem 2700 × 1300; reg 1300 × 3400 — verify)</text>
+
+      <!-- ===== FURNITURE — TOP WING (open space) ===== -->
+      <!-- Kitchen run along W wall -->
+      <rect class="built" x="200" y="200" width="900" height="3000"/>
+      <!-- Kitchen N return -->
+      <rect class="built" x="200" y="200" width="3000" height="600"/>
+      <!-- Oven tall column NW corner -->
+      <line class="symL" x1="200" y1="800" x2="900" y2="800"/>
+      <text class="lblSm" x="550" y="600">oven</text>
+      <!-- Cooktop (N wall) -->
+      <circle cx="2200" cy="450" r="80" class="furn"/>
+      <circle cx="2400" cy="450" r="80" class="furn"/>
+      <circle cx="2200" cy="650" r="80" class="furn"/>
+      <circle cx="2400" cy="650" r="80" class="furn"/>
+      <text class="lblSm" x="2300" y="950">cooktop</text>
+      <!-- Sink (W wall) -->
+      <ellipse cx="650" cy="1200" rx="350" ry="200" class="furn"/>
+      <text class="lblSm" x="650" y="1500">sink</text>
+      <!-- Fridge tall column N wall east end -->
+      <rect class="built" x="2900" y="200" width="700" height="700"/>
+      <text class="lblSm" x="3250" y="600">fridge</text>
+
+      <!-- Dining table 1800 × 900 -->
+      <rect class="furn" x="3000" y="2300" width="1800" height="900" rx="50"/>
+      <text class="lblSm" x="3900" y="2820">Dining 1800 × 900 (6–8)</text>
+      <!-- 6 chairs -->
+      <rect class="furn" x="3100" y="2100" width="450" height="180"/>
+      <rect class="furn" x="3675" y="2100" width="450" height="180"/>
+      <rect class="furn" x="4250" y="2100" width="450" height="180"/>
+      <rect class="furn" x="3100" y="3220" width="450" height="180"/>
+      <rect class="furn" x="3675" y="3220" width="450" height="180"/>
+      <rect class="furn" x="4250" y="3220" width="450" height="180"/>
+
+      <!-- Wool rug under living -->
+      <rect class="rug" x="4900" y="3500" width="2000" height="2300"/>
+
+      <!-- L-sofa long part (back to S, faces N) — south of rug -->
+      <rect class="softp" x="4900" y="4900" width="1800" height="900" rx="60"/>
+      <!-- L-sofa short return (back to E, faces W) -->
+      <rect class="softp" x="6000" y="3500" width="900" height="1500" rx="60"/>
+      <text class="lblSm" x="5800" y="5450">L-sofa 3.0 × 2.3</text>
+      <!-- Coffee table -->
+      <rect class="furn" x="5100" y="4000" width="1000" height="700" rx="30"/>
+      <text class="lblSm" x="5600" y="4400">coffee</text>
+
+      <!-- TV on N wall between fridge and loggia (mounted on plaster column) -->
+      <rect class="built" x="3700" y="200" width="900" height="120"/>
+      <text class="lblSm" x="4150" y="500">TV (wall-mount)</text>
+
+      <!-- WFH desk niche along E wall, top -->
+      <rect class="built" x="6100" y="500" width="900" height="600"/>
+      <text class="lblSm" x="6550" y="850">WFH desk · LAN</text>
+
+      <!-- Removed wall (faint dashed line where MEERIM partition was) -->
+      <line class="removed" x1="3500" y1="200" x2="3500" y2="3400"/>
+      <text class="lblNot" x="3500" y="3700" text-anchor="middle">— wall removed —</text>
+
+      <!-- Top-wing labels -->
+      <text class="lblRm" x="4400" y="1700">Open space · 35.6 m² (registry №2)</text>
+      <text class="lblA"  x="4400" y="1980">kitchen + dining + living + WFH + TV</text>
+
+      <!-- Pantry label -->
+      <text class="lblRm" x="950" y="4900">Pantry</text>
+      <text class="lblA"  x="950" y="5160">Кладовая №3 · 2.8 m²</text>
+      <line class="symL" x1="350" y1="4400" x2="1550" y2="4400"/>
+      <line class="symL" x1="350" y1="4600" x2="1550" y2="4600"/>
+      <line class="symL" x1="350" y1="5400" x2="1550" y2="5400"/>
+      <line class="symL" x1="350" y1="5600" x2="1550" y2="5600"/>
+
+      <!-- ===== FURNITURE — MID WING (hall + WC + shower) ===== -->
+      <!-- WC fixtures -->
+      <rect class="furn" x="900" y="6300" width="450" height="600" rx="50"/>
+      <ellipse cx="1125" cy="6600" rx="180" ry="200" class="symL"/>
+      <text class="lblSm" x="700" y="7350">WC</text>
+      <ellipse cx="500" cy="7300" rx="200" ry="120" class="furn"/>
+      <text class="lblRm" x="850" y="6800">Санузел №4</text>
+      <text class="lblA"  x="850" y="7050">1.6 m²</text>
+
+      <!-- Shower -->
+      <rect class="furn" x="350" y="7900" width="900" height="900"/>
+      <line class="symL" x1="350" y1="7900" x2="1250" y2="8800"/>
+      <line class="symL" x1="1250" y1="7900" x2="350" y2="8800"/>
+      <ellipse cx="1650" cy="7950" rx="200" ry="130" class="furn"/>
+      <rect class="furn" x="1500" y="9050" width="350" height="380" rx="40"/>
+      <text class="lblRm" x="1050" y="8350">Душевая №5</text>
+      <text class="lblA"  x="1050" y="8580">3.1 m²</text>
+
+      <!-- Hall built-in wardrobe along E wall (4600 long × 600 deep) -->
+      <rect class="built" x="6400" y="6500" width="600" height="2700"/>
+      <text class="lblSm" x="6700" y="7900" transform="rotate(-90 6700 7900)">Built-in wardrobe 4600 × 600 (rotated for E wall)</text>
+
+      <!-- Console near entry -->
+      <rect class="built" x="2200" y="6300" width="900" height="280"/>
+      <text class="lblSm" x="2650" y="6500">console + mirror</text>
+
+      <!-- Hall labels -->
+      <text class="lblRm" x="4200" y="7700">Холл №1 · 17.0 m²</text>
+      <text class="lblA"  x="4200" y="7960">central corridor + storage</text>
+
+      <!-- ===== FURNITURE — BOTTOM WING (bedrooms + bath) ===== -->
+      <!-- WEST BEDROOM (children, 14.2 m²) -->
+      <!-- Twin beds along W wall, heads N -->
+      <rect class="softp" x="350" y="9900" width="900" height="1900" rx="50"/>
+      <rect class="furn"  x="400" y="9950" width="800" height="180" rx="30"/>
+      <text class="lblSm" x="800"  y="10900">Bed 1 (900×1900)</text>
+      <rect class="softp" x="350" y="12000" width="900" height="1900" rx="50"/>
+      <rect class="furn"  x="400" y="12050" width="800" height="180" rx="30"/>
+      <text class="lblSm" x="800"  y="13000">Bed 2 (900×1900)</text>
+      <!-- Children desk along E wall -->
+      <rect class="built" x="2100" y="11000" width="700" height="1400"/>
+      <text class="lblSm" x="2450" y="11700">Desk 1400 × 700 + LAN</text>
+      <!-- Wardrobe along S wall -->
+      <rect class="built" x="350"  y="14400" width="2400" height="800"/>
+      <text class="lblSm" x="1550" y="14900">Wardrobe (sliding)</text>
+      <text class="lblRm" x="1550" y="13900">Спальня №7 · 14.2 m²</text>
+      <text class="lblA"  x="1550" y="14180">children · west · ≈ 2700 × 5500</text>
+
+      <!-- BATH №8 (4.2 m²) central column -->
+      <!-- Vestibule label -->
+      <text class="lblSm" x="3650" y="10350">Vestibule</text>
+      <text class="lblSm" x="3650" y="10580">~1500 × 1200</text>
+      <!-- W/D column NW corner of bath -->
+      <rect class="built" x="2950" y="10950" width="650" height="850"/>
+      <circle cx="3275" cy="11200" r="180" class="furn"/>
+      <circle cx="3275" cy="11600" r="160" class="furn"/>
+      <text class="lblSm" x="3275" y="11200" fill="#fff">W</text>
+      <text class="lblSm" x="3275" y="11600" fill="#fff">D</text>
+      <!-- Tub along E wall of bath, 1700 × 750 -->
+      <rect class="furn" x="3650" y="11700" width="700" height="1700" rx="60"/>
+      <ellipse cx="4000" cy="12550" rx="280" ry="700" class="symL"/>
+      <text class="lblSm" x="4000" y="12600">Tub 1700×750</text>
+      <!-- WC -->
+      <rect class="furn" x="3000" y="12900" width="400" height="550" rx="40"/>
+      <ellipse cx="3200" cy="13180" rx="170" ry="200" class="symL"/>
+      <text class="lblSm" x="3200" y="13580">WC</text>
+      <!-- Vanity 800 × 600 -->
+      <rect class="furn" x="3050" y="11950" width="600" height="500"/>
+      <ellipse cx="3350" cy="12200" rx="220" ry="150" class="furn"/>
+      <text class="lblSm" x="3350" y="12550">vanity 800×600</text>
+      <!-- Bath labels -->
+      <text class="lblRm" x="3650" y="13800">Ванная №8</text>
+      <text class="lblA"  x="3650" y="14060">4.2 m² · tub + W/D</text>
+
+      <!-- EAST BEDROOM (parents, 15.1 m²) -->
+      <!-- Queen bed 1600 × 2000, head against W wall (against bath partition) -->
+      <rect class="softp" x="4700" y="11000" width="1600" height="2000" rx="60"/>
+      <rect class="furn"  x="4720" y="11050" width="700" height="200" rx="30"/>
+      <rect class="furn"  x="5520" y="11050" width="700" height="200" rx="30"/>
+      <text class="lblSm" x="5500" y="12100">Queen 1600 × 2000</text>
+      <!-- Bedside tables flanking -->
+      <rect class="furn" x="4700" y="10600" width="500" height="400"/>
+      <text class="lblSm" x="4950" y="10840">side</text>
+      <rect class="furn" x="5800" y="10600" width="500" height="400"/>
+      <text class="lblSm" x="6050" y="10840">side</text>
+      <!-- Wardrobe along S wall (depth 800 × 2400 wide), built-in sliding with mirror centre -->
+      <rect class="built" x="4500" y="14400" width="2400" height="800"/>
+      <text class="lblSm" x="5700" y="14900">Built-in sliding wardrobe (mirror centre)</text>
+      <!-- Reading armchair near loggia door -->
+      <rect class="furn" x="6100" y="13300" width="700" height="700" rx="60"/>
+      <text class="lblSm" x="6450" y="13700">chair</text>
+      <text class="lblRm" x="5700" y="13900">Спальня №6 · 15.1 m²</text>
+      <text class="lblA"  x="5700" y="14180">parents · east · ≈ 2700 × 5500</text>
+
+      <!-- ===== KEY DIMENSIONS ===== -->
+      <text class="lblDim" x="3600" y="-300" text-anchor="middle">7200 mm</text>
+      <text class="lblDim" x="-1200" y="7700" text-anchor="middle" transform="rotate(-90 -1200 7700)">15400 mm</text>
+      <line class="symL" x1="0" y1="-150" x2="7200" y2="-150"/>
+      <line class="symL" x1="-1000" y1="0" x2="-1000" y2="15400"/>
+
+      <!-- North arrow top right -->
+      <g transform="translate(8000,-1100)">
+        <circle r="280" fill="none" stroke="#2c5282" stroke-width="40"/>
+        <path d="M0,-260 L120,180 L0,80 L-120,180 Z" fill="#2c5282"/>
+        <text class="lblTit" x="0" y="-360" text-anchor="middle">N</text>
+      </g>
+
+      <!-- Scale bar 1 m -->
+      <g transform="translate(6800,17000)">
+        <rect width="1000" height="60" fill="#1a1a1a"/>
+        <rect x="200" width="200" height="60" fill="#fff" stroke="#1a1a1a" stroke-width="20"/>
+        <rect x="600" width="200" height="60" fill="#fff" stroke="#1a1a1a" stroke-width="20"/>
+        <text class="lblDim" x="500" y="240" text-anchor="middle">1 m</text>
+      </g>
+
+      <!-- Bottom note -->
+      <text class="lblNot" x="3600" y="17400" text-anchor="middle">Internal sum 93.6 m² (registry §2.3) · external 11.3 m² · indicative — verify on site</text>
+    </svg>
+  </div>
+
+  <h3>4.3 AI rendering — landscape (design-intent illustration)</h3>
+  <p class="note"><strong>Not for tender</strong>. AI-generated illustration of the same plan in landscape composition. Useful as a presentation visual; treat as <em>design intent only</em> — the hand SVG (§4.2) and MEERIM (§4.1) remain normative. Note: AI tends to compress the apartment proportions toward landscape; use mm dimensions from §4.2 / §4.1, not from this image.</p>
+  <img class="render" src="renders/apt93-floor-plan.png"
+       alt="AI-rendered architectural floor plan illustration of apartment 93 in landscape composition with kitchen NW, living NE, dining centre, wet block on west, central hall and bedrooms south"/>
+  <p class="render-cap">AI illustration · landscape composition · design intent only · do NOT scale.</p>
+
+  <h3>4.4 AI rendering — portrait attempt (design-intent illustration)</h3>
+  <p class="note"><strong>Not for tender</strong>. Second AI generation, prompted for portrait orientation matching the MEERIM aspect ratio. Closer to reality than §4.3 in proportion, but still illustrative.</p>
+  <img class="render" src="renders/apt93-floor-plan-portrait.png"
+       alt="AI-rendered architectural floor plan illustration of apartment 93 in portrait orientation, three vertical sections labelled NORTH/MIDDLE/SOUTH"/>
+  <p class="render-cap">AI illustration · portrait attempt · design intent only · do NOT scale.</p>
+
+  <h3>4.5 3D axonometric cutaway (volumetric intent)</h3>
+  <img class="render" src="renders/apt93-isometric.png"
+       alt="3D isometric cutaway rendering of apartment 93 with walls cut at 1.5 m showing all rooms, furniture and finishes"/>
+  <p class="render-cap">Isometric cutaway at ~1.5 m, walls cut to expose interior layout. Materials, furniture, and finishes are indicative of the chosen Scandinavian + Japandi direction.</p>
+
+  <details>
+    <summary>4.6 Earlier schematic SVG (printable B/W; superseded by §4.2)</summary>
+  <p class="note">Drawn to <strong>1 SVG unit = 1 mm</strong>; rectangular schematic, ±5 % per-room area drift accepted (registry remains normative). Doors with swing arc (orange); built-in furniture in light blue.</p>
   <div class="schematic">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1700 -1700 10500 18100" role="img" aria-label="Detailed scaled floor plan of apartment 93">
       <defs>
@@ -513,6 +899,7 @@
       <text class="lbl-ext" x="-1500" y="-1200" text-anchor="start">Top of plan = north (assumed; verify with façade orientation)</text>
     </svg>
   </div>
+  </details>
 
   <h3>Apartment area summary (registry · §2.3)</h3>
   <table>
@@ -523,12 +910,12 @@
       <tr><td>WC (gosregistr №4)</td><td>1.6</td><td>1300 × 1300</td><td>NW corner of mid wing.</td></tr>
       <tr><td>Shower (gosregistr №5)</td><td>3.1</td><td>1700 × 1850</td><td>SW of WC, separate door.</td></tr>
       <tr><td>Pantry</td><td>2.8</td><td>1500 × 1800</td><td>NE of mid wing, near kitchen.</td></tr>
-      <tr><td>Bedroom — parents (gosregistr №6)</td><td>15.1</td><td>~2700 × 5700 (incl. wardrobe footprint)</td><td>West; loggia 4.4 m² on west.</td></tr>
-      <tr><td>Bedroom — children (gosregistr №7)</td><td>14.2</td><td>~2700 × 5700</td><td>East; balcony 3.2 m² on east.</td></tr>
+      <tr><td>Bedroom — parents (gosregistr №6)</td><td>15.1</td><td>~2700 × 5700 (incl. wardrobe footprint)</td><td><strong>East</strong>; loggia 4.4 m² on east (MEERIM №9).</td></tr>
+      <tr><td>Bedroom — children (gosregistr №7)</td><td>14.2</td><td>~2700 × 5700</td><td><strong>West</strong>; balcony 3.2 m² on west (MEERIM №10).</td></tr>
       <tr><td>Bath (gosregistr №8)</td><td>4.2</td><td>1600 × 2600</td><td>Central south, between bedrooms; W/D column inside.</td></tr>
       <tr><td>External — loggia N (kitchen)</td><td>3.7</td><td>2900 × 1300</td><td>Cold contour; storage / drying.</td></tr>
-      <tr><td>External — loggia W (parents)</td><td>4.4</td><td>1300 × 3400</td><td>Cold contour; storage / chair.</td></tr>
-      <tr><td>External — balcony E (children)</td><td>3.2</td><td>1200 × 2700</td><td>Cold contour; light folding seating.</td></tr>
+      <tr><td>External — loggia E (parents, MEERIM №9)</td><td>4.4</td><td>1300 × 3400</td><td>Cold contour; storage / chair.</td></tr>
+      <tr><td>External — balcony W (children, MEERIM №10)</td><td>3.2</td><td>1200 × 2700</td><td>Cold contour; light folding seating.</td></tr>
       <tr><td><strong>Total internal (registry)</strong></td><td><strong>93.6</strong></td><td>—</td><td>External 11.3 m² not included in internal sum.</td></tr>
     </tbody>
   </table>
@@ -562,6 +949,9 @@
   </ul>
 
   <h3>5.2 Hall &amp; built-in wardrobe (5.8.2) <span class="ru">(Холл и гардеробная)</span></h3>
+  <img class="render" src="renders/apt93-render-hall.png"
+       alt="Hall render: full-height built-in wardrobe in matte off-white with oak slatted niche, oak bench, full-height mirror, indirect cove lighting"/>
+  <p class="render-cap">Hall design intent — full-height built-in wardrobe with USB-C niche, oak bench at entry, full-height mirror at far end, dimmable indirect cove on night scene.</p>
   <ul>
     <li>Wardrobe: full-height (FFL → ceiling 2700, top closed), depth 600 mm, push-to-open flat fronts <code>P1</code> + handle-less; segmented for outerwear / shoes (vented) / suitcases / sports / seasonal.</li>
     <li>Keys / mail mini-zone: shallow niche 80 × 250 × 120 mm with 1 USB-C charging socket inside (children-safe lid).</li>
@@ -573,6 +963,9 @@
   </ul>
 
   <h3>5.3 Open space — kitchen + dining + living + WFH + TV (5.8.3) <span class="ru">(Open space)</span></h3>
+  <img class="render" src="renders/apt93-render-openspace.png"
+       alt="Open space render: linear off-white kitchen with sintered stone splashback, oak shelves and pendant; oak dining table for 6 with wishbone chairs; soft linen L-sofa with oak coffee table on wool rug; wall-mounted TV; loggia daylight"/>
+  <p class="render-cap">Open-space design intent — kitchen / dining / living / WFH read as one volume, defined by a single oak floor and linear ceiling tracks; warm 2700–3000 K, no overhead glare on sofa or table edges.</p>
   <p class="note">Refer to the apartment plan in <a href="#s4">§4</a> for full dimensioned layout (kitchen run 3400 mm, dining 1800 × 900, L-sofa 3000 × 2300, working aisle ≥ 1100 mm, TV unit 600 × 3000 mm on east wall).</p>
   <h4>Kitchen block</h4>
   <ul>
@@ -626,6 +1019,9 @@
   </ul>
 
   <h3>5.7 Bath / utility (5.8.7) <span class="ru">(Ванная 4.2)</span></h3>
+  <img class="render" src="renders/apt93-render-bath.png"
+       alt="Bath render: built-in tub 1700×750 with matte black thermostatic mixer and slide rail, sintered stone vanity 800×600 with mirror cabinet and vertical face lights, wall-hung WC, stacked washer-dryer column in oak joinery, electric heated towel rail, large-format porcelain in warm beige"/>
+  <p class="render-cap">Bath design intent — fixed tub + W/D column inside the 4.2 m² envelope, vertical face light at mirror, IP65 wet-zone downlights, matte black hardware. Coordinate waterproofing certification with licensed engineer.</p>
   <div class="schematic" style="max-width: 32rem;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-400 -400 2400 3300" role="img" aria-label="Bath plan to scale 1:50">
       <defs>
@@ -698,7 +1094,10 @@
 
   <h3>5.8 Bedrooms (5.8.8) <span class="ru">(Спальни)</span></h3>
 
-  <h4>Parents (15.1 m², ≈ 2700 × 5700 mm internal + loggia 4.4 W)</h4>
+  <h4>Parents (15.1 m², ≈ 2700 × 5700 mm internal, EAST side + loggia 4.4 m² on east — MEERIM №9)</h4>
+  <img class="render" src="renders/apt93-render-bedroom-parents.png"
+       alt="Parents bedroom render: queen bed with linen headboard, oak bedside tables with warm ceramic lamps, full-height built-in wardrobe with mirror centre, sliding glass door to loggia with rattan armchair, blackout + sheer linen curtains, split AC high on side wall"/>
+  <p class="render-cap">Parents bedroom design intent — calm material-led palette, AC throw parallel to bed, blackout + sheer pair, loggia used as reading nook + storage.</p>
   <div class="schematic" style="max-width: 36rem;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1800 -400 5400 6500" role="img" aria-label="Parents bedroom plan to scale 1:75">
       <defs>
@@ -772,10 +1171,13 @@
     <li>Built-in wardrobe to 2700 mm (sliding doors per <a href="#s9">§9.5</a>); depth 800 mm; mirror centre panel.</li>
     <li>Blackout curtain on wrap rail with side returns; sheer underlayer for daytime; pelmet 200 mm to block "halo".</li>
     <li>Split AC mounted high on east wall, throw <strong>parallel</strong> to bed; drainage routed inside joinery void.</li>
-    <li>Loggia W: storage column + reading chair; no water lines outdoors (A9).</li>
+    <li>Loggia E (1.3 × 3.4 m, MEERIM №9): storage column + reading chair; no water lines outdoors (A9).</li>
   </ul>
 
-  <h4>Children (14.2 m², ≈ 2700 × 5700 mm internal + balcony 3.2 E)</h4>
+  <h4>Children (14.2 m², ≈ 2700 × 5700 mm internal, WEST side + balcony 3.2 m² on west — MEERIM №10)</h4>
+  <img class="render" src="renders/apt93-render-bedroom-children.png"
+       alt="Children bedroom render: two twin beds with layered linen bedding in soft sand and sage tones, oak desk with task lamp by the wall, low oak storage drawers, full-height sliding-door wardrobe, French balcony glass door, split AC high on side wall, gentle child-friendly accent wall"/>
+  <p class="render-cap">Children bedroom design intent — twin beds clear of door swing, dedicated desk with RJ45, low reach hanging in wardrobe, AC throw parallel to beds, gentle accent colour without overstimulation.</p>
   <div class="schematic" style="max-width: 36rem;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-400 -400 5400 6500" role="img" aria-label="Children bedroom plan to scale 1:75">
       <defs>
@@ -853,7 +1255,7 @@
     <li>Half-desk 1400 × 700 mm at west wall (north end), with dedicated dimmer task lamp + 1 RJ45 (LAN per §5.0).</li>
     <li>Built-in wardrobe with <strong>lower hanging rail at 1200 mm AFF</strong> (child reach); soft-close hinges; 2 toy/spare-bed drawers low.</li>
     <li>Blackout + sheer; warm dim night light (1–5 %); split AC throw parallel to beds (not on heads).</li>
-    <li>Balcony E: light folding chair only; <strong>no built-ins fixed to parapet</strong> without HoA approval.</li>
+    <li>Balcony W (1.2 × 2.7 m, MEERIM №10): light folding chair only; <strong>no built-ins fixed to parapet</strong> without HoA approval.</li>
   </ul>
 
   <h3>5.9 Loggias and balcony (5.8.9) <span class="ru">(Лоджии и балкон)</span></h3>
