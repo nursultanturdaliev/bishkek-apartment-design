@@ -24,7 +24,7 @@
 
 ## 1. Назначение и фазовый поток
 
-Документ описывает **результаты работы дизайнера** в типовом жилом проекте «под ключ» по интерьеру. Содержательные требования (стиль, свет, быт, ограничения) — в [требованиях к проекту](./apartment-project-requirements.md) (кратко — [§4](./apartment-project-requirements.md#section-4), детали — [§5](./apartment-project-requirements.md#section-5)).
+Документ описывает **результаты работы дизайнера** в типовом жилом проекте «под ключ» по интерьеру. Содержательные требования (стиль, свет, быт, ограничения, **помещение за помещением**) — в [требованиях к проекту](./apartment-project-requirements.md) (кратко — [§4](./apartment-project-requirements.md#section-4), детали — [§5](./apartment-project-requirements.md#section-5), зональные предпочтения — [§5.8](./apartment-project-requirements.md#section-5-8)).
 
 ```mermaid
 flowchart LR
