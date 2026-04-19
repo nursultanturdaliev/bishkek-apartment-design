@@ -8,7 +8,7 @@
 
 **Тип документа:** **дизайн-схема электрики и слаботочки** уровня **DD/CD** в интерьерных границах: **позиции** розеток / выключателей / точек данных / ТВ / кондиционеров / встроенной техники, **высоты установки**, **логика выключателей**, **группы освещения** и **спека встроенной техники с пометкой «выделенная линия»**. Документ предназначен **для лицензированного электрика и проектировщика ОВиК**: он использует эту схему для **расчёта сечений, автоматов, УЗО/диффавтоматов, заземления, щита и согласования с нормами в юрисдикции объекта**.
 
-**Версия документа:** 1.0 · **Дата:** 2026-04-19 · **Кратко:** первый выпуск; точки и сценарии освещения — после обмера и закрытия **TBD-5** (мокрая стена кухни, см. требования **§6**); таблица групп — стартовая, окончательная — на чертеже электрика.
+**Версия документа:** 1.1 · **Дата:** 2026-04-19 · **Кратко:** добавлены визуальные схемы — **§3.1** elevation (mounting heights), **§4.1** floor-plan electrical overlay (SVG, geometry per design-book), **§5.6.A** IP-zones reference (SVG), **§6.1** switching-logic flow (mermaid), **§7.1** LAN star (mermaid), **§8.1** AC topology (mermaid), **§10.1** panel logical grouping (mermaid). Точки и сценарии освещения — после обмера и закрытия **TBD-5** (мокрая стена кухни, см. требования **§6**).
 
 **Единицы:** SI — **мм** для высот, **м** для трасс, **Вт / кВт** только как **информативная нагрузка по паспорту техники** (не сечение и не автомат).
 
@@ -20,7 +20,7 @@
 2. [Условные обозначения и легенда](#section-2)
 3. [Высоты установки (типовые ориентиры до обмера)](#section-3) — [§3.1 elevation SVG](#section-3-1)
 4. [Сводная матрица точек по помещениям](#section-4) — [§4.1 plan overlay SVG](#section-4-1)
-5. [По помещениям — детальные ведомости](#section-5)
+5. [По помещениям — детальные ведомости](#section-5) — [§5.6.A IP-zones reference SVG](#section-5-wet-zones)
    - [5.1 Холл / коридор](#section-5-1)
    - [5.2 Open space — кухонный блок](#section-5-2)
    - [5.3 Open space — обеденная зона](#section-5-3)
@@ -705,6 +705,76 @@
 | Свет потолок | — | — | **1 группа L-Pantry** | Дубль выключателя у входа в холл и **внутри** |
 | Выключатель внутри | у двери внутри | 900 мм | **1** | Для удобства |
 
+<a id="section-5-wet-zones"></a>
+
+### 5.6.A Справка: IP-зоны мокрых помещений (общая для §§ 5.7–5.9)
+
+*Зоны 0–3 — общая инженерная конвенция мокрого помещения, по которой подбираются **класс IP** и допустимость розеток. **Карту зон для конкретного помещения** строит электрик с учётом фактической компоновки сантехники и нашей расстановки точек.*
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" role="img" aria-label="Bathroom IP zones reference: zone 0 inside tub/shower, zone 1 above to 2250 mm, zone 2 600 mm laterally, zone 3 outside, with typical IP rating per zone">
+  <defs>
+    <style>
+      .zone-bg{ fill: #fbfaf4; stroke: #1a1a1a; stroke-width: 2; }
+      .z0     { fill: #f4c7c3; stroke: #9b2c2c; stroke-width: 1.5; }
+      .z1     { fill: #fbd6c4; stroke: #c05621; stroke-width: 1.5; }
+      .z2     { fill: #fef0c2; stroke: #b7791f; stroke-width: 1.5; }
+      .z3     { fill: #d6f0d6; stroke: #2f855a; stroke-width: 1.5; }
+      .floor-z{ fill: #cfa97a; stroke: #1a1a1a; stroke-width: 2; }
+      .wall-z { fill: #e2dccf; stroke: #1a1a1a; stroke-width: 2; }
+      .lblz   { font: 700 14px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+      .lblzd  { font: 11px system-ui, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+      .ttl-z  { font: 700 14px system-ui, sans-serif; fill: #1a1a1a; }
+      .axis-z { stroke: #1a1a1a; stroke-width: 1.2; }
+      .lblax  { font: 11px system-ui, sans-serif; fill: #1a1a1a; }
+    </style>
+  </defs>
+
+  <text class="ttl-z" x="20" y="22">IP zones — typical wet-room reference (elevation through tub / shower)</text>
+
+  <!-- Wall (left) -->
+  <rect class="wall-z" x="40" y="40" width="20" height="280"/>
+  <!-- Floor -->
+  <rect class="floor-z" x="60" y="305" width="800" height="20"/>
+
+  <!-- Tub silhouette -->
+  <path d="M120,265 Q140,245 200,245 H380 Q440,245 460,265 V305 H120 Z" fill="#e6edf4" stroke="#2c5282" stroke-width="1.5"/>
+  <text class="lblzd" x="290" y="295">Tub / shower tray</text>
+
+  <!-- Zone 0 — inside tub -->
+  <rect class="z0" x="120" y="245" width="340" height="60" opacity="0.55"/>
+  <text class="lblz" x="290" y="278">Zone 0 — внутри · IP67</text>
+
+  <!-- Zone 1 — above tub up to 2250 mm AFF (mark on right axis at 225 px) -->
+  <rect class="z1" x="120" y="60" width="340" height="185" opacity="0.45"/>
+  <text class="lblz" x="290" y="155">Zone 1 — над зоной 0, до 2250 мм AFF · IP65</text>
+
+  <!-- Zone 2 — 600 mm to side and above to 2250 mm -->
+  <rect class="z2" x="460" y="60" width="120" height="245" opacity="0.5"/>
+  <text class="lblz" x="520" y="180">Zone 2</text>
+  <text class="lblzd" x="520" y="200">≤ 600 мм · IP44</text>
+
+  <!-- Zone 3 — beyond 600 mm -->
+  <rect class="z3" x="580" y="60" width="270" height="245" opacity="0.45"/>
+  <text class="lblz" x="715" y="180">Zone 3 — вне зон · IP21+</text>
+  <text class="lblzd" x="715" y="200">розетки допускаются (УЗО)</text>
+
+  <!-- Vertical axis with 2250 mm tick -->
+  <line class="axis-z" x1="855" y1="305" x2="855" y2="40"/>
+  <line class="axis-z" x1="850" y1="305" x2="855" y2="305"/>
+  <text class="lblax" x="845" y="308" text-anchor="end">0</text>
+  <line class="axis-z" x1="850" y1="80"  x2="855" y2="80"/>
+  <text class="lblax" x="845" y="83"  text-anchor="end">2250</text>
+  <text class="lblax" x="868" y="180" transform="rotate(90 868 180)">AFF, mm</text>
+
+  <text class="lblzd" x="20" y="345">Карта применимости — справочная; точные границы зон и допустимое размещение розеток — у лицензированного электрика по нормам юрисдикции.</text>
+</svg>
+
+**Применение к нашим санузлам:**
+
+- **СУ 1,6 м²** (без душа/ванны) — почти всё помещение в **зоне 3**; тем не менее розетки **внутри** — по решению электрика; светильники потолка — **IP44+** (брызги от раковины).
+- **Душевая 3,1 м²** — внутри лотка/ниши душа = **зона 0**; над душем до 2250 мм — **зона 1** (потолок там — **IP65**); 600 мм по сторонам = **зона 2** (IP44); полотенцесушитель — **IP44+**, питание скрыто за корпусом.
+- **Ванная 4,2 м²** — над ванной = **зона 1 → IP65** на потолке в проекции; зеркало и бра — **IP44+**; стиралка/сушилка — **в соседнем корпусе** на 1000–1100 мм с **IP44+** и **УЗО 30 мА** (тип — у электрика).
+
 <a id="section-5-7"></a>
 
 ### 5.7 Гостевой санузел (1,6 м²) — связка с требованиями §5.8.5
@@ -1111,6 +1181,83 @@ flowchart LR
 - **ведомость освещения** с диммерами, драйверами, IES/LDT, IP/IK (см. **§4.3** deliverables);
 - ведомость встроенной техники и FF&E (мощности по паспорту);
 - журнал согласований (**§3.3.1** требований).
+
+<a id="section-10-1"></a>
+
+### 10.1 Логическая группировка щита — стартовая схема (mermaid)
+
+*Это **не** однолинейная схема щита. Это **логическая группировка контуров** для передачи электрику: какие группы желательно разнести по отдельным автоматам / УЗО для удобства эксплуатации. Финальное число модулей, типы автоматов / диффавтоматов, токи утечки и схема щита — у электрика.*
+
+```mermaid
+flowchart TB
+  Mains["Ввод в квартиру<br/>(располагаемая мощность TBD-E1<br/>фазы TBD-E2)"]
+  Mains --> Panel["Главный щит<br/>(сборка — электрик)<br/>УЗО / SPD / маркировка"]
+
+  subgraph Light["Контуры освещения (по группам §6)"]
+    L_Hall["Холл — Day / Night / Wardrobe"]
+    L_OS["Open space — Kit-* / Liv-* / Dining / Work"]
+    L_Wet["Мокрые зоны — WC / Shower / Bath<br/>(IP, отд. УЗО — у электрика)"]
+    L_Bed["Спальни — Bed1 / Bed2 (Amb + Read)"]
+    L_Pan["Кладовая · L-Pantry"]
+  end
+
+  subgraph Sock["Силовые контуры — общие розетки"]
+    S_Hall["Холл — общие R"]
+    S_OS["Open space — диван / ТВ / WFH / общие"]
+    S_Bed1["Спальня 1 — общие + прикроват."]
+    S_Bed2["Спальня 2 — общие + прикроват."]
+    S_Pan["Кладовая — R общие"]
+  end
+
+  subgraph DED["Выделенные линии (DED) — техника"]
+    D_Hob["Варочная (TBD-E3: A/B)"]
+    D_Oven["Духовой шкаф"]
+    D_DW["Посудомоечная машина"]
+    D_Fr["Холодильник"]
+    D_WM["Стиральная машина (УЗО 30 мА)"]
+    D_DRY["Сушильная машина (опц.)"]
+    D_BO["Газовый котёл (BO)"]
+    D_Tow["Полотенцесушитель эл. (опц.)"]
+  end
+
+  subgraph AC["Кондиционирование (по §8)"]
+    A_OS["AC-OS — open space"]
+    A_B1["AC-B1 — спальня родители"]
+    A_B2["AC-B2 — спальня дети"]
+  end
+
+  subgraph LV["Слаботочка (по §7)"]
+    LV_Net["LAN / роутер · кладовая"]
+    LV_TV["TV / коакс (если применимо)"]
+    LV_Domo["Домофон"]
+  end
+
+  Panel --> Light
+  Panel --> Sock
+  Panel --> DED
+  Panel --> AC
+  Panel -.->|щиток слаботочки| LV
+
+  classDef l fill:#fff7d1,stroke:#b7791f,stroke-width:1.5px;
+  classDef s fill:#e6edf4,stroke:#2c5282,stroke-width:1.5px;
+  classDef d fill:#fed7d7,stroke:#c53030,stroke-width:1.5px;
+  classDef a fill:#d8f0f0,stroke:#2c7a7b,stroke-width:1.5px;
+  classDef lv fill:#c6f6d5,stroke:#2f855a,stroke-width:1.5px;
+  classDef pnl fill:#fafaf6,stroke:#1a1a1a,stroke-width:2px;
+  class L_Hall,L_OS,L_Wet,L_Bed,L_Pan l;
+  class S_Hall,S_OS,S_Bed1,S_Bed2,S_Pan s;
+  class D_Hob,D_Oven,D_DW,D_Fr,D_WM,D_DRY,D_BO,D_Tow d;
+  class A_OS,A_B1,A_B2 a;
+  class LV_Net,LV_TV,LV_Domo lv;
+  class Mains,Panel pnl;
+```
+
+**Что закрывает эта схема для электрика:**
+
+- сколько **отдельных** контуров желательно (≈ 18–22 силовых + 5 групп освещения как минимум; финал — у электрика по нагрузке);
+- какие линии — **DED** (мокрые зоны и крупная техника);
+- что **слаботочка** разнесена в **отдельный** щиток / шкаф;
+- что **AC** и **BO** идут как отдельные линии **с УЗО** (тип и ток утечки — электрик подбирает).
 
 ---
 
